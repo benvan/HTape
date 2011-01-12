@@ -1,0 +1,102 @@
+URL: http://www.thegleam.com/ke5fx/
+NOTES: John Miles' website - includes AIL version 2, open source
+
+
+URL: http://www.radgametools.com/miles.htm
+NOTES: Miles soundsystem - used for (apparently) most games in existence..?
+
+
+URL: http://www.ambiera.com/irrklang/
+NOTES: irrKlang = another audio library. Used for C++, C# and all .NET (??)
+languages. Has Linux support for ALSA. Seems to be mostly about playback.
+
+
+URL: http://www.mathtools.net/C_C__/Signal_processing/index.html
+NOTES: breakdown of a bunch of signal processing tools / sdks
+
+
+URL: http://www.computer.org/portal/web/csdl/doi/10.1109/IV.2001.942112
+NOTES: Immersive Audio-Augmented Environments: The LISTEN Project. Looks promising - HRIRs and HRTFs. See next bookmark for implementations
+
+
+URL: http://recherche.ircam.fr/equipes/salles/listen/index.html
+NOTES: LISTEN project HRTF and HRIR database. Lots of mappings
+
+
+URL: http://en.wikipedia.org/wiki/Head-related_transfer_function
+NOTES: Wikipedia. Pretty good background of HRTF
+
+
+URL: http://www.fftw.org/
+NOTES: fast fourier transform library (in C). Useful for realtime HRIRs
+
+
+URL: http://www.elec.qmul.ac.uk/dafx03/proceedings/pdfs/dafx48.pdf
+NOTES: Research paper outlining 3d audio generation with HRIRs. IMPORTANT!!
+
+
+URL: http://www.aes.org/e-lib/browse.cfm?elib=13784
+NOTES: VERY RELEVANT. Binaural simulation of complex acoustic scenes for interactive audio. "We describe a computationally efficient spatial reverberation and 3-D positional audio mixing architecture for real-time virtual acoustics using headphones or loudspeakers. A new method for binaural synthesis of massive numbers of sound sources is introduced. Extensions of the processing architecture are described for modeling spatially extended sound events, simulating near-field emitters, rendering multi-room reverberation and incorporating the perceptually salient features of early reflections and acoustic obstructions in the listener's immediate virtual environment. The proposed approach enables the implementation of scalable interactive 3D audio rendering systems in personal computers, game consoles, set top boxes or mobile phones. The associated scene representation model is compatible with current interactive audio standards, including OpenAL, MPEG-4 and JSR-234."
+
+
+URL: http://www.holistiks.com/amphiotik/modules.php?name=_hes_Documents&file=_demos
+NOTES: 3d audio samples, generated from stereo recordings. Unlikely to be realtime
+
+
+URL: www.iasig.org/pubs/3dl2v1a.pdf
+NOTES: PERFECT FOR EVALUATION!! Set of guidelines for 3d audio rendering. A spec, in effect
+
+
+URL: www.iasig.org/pubs/3dl1v1.pdf
+NOTES: Level 1 audio guidelines. Predecessor to previous bookmark.
+
+
+URL: http://www3.math.tu-berlin.de/jreality/index.php?article_id=29
+NOTES: Scary. Jreality, not tested yet. Quote: jReality supports spatialized audio. Various sound sources (e.g., audio files or software synthesizers) can be placed in the 3D scene. The audio can then be rendered on a wide range of speaker setups including stereo, 5.1 surround, and arbitrary Ambisonics rigs. The audio rendering pipeline of jReality includes a physically accurate simulation of sound propagation that implicitly creates Doppler effects, as well as support for effects such as reverberation and distance cues.
+
+
+URL: http://www3.math.tu-berlin.de/jreality/mediawiki/index.php/The_jReality_audio_rendering_pipeline
+NOTES: Jreality audio rendering pipeline (diagram + description)
+
+
+URL: http://www.sonicspot.com/guide/3daudio.html
+NOTES: Full on breakdown of implementing 3d audio environment. IMPORTANT.  Doppler + occlusion + transforms etc. HUGE BUNCH OF REFERENCES!!!
+
+
+URL: http://sound.media.mit.edu/resources/KEMAR.html
+NOTES: This guy has done everything... pretty much. BILL GARDNER
+
+
+URL: http://alumni.media.mit.edu/~billg/
+NOTES: BILL GARDNER's page
+
+
+URL: http://vip.tilb.sze.hu/~wersenyi/IEEE.pdf
+NOTES: Head tracking research paper for audio environments. Emulated head
+movement, rather than actual head tracking. Didn't work very well. 
+
+
+URL: http://www.racedepartment.com/sim-racing-hardware/36608-trackir-freetrack-face-track.html
+NOTES: Face tracking notes + brief howto
+
+
+URL: http://oai.cwi.nl/oai/asset/5150/5150D.pdf
+NOTES: Spatial Audio in Graphical Applications (PDF). Good breakdown of use of HRTFs
+
+
+URL: http://auris.pu-toyama.ac.jp/PDF/JCA2007_DAD.pdf
+NOTES: Head tracked hrtf paper
+
+
+URL: http://alumnus.caltech.edu/~franko/thesis/thesis.html
+NOTES: DESIGN AND IMPLEMENTATION OF AN AURALIZATION SYSTEM WITH A SPECTRUM-BASED TEMPORAL PROCESSING OPTIMIZATION. Useful. Thesis, info on theory and HRTFs
+
+
+URL: http://www.devmaster.net/articles/openal-tutorials/lesson1.php
+NOTES: OpenAL tutorial!! :D
+
+
+URL: http://www.netrino.com/Embedded-Systems/How-To/Digital-Filters-FIR-IIR
+NOTES: Implementation of digital filters - first reference used
+
+

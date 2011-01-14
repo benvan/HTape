@@ -1,0 +1,223 @@
+#LyX 1.6.5 created this file. For more info see http://www.lyx.org/
+\lyxformat 345
+\begin_document
+\begin_header
+\textclass article
+\use_default_options true
+\language english
+\inputencoding auto
+\font_roman default
+\font_sans default
+\font_typewriter default
+\font_default_family default
+\font_sc false
+\font_osf false
+\font_sf_scale 100
+\font_tt_scale 100
+
+\graphics default
+\paperfontsize default
+\use_hyperref false
+\papersize default
+\use_geometry false
+\use_amsmath 1
+\use_esint 1
+\cite_engine basic
+\use_bibtopic false
+\paperorientation portrait
+\secnumdepth 3
+\tocdepth 3
+\paragraph_separation indent
+\defskip medskip
+\quotes_language english
+\papercolumns 1
+\papersides 1
+\paperpagestyle default
+\tracking_changes false
+\output_changes false
+\author "" 
+\end_header
+
+\begin_body
+
+\begin_layout Title
+HTape: Head Tracked Audio Processing Engine
+\end_layout
+
+\begin_layout Author
+by Ben van Enckevort
+\end_layout
+
+\begin_layout Section
+Introduction
+\end_layout
+
+\begin_layout Subsection
+Clear statement: What the project is about
+\end_layout
+
+\begin_layout Standard
+This project aims to provide a tool for the rendering of immersive and realistic
+ dynamic 3D audio environments via headphones by incorporating the location
+ and motion of the user's head tackling a number of related issues normally
+ experienced with virtual auditory environments by .
+ The primary of these is by supplementing the loss of physical grounding
+ GAAAAAH.
+\end_layout
+
+\begin_layout Subsection
+What do i set out to achieve?
+\end_layout
+
+\begin_layout List
+\labelwidthstring 00.00.0000
+1.
+ The ability to locate the source of a sound in a virtual environment, with
+ significantly greater accuracy than in previous approaches.
+ See references.
+ Show that head tracking increases this accuracy
+\end_layout
+
+\begin_layout List
+\labelwidthstring 00.00.0000
+2.
+ Create a convincing physical integration with said environment (for example,
+ moving blindfolded head close to virtual sawblade should raise user's heartrate
+ somewhat...) 
+\end_layout
+
+\begin_layout List
+\labelwidthstring 00.00.0000
+3.
+ Simulation of physical effects with respect to motion, distance and acoustics
+ 
+\end_layout
+
+\begin_layout Subsection
+Clear summary of the project's background
+\end_layout
+
+\begin_layout Standard
+It's not a new subject.
+ HRTFs exist for this purpose.
+ Mostly used for recording and reproduction, not dynamic systems.
+ But.
+ Big gap, not yet bridged: How to incorporate the auditory cues we make
+ use of when listening to sound in the real world, which are destroyed by
+ current audio generation? Translating and rotating the head.
+ Why does the removal of this ability break down the experience?
+\end_layout
+
+\begin_layout Standard
+Since the 1990s, games developers have been experimenting with 3D positional
+ audio effects in an effort to boost realism and immersion within their
+ products.
+ Aureal Semiconductor was the first on the scene with Aureal 3-Dimensional.
+ This was then trumped by Creative Labs when they introduced EAXTM toward
+ the end of the decade, which aimed to provide 'environmental' audio effects
+ in 3D gaming.
+ EAX later followed with X-Fi CMSS-3D, which was designed to provide faithful
+ “upmixing” of two channel audio to 5.1 or 7.1 surround sound, and as a result,
+ simulate much more realistic virtual environments.
+ The driving force behind these efforts seems to be the desire to convince
+ users that they really are where their computer screens would have them
+ believe.
+\end_layout
+
+\begin_layout Standard
+Project's relevance
+\end_layout
+
+\begin_layout Standard
+Why is the project relevant? It has many applications, mostly in the gaming
+ industry.
+ First and foremost, the intention is to enhance immersion, which is the
+ virtual environment holy grail.
+ Secondly, it expands the ways in which the user can interact with a game,
+ effectively decoupling the virtual camera from the audio receiver.
+ For example, whilst sprinting in-game, a quick flick of the head should
+ be enough to determine whether a sound off to the player's left is positioned
+ in front his current position.
+ Traditionally, one would flick the mouse (or controller) in an attempt
+ to achieve the same result, which would invariably throw the character
+ off course as a side-effect.
+ Also, with the introduction of new ways to interact with gaming devices,
+ such as the Kinect, and the Playstation Move, being able to convincingly
+ attach sound sources to real-world objects is an attractive idea.
+ This is not possible without head tracking because it is otherwise impossible
+ to know where the user's ears are.
+ A potential application of this might be enhancing the sound effects generated
+ by a lightsaber, wielded by the player in the form of the playstation move
+ controller.
+ Brushing the blade past the left and right ears by making the idential
+ motion with one's fist should create the familiar buzzing sound on the
+ left and right side respectively.
+\end_layout
+
+\begin_layout Standard
+In addition to gaming, we can use this to enhance 3D conferencing environments,
+ and could be massively instrumental in paving the way for auditory displays
+ for the blind and hard of sight.
+\end_layout
+
+\begin_layout Standard
+Main contributions?
+\end_layout
+
+\begin_layout Standard
+What is the problem?
+\end_layout
+
+\begin_layout Standard
+The problem is audio environments aren't very convincing.
+ It's also very difficult to tell where sounds are coming from, which sucks
+ when you're being shot at.
+\end_layout
+
+\begin_layout Standard
+Explain motivation (Why is it important?)
+\end_layout
+
+\begin_layout Standard
+Could be important for blind people, but let's face it – video games industry
+ is the LARGEST entertainment industry in the world.
+ Any advancement in this field generates massive interest and can be enjoyed
+ by millions world-wide.
+ … This sounds like a crap argument, irrespective of wording ...
+\end_layout
+
+\begin_layout Standard
+Identify issues (Why is it difficult to address?)
+\end_layout
+
+\begin_layout Standard
+It's only recently that head tracking has become affordable for the home
+ user both in terms of computing power and equipment, which is possibly
+ why we haven't seen commercial solutions to the problem so far.
+ The solution as it stands is to use a well configured surround sound system,
+ which does allow the user to experience the benefits of physical grounding
+ in the environment, but lacks behind in two respects: only one user may
+ make use of the room at a time, and it is very difficult if not currently
+ impossible to replicate sound sources in close proximity to the user's
+ head; an example being a quiet whisper into one ear.
+\end_layout
+
+\begin_layout Standard
+The things to be addressed are: 3d positioning of sound; time-delay and
+ level differences and spectral information Spatial tracking of user's head
+ including rotation and translation effect under motion of sound sources
+ (implicitly translates to the effect under motion of the user's head) for
+ example doppler shift
+\end_layout
+
+\begin_layout Standard
+Set the scene, provide reader with a summary of key things to look out for
+ in the remainder of the report
+\end_layout
+
+\begin_layout Standard
+mostly NON-TECHNICAL
+\end_layout
+
+\end_body
+\end_document

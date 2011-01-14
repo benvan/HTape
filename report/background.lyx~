@@ -1,0 +1,135 @@
+#LyX 1.6.5 created this file. For more info see http://www.lyx.org/
+\lyxformat 345
+\begin_document
+\begin_header
+\textclass article
+\use_default_options true
+\language english
+\inputencoding auto
+\font_roman default
+\font_sans default
+\font_typewriter default
+\font_default_family default
+\font_sc false
+\font_osf false
+\font_sf_scale 100
+\font_tt_scale 100
+
+\graphics default
+\paperfontsize default
+\use_hyperref false
+\papersize default
+\use_geometry false
+\use_amsmath 1
+\use_esint 1
+\cite_engine basic
+\use_bibtopic false
+\paperorientation portrait
+\secnumdepth 3
+\tocdepth 3
+\paragraph_separation indent
+\defskip medskip
+\quotes_language english
+\papercolumns 1
+\papersides 1
+\paperpagestyle default
+\tracking_changes false
+\output_changes false
+\author "" 
+\end_header
+
+\begin_body
+
+\begin_layout Section
+Background
+\end_layout
+
+\begin_layout Subsection
+Sound localisation
+\end_layout
+
+\begin_layout Standard
+Sound localisation is a term which describes the ability for a listener
+ to approximate the direction and distance of a perceived sound.
+ Human beings make use of several auditory cues in this evaluation, including
+ spectral information, interaural time difference (ITD) and interaural level
+ difference (ILD).
+ We characterise the location of a sound in 3D space by three quantities:
+ its azimuth angle, its elevation angle and its distance from the listener
+ (see Figure 1).
+ While the exact mechanisms by which our brains evaluate these parameters
+ is yet unknown, we are familiar with which audio cues are required.
+ Interaural time differences exist because sound propagates at a finite
+ speed.
+ Sound emanating from the left will reach the left ear before it reaches
+ the right, and due to sound's relatively low propagation speed through
+ air, we are able to detect this.
+ Interaural level differences occur primarly because the head shadows the
+ furthest ear from the sound source.
+ Depending on the frequency of the sound, signal dissipation in air may
+ also play a detectable role in ILDs.
+\end_layout
+
+\begin_layout Subsubsection
+ITD, ILD and the locus of possibilities
+\end_layout
+
+\begin_layout Standard
+By considering only the ITD between left and right ears, it is possible
+ to confine the potential location of a sound to the surface of a cone,
+ emanating laterally from the listener's head.
+ This cone, called the 
+\begin_inset Quotes eld
+\end_inset
+
+cone of confusion
+\begin_inset Quotes erd
+\end_inset
+
+, describes all the points in space from which a sound would produce the
+ detected ITD.
+ In his pioneering forray into the mechanics of sound localisation, Hans
+ Wallach concluded that since we are able to localise in the median plane
+ (the plane passing vertically through the skull, dividing the head exactly
+ into left and right sides), another factor must exist.
+\end_layout
+
+\begin_layout Standard
+\begin_inset Float figure
+wide false
+sideways false
+status collapsed
+
+\begin_layout Plain Layout
+\begin_inset Graphics
+	filename attachments/localisation1.png
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+\begin_inset Caption
+
+\begin_layout Plain Layout
+Spherical coordinate system.
+ Diagram probably needs changing, since it's a bit hard to read...
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_body
+\end_document

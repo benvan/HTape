@@ -745,7 +745,7 @@ status open
 \align center
 \begin_inset Graphics
 	filename attachments/hrtf_implementation.png
-	scale 66
+	scale 50
 
 \end_inset
 
@@ -786,8 +786,7 @@ To solve this problem, we would be required to track the user's head in
  This is not a new idea, and has been attempted in research prior to this
  project, but the techniques used to achieve the required spatial accuracy
  have been cumbersome and generally too expensive for use in the home.
- In recent years, a few commercial solutions have also begun to surface,
- as detailed below.
+ Here, we explore these approaches, and evaluate their effectiveness.
 \end_layout
 
 \begin_layout Itemize
@@ -801,326 +800,25 @@ reference "fig:beyerdynamic-Headzone"
 
 ) from beyerdynamic acheive the desired result of fixing the sound stage
  in place despite the user's head movements, but they currently retail at
- around 2,000.
+ around ₤2,000.
  The DSP unit is minimally configurable, allowing the user to modify only
  the virtual room's dimensions and ambience, and the volume.
 \end_layout
 
 \begin_layout Itemize
-DTS Surround Sensation Ultra PC plus Head Tracker Heaphones.
- In 2009, VIA and DTS collaborated to create a head tracking virtual surround
- sound solution.
- There is very little information on the unit, and it is not on general
- release to the public.
- Instead, it has been targeted at manufactures in the audio industry for
- use with their products.
- Currently there is no pricing information available.
- One limitation is that the unit fails to track the user's head past 30°
- in either direction in the lateral plane.
-\end_layout
-
-\begin_layout Itemize
-Smyth Realiser.
- The Smyth realiser is perhaps the most advanced solution seen so far in
- background research.
- The package includes the Realiser A8 (DSP unit), headphones, head tracker
- (attached to listener's head) and head tracking unit, plus miniture microphones
- which allow the user to record their own HRTF.
- This recording requires the use of a surround sound system in the room
- in which the unit is to be used.
- A minor pitfall is that the HRTF measured includes the room's acoustics,
- but the benefit of being able to use one's own tailored transfer function
- is substantial.
- Also, the unit is also fairly cumbersome (Figure ).
- It currently retails at around $3400.
-\end_layout
-
-\begin_layout Subsubsection
-Head Tracking
-\end_layout
-
-\begin_layout Standard
-It is important that the right head tracking solution be chosen for this
- project.
- The key elements to be considered are
-\end_layout
-
-\begin_layout Itemize
-Rotational error.
-\end_layout
-
-\begin_layout Itemize
-Positional error.
-\end_layout
-
-\begin_layout Itemize
-Rotational range: the maximum number of degrees in each axis for which the
- user remains tracked.
- Bigger is better
-\end_layout
-
-\begin_layout Itemize
-Response time: the time it takes to update the location and orientation
- of the user's head.
-\end_layout
-
-\begin_layout Itemize
-Acquiry time: the time it takes (typically) to first acquire the position
- and orientation of the user's head.
-\end_layout
-
-\begin_layout Itemize
-CPU load: the percentage of CPU resources required to run the head tracking
- solution.
-\end_layout
-
-\begin_layout Standard
-Many stand-alone head tracking solutions are available online.
- Recently, 
-\emph on
-seeingmachines 
-\emph default
-has taken the lead role in head tracking with their software 
-\emph on
-faceAPI.
-
-\emph default
- We evaluate and compare its usefulness to this project with other solutions
- below:
-\end_layout
-
-\begin_layout Itemize
-faceAPI.
+DTS Surround Sensation Ultra PC plus Head Tracker headphones.
  
-\begin_inset Tabular
-<lyxtabular version="3" rows="10" columns="2">
-<features>
-<column alignment="center" valignment="top" width="0">
-<column alignment="center" valignment="top" width="0">
-<row>
-<cell alignment="center" valignment="top" topline="true" bottomline="true" leftline="true" usebox="none">
-\begin_inset Text
-
-\begin_layout Plain Layout
-
-\series bold
-Specification
-\end_layout
-
-\end_inset
-</cell>
-<cell alignment="center" valignment="top" topline="true" bottomline="true" leftline="true" rightline="true" usebox="none">
-\begin_inset Text
-
-\begin_layout Plain Layout
-
-\series bold
-Value
-\end_layout
-
-\end_inset
-</cell>
-</row>
-<row>
-<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
-\begin_inset Text
-
-\begin_layout Plain Layout
-Rotational range X (°)
-\end_layout
-
-\end_inset
-</cell>
-<cell alignment="center" valignment="top" topline="true" leftline="true" rightline="true" usebox="none">
-\begin_inset Text
-
-\begin_layout Plain Layout
--30 < X < 60
-\end_layout
-
-\end_inset
-</cell>
-</row>
-<row>
-<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
-\begin_inset Text
-
-\begin_layout Plain Layout
-Rotational range Y (°)
-\end_layout
-
-\end_inset
-</cell>
-<cell alignment="center" valignment="top" topline="true" leftline="true" rightline="true" usebox="none">
-\begin_inset Text
-
-\begin_layout Plain Layout
--90 < Y < 90
-\end_layout
-
-\end_inset
-</cell>
-</row>
-<row>
-<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
-\begin_inset Text
-
-\begin_layout Plain Layout
-Rotational range Z (°)
-\end_layout
-
-\end_inset
-</cell>
-<cell alignment="center" valignment="top" topline="true" leftline="true" rightline="true" usebox="none">
-\begin_inset Text
-
-\begin_layout Plain Layout
--90 < Z < 90
-\end_layout
-
-\end_inset
-</cell>
-</row>
-<row>
-<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
-\begin_inset Text
-
-\begin_layout Plain Layout
-Rotational error
-\end_layout
-
-\end_inset
-</cell>
-<cell alignment="center" valignment="top" topline="true" leftline="true" rightline="true" usebox="none">
-\begin_inset Text
-
-\begin_layout Plain Layout
-< 1cm
-\end_layout
-
-\end_inset
-</cell>
-</row>
-<row>
-<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
-\begin_inset Text
-
-\begin_layout Plain Layout
-Positional error
-\end_layout
-
-\end_inset
-</cell>
-<cell alignment="center" valignment="top" topline="true" leftline="true" rightline="true" usebox="none">
-\begin_inset Text
-
-\begin_layout Plain Layout
-< 3°
-\end_layout
-
-\end_inset
-</cell>
-</row>
-<row>
-<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
-\begin_inset Text
-
-\begin_layout Plain Layout
-Response time (ms)
-\end_layout
-
-\end_inset
-</cell>
-<cell alignment="center" valignment="top" topline="true" leftline="true" rightline="true" usebox="none">
-\begin_inset Text
-
-\begin_layout Plain Layout
-
-\end_layout
-
-\end_inset
-</cell>
-</row>
-<row>
-<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
-\begin_inset Text
-
-\begin_layout Plain Layout
-Acquiry time (s)
-\end_layout
-
-\end_inset
-</cell>
-<cell alignment="center" valignment="top" topline="true" leftline="true" rightline="true" usebox="none">
-\begin_inset Text
-
-\begin_layout Plain Layout
-0.3 - 3.0
-\end_layout
-
-\end_inset
-</cell>
-</row>
-<row>
-<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
-\begin_inset Text
-
-\begin_layout Plain Layout
-CPU load (30hz USB webcam)
-\end_layout
-
-\end_inset
-</cell>
-<cell alignment="center" valignment="top" topline="true" leftline="true" rightline="true" usebox="none">
-\begin_inset Text
-
-\begin_layout Plain Layout
-30%
-\end_layout
-
-\end_inset
-</cell>
-</row>
-<row>
-<cell alignment="center" valignment="top" topline="true" bottomline="true" leftline="true" usebox="none">
-\begin_inset Text
-
-\begin_layout Plain Layout
-CPU load (60hz firewire webcam)
-\end_layout
-
-\end_inset
-</cell>
-<cell alignment="center" valignment="top" topline="true" bottomline="true" leftline="true" rightline="true" usebox="none">
-\begin_inset Text
-
-\begin_layout Plain Layout
-8%
-\end_layout
-
-\end_inset
-</cell>
-</row>
-</lyxtabular>
-
-\end_inset
-
-
 \end_layout
 
 \begin_layout Standard
 \begin_inset Float figure
-placement H
 wide false
 sideways false
 status open
 
 \begin_layout Plain Layout
-\noindent
-\align center
 \begin_inset Graphics
 	filename attachments/beyer.png
-	scale 50
 
 \end_inset
 
@@ -1151,26 +849,21 @@ beyerdynamic Headzone Home 5.1 Surround Sound System with Head Tracking.
 
 \end_layout
 
-\begin_layout Standard
+\begin_layout Bibliography
+\begin_inset CommandInset bibitem
+LatexCommand bibitem
+label "HW38"
+key "key-1"
+
+\end_inset
+
+
 \begin_inset Float figure
 wide false
 sideways false
 status open
 
 \begin_layout Plain Layout
-\begin_inset Float figure
-wide false
-sideways false
-status collapsed
-
-\begin_layout Plain Layout
-\noindent
-\begin_inset Graphics
-	filename attachments/smyth_cumbersome.jpg
-	scale 50
-
-\end_inset
-
 
 \end_layout
 
@@ -1178,58 +871,6 @@ status collapsed
 \begin_inset Caption
 
 \begin_layout Plain Layout
-\begin_inset CommandInset label
-LatexCommand label
-name "fig:The-Smyth-Realiser-in-use"
-
-\end_inset
-
-The Smyth Realiser A8 in use
-\end_layout
-
-\end_inset
-
-
-\end_layout
-
-\end_inset
-
-
-\begin_inset space \hfill{}
-\end_inset
-
-
-\begin_inset Float figure
-wide false
-sideways false
-status collapsed
-
-\begin_layout Plain Layout
-\noindent
-\begin_inset Graphics
-	filename attachments/smyth_realiser.jpg
-	scale 50
-
-\end_inset
-
-
-\end_layout
-
-\begin_layout Plain Layout
-\begin_inset Caption
-
-\begin_layout Plain Layout
-\begin_inset CommandInset label
-LatexCommand label
-name "fig:The-Smyth-Realiser-1"
-
-\end_inset
-
-The Smyth Realiser A8
-\end_layout
-
-\end_inset
-
 
 \end_layout
 
@@ -1239,34 +880,8 @@ The Smyth Realiser A8
 \end_layout
 
 \begin_layout Plain Layout
-\begin_inset Caption
-
-\begin_layout Plain Layout
-Smyth Realiser A8
-\end_layout
-
-\end_inset
-
 
 \end_layout
-
-\end_inset
-
-
-\end_layout
-
-\begin_layout Standard
-\begin_inset Newpage pagebreak
-\end_inset
-
-
-\end_layout
-
-\begin_layout Bibliography
-\begin_inset CommandInset bibitem
-LatexCommand bibitem
-label "HW38"
-key "key-1"
 
 \end_inset
 

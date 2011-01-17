@@ -1200,6 +1200,7 @@ status open
 \align center
 \begin_inset Graphics
 	filename attachments/beyer.png
+	scale 50
 
 \end_inset
 
@@ -1232,6 +1233,7 @@ beyerdynamic Headzone Home 5.1 Surround Sound System with Head Tracking.
 
 \begin_layout Standard
 \begin_inset Float figure
+placement H
 wide false
 sideways false
 status open
@@ -1397,6 +1399,85 @@ i.e.
 
 \begin_layout Subsubsection
 What is the quantitative gain in localisation accuracy when using head tracking?
+\end_layout
+
+\begin_layout Standard
+All of the above can be compared to existing prior work - I have a number
+ of papers in my posession which quantitavely evaluate the efficacy of standard
+ (non head tracked) HRFT solutions.
+\end_layout
+
+\begin_layout Subsubsection
+Subjective evaluation: How does the user rate the ability to listen without
+ moving the game character?
+\end_layout
+
+\begin_layout Standard
+A questionnaire would be appropriate, asking the user to rate their experiences:
+\end_layout
+
+\begin_layout Itemize
+on a scale of 1 to 10, how immersive do you feel the non head-tracked solution
+ to be
+\end_layout
+
+\begin_layout Itemize
+on a scale of 1 to 10, how immersive do you feel the head-tracked solution
+ to be
+\end_layout
+
+\begin_layout Itemize
+on a scale of 1 to 10, how important do you feel it is to be able to move
+ the listener without moving the character?
+\end_layout
+
+\begin_layout Itemize
+how much would you like to see this integrated into your favourite games?
+\end_layout
+
+\begin_layout Itemize
+how much would you be willing to pay for a commercial implementation?
+\end_layout
+
+\begin_layout Standard
+more to follow as they crop up
+\end_layout
+
+\begin_layout Section
+Plan of work
+\end_layout
+
+\begin_layout Subsection
+What remains to be done
+\end_layout
+
+\begin_layout Standard
+Almost the entire implementation.
+ I need devise and document the technical spec for my solution, and then
+ implement it.
+ Currently software exists, but it is in an exploratory phase and has little
+ structure, although this is beginning to emerge.
+ I may need to document the transition from openal in c to lwjgl.
+ I think it would be worthwhile evaluating more than one head tracking solution.
+ Since the software is really just an audio engine, it 
+\emph on
+should 
+\emph default
+be easy to chop and change head tracking engines and compare them.
+ Also, the hrtf blending tool needs to be written - this shouldnt take too
+ long.
+\end_layout
+
+\begin_layout Subsection
+Timetable
+\end_layout
+
+\begin_layout Standard
+This term, i will be taking 3 courses, which 
+\emph on
+hopefully
+\emph default
+ will take up two days of my week.
 \end_layout
 
 \begin_layout Standard

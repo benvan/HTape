@@ -198,7 +198,7 @@ In addition to gaming, the technique can be used to enhance 3D conferencing
 \begin_layout Standard
 It's only recently that head tracking has become affordable for the home
  user both in terms of computing power and equipment, which is possibly
- why we haven't seen commercial solutions to the problem so far.
+ why we haven't seen widespread commercial solutions to the problem so far.
 \end_layout
 
 \begin_layout Subsection
@@ -383,23 +383,20 @@ Cone of confusion.
 
 \end_layout
 
-\begin_layout Plain Layout
-
-\end_layout
-
 \end_inset
 
 
 \end_layout
 
 \begin_layout Subsubsection
+Sound localisation in the median plane
 \begin_inset CommandInset label
 LatexCommand label
 name "sub:Sound-localisation_HRTF"
 
 \end_inset
 
-Sound localisation in the median plane
+
 \end_layout
 
 \begin_layout Standard
@@ -748,7 +745,7 @@ status open
 \align center
 \begin_inset Graphics
 	filename attachments/hrtf_implementation.png
-	scale 50
+	scale 66
 
 \end_inset
 
@@ -789,21 +786,423 @@ To solve this problem, we would be required to track the user's head in
  This is not a new idea, and has been attempted in research prior to this
  project, but the techniques used to achieve the required spatial accuracy
  have been cumbersome and generally too expensive for use in the home.
- Here, we explore these approaches, and evaluate their effectiveness.
+ In recent years, a few commercial solutions have also begun to surface,
+ as detailed below.
 \end_layout
 
 \begin_layout Itemize
 beyerdynamic Headzone Home 5.1 Surround Sound System with Head Tracking.
- These headphones + DSP unit (see Figure )
+ These headphones + DSP unit (see Figure 
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "fig:beyerdynamic-Headzone"
+
+\end_inset
+
+) from beyerdynamic acheive the desired result of fixing the sound stage
+ in place despite the user's head movements, but they currently retail at
+ around 2,000.
+ The DSP unit is minimally configurable, allowing the user to modify only
+ the virtual room's dimensions and ambience, and the volume.
+\end_layout
+
+\begin_layout Itemize
+DTS Surround Sensation Ultra PC plus Head Tracker Heaphones.
+ In 2009, VIA and DTS collaborated to create a head tracking virtual surround
+ sound solution.
+ There is very little information on the unit, and it is not on general
+ release to the public.
+ Instead, it has been targeted at manufactures in the audio industry for
+ use with their products.
+ Currently there is no pricing information available.
+ One limitation is that the unit fails to track the user's head past 30°
+ in either direction in the lateral plane.
+\end_layout
+
+\begin_layout Itemize
+Smyth Realiser.
+ The Smyth realiser is perhaps the most advanced solution seen so far in
+ background research.
+ The package includes the Realiser A8 (DSP unit), headphones, head tracker
+ (attached to listener's head) and head tracking unit, plus miniture microphones
+ which allow the user to record their own HRTF.
+ This recording requires the use of a surround sound system in the room
+ in which the unit is to be used.
+ A minor pitfall is that the HRTF measured includes the room's acoustics,
+ but the benefit of being able to use one's own tailored transfer function
+ is substantial.
+ Also, the unit is also fairly cumbersome (Figure ).
+ It currently retails at around $3400.
+\end_layout
+
+\begin_layout Subsubsection
+Head Tracking
+\end_layout
+
+\begin_layout Standard
+It is important that the right head tracking solution be chosen for this
+ project.
+ The key elements to be considered are:
+\end_layout
+
+\begin_layout Itemize
+Rotational error.
+\end_layout
+
+\begin_layout Itemize
+Positional error.
+\end_layout
+
+\begin_layout Itemize
+Rotational range: the maximum number of degrees in each axis for which the
+ user remains tracked.
+ Bigger is better
+\end_layout
+
+\begin_layout Itemize
+Response time: the time it takes to update the location and orientation
+ of the user's head.
+\end_layout
+
+\begin_layout Itemize
+Acquiry time: the time it takes (typically) to first acquire the position
+ and orientation of the user's head.
+\end_layout
+
+\begin_layout Itemize
+CPU load: the percentage of CPU resources required to run the head tracking
+ solution.
+\end_layout
+
+\begin_layout Standard
+Many stand-alone head tracking solutions are available online.
+ Recently, 
+\emph on
+seeingmachines 
+\emph default
+has taken the lead role in head tracking with their software 
+\emph on
+faceAPI.
+
+\emph default
+ We evaluate and compare its suitability for use in this project with other
+ solutions below:
+\end_layout
+
+\begin_layout Itemize
+
+\series bold
+seeingmachines faceAPI
+\series default
+ works with any webcam, and boasts high rotational range especially in the
+ Y axis (up through the head).
+ CPU load is fairly high, but robustness and recovery time are exceptional.
+ The API goes well beyond the needs of this project, as facial features
+ are tracked as well (eyes, eyebrows, mouth etc).
+ These extra features can be turned on and off at will.
+\begin_inset Newline newline
+\end_inset
+
+
+\begin_inset Tabular
+<lyxtabular version="3" rows="10" columns="2">
+<features>
+<column alignment="center" valignment="top" width="0">
+<column alignment="center" valignment="top" width="0">
+<row>
+<cell alignment="center" valignment="top" topline="true" bottomline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\series bold
+Specification
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" bottomline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\series bold
+Value
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+Rotational range X (°)
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+-30 < X < 60
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+Rotational range Y (°)
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+-90 < Y < 90
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+Rotational range Z (°)
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+-90 < Z < 90
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+Rotational error
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+< 1cm
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+Positional error
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+< 3°
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+Response time (ms)
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+N/A ( = 1/camera hz)
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+Acquiry time (s)
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+0.3 - 3.0
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+CPU load (30hz USB webcam)
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+30%
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row>
+<cell alignment="center" valignment="top" topline="true" bottomline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+CPU load (60hz firewire webcam)
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" bottomline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+8%
+\end_layout
+
+\end_inset
+</cell>
+</row>
+</lyxtabular>
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Itemize
+
+\series bold
+TrackIR 5 
+\series default
+is a custom solution provided by NaturalPoint.
+ It provides extremely accurate head tracking via the use of a special infrared
+ camera and headphone attachment.
+ It has a sensor resolution of 640 x 480 pixels, but it boasts the ability
+ to consistently measure movements at 1/150th of a pixel, giving high positition
+al and rotational accuracy.
+ Unfortunately, as it requires custom hardware it will not be considered
+ further as a viable head-tracking option for this project.
+\end_layout
+
+\begin_layout Itemize
+
+\series bold
+Freetrack 
+\series default
+is an open source head tracking application for Microsoft Windows, which
+ works by tracking powered LEDs attached to the user's head.
+ Specifications are sparse, and due to the 
+\begin_inset Quotes eld
+\end_inset
+
+do-it-yourself
+\begin_inset Quotes erd
+\end_inset
+
+ nature of the project, results vary greatly.
+ The requirement for powered LEDs makes this solution fairly cumbersome,
+ as a power supply (be it battery or otherwise) must be connected.
+\end_layout
+
+\begin_layout Itemize
+
+\series bold
+Cachya 
+\series default
+is a fairly unique software head tracking solution which requires the user
+ to print and somehow attach a black and white symbol to their head (presumably
+ by wearing a cap).
+ Unfortunately, the author provides no technical specifications whatsoever,
+ so it is difficult to evaluate it's suitability here.
+ The software is commercially licensed, and available for a small fee.
+ (NOTE: this seems completely redundant.
+ Perhaps I either evaluate it myself, or leave it out entirely?)
+\end_layout
+
+\begin_layout Itemize
+
+\series bold
+OpenCV 
+\series default
+is not a head-tracking solution, but an open source computer vision library.
+ In the course of background research, many solutions using OpenCV have
+ been observed, but all of them fall far short of the solutions already
+ listed.
+ If time were no object, it might be sensible to build a custom head tracking
+ tool, but this lies outside the scope of this project, and will be considered
+ as an extension in 
+\emph on
+further work
+\emph default
+.
 \end_layout
 
 \begin_layout Standard
 \begin_inset Float figure
+placement H
 wide false
 sideways false
 status open
 
 \begin_layout Plain Layout
+\noindent
+\align center
+\begin_inset Graphics
+	filename attachments/beyer.png
+
+\end_inset
+
 
 \end_layout
 
@@ -811,6 +1210,12 @@ status open
 \begin_inset Caption
 
 \begin_layout Plain Layout
+\begin_inset CommandInset label
+LatexCommand label
+name "fig:beyerdynamic-Headzone"
+
+\end_inset
+
 beyerdynamic Headzone Home 5.1 Surround Sound System with Head Tracking.
  (beyerdynamic.com)
 \end_layout
@@ -820,10 +1225,117 @@ beyerdynamic Headzone Home 5.1 Surround Sound System with Head Tracking.
 
 \end_layout
 
-\begin_layout Plain Layout
+\end_inset
+
 
 \end_layout
 
+\begin_layout Standard
+\begin_inset Float figure
+wide false
+sideways false
+status open
+
+\begin_layout Plain Layout
+\begin_inset Float figure
+wide false
+sideways false
+status collapsed
+
+\begin_layout Plain Layout
+\noindent
+\begin_inset Graphics
+	filename attachments/smyth_cumbersome.jpg
+	scale 50
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+\begin_inset Caption
+
+\begin_layout Plain Layout
+\begin_inset CommandInset label
+LatexCommand label
+name "fig:The-Smyth-Realiser-in-use"
+
+\end_inset
+
+The Smyth Realiser A8 in use
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\begin_inset space \hfill{}
+\end_inset
+
+
+\begin_inset Float figure
+wide false
+sideways false
+status collapsed
+
+\begin_layout Plain Layout
+\noindent
+\begin_inset Graphics
+	filename attachments/smyth_realiser.jpg
+	scale 50
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+\begin_inset Caption
+
+\begin_layout Plain Layout
+\begin_inset CommandInset label
+LatexCommand label
+name "fig:The-Smyth-Realiser-1"
+
+\end_inset
+
+The Smyth Realiser A8
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+\begin_inset Caption
+
+\begin_layout Plain Layout
+Smyth Realiser A8
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset Newpage pagebreak
 \end_inset
 
 

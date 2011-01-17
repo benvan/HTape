@@ -1478,6 +1478,63 @@ This term, i will be taking 3 courses, which
 hopefully
 \emph default
  will take up two days of my week.
+ This should leave 2-3 days a week available to work on project.
+ There are 12 weeks until the end of this term - my aim is as follows:
+\end_layout
+
+\begin_layout List
+\labelwidthstring 00.00.0000
+Week2 Have planned (on paper) the design for the guts of the streaming system.
+ The objective is to design a structure such that every component is able
+ to pipe to/from or wrap a stream.
+ Every sound would be presented in the same way - a simple stream, regardless
+ of whether it had been read from disk or memory, and regardless of what
+ effects have / have not been applied.
+ Wrappers need not be filters - it will be useful to have classes which
+ are able to efficiently buffer, split, join etc.
+\end_layout
+
+\begin_layout List
+\labelwidthstring 00.00.0000
+Week5 The above should have been implemented such that audio sources can
+ be efficiently loaded into memory and played, wrapped with an arbitrary
+ number of 'decorators'.
+ At this point, the basic filter type should have been created, and an HRTFs
+ should be a simple implementation of one of these.
+\end_layout
+
+\begin_layout List
+\labelwidthstring 00.00.0000
+Week6 HRTF manager should be created - positional data fed to the engine
+ should be picked up here and used to switch HRIRs.
+\end_layout
+
+\begin_layout List
+\labelwidthstring 00.00.0000
+Week7 Enter head tracking.
+ Get started with faceAPI.
+ Allow 1 week for for experimentation.
+ Use next two weeks to build bridge between audio engine and faceAPI.
+\end_layout
+
+\begin_layout List
+\labelwidthstring 00.00.0000
+Week10 Work on HRTF blender.
+ Should be able to blend 2 or more HRTFs with variable weighting to produce
+ a new hrtf which can be used by the listener in simulation.
+ Fairly simple.
+ If on time, use this period to create test environments for evaluation
+\end_layout
+
+\begin_layout List
+\labelwidthstring 00.00.0000
+Week12 Two weeks padding to allow for tweaking / bugfixing / troubleshooting.
+\end_layout
+
+\begin_layout Standard
+If i am on track at this point, it might be worth implementing an 'attach
+ sound to tennis ball' demo, for evaluation points in subjective review.
+ If significantly behind schedule, hrtf blending tool can be scrapped.
 \end_layout
 
 \begin_layout Standard

@@ -1335,6 +1335,71 @@ Smyth Realiser A8
 \end_layout
 
 \begin_layout Standard
+At this stage, the best option available is 
+\emph on
+faceAPI
+\emph default
+, since it provides more than adequate accuracy and robust performance,
+ with solid documentation and well structured API.
+\end_layout
+
+\begin_layout Section
+Evaluation
+\end_layout
+
+\begin_layout Standard
+This section of the report is currently only a rough guide / collection
+ of ideas.
+\end_layout
+
+\begin_layout Subsection
+How am I going to evaluate the resulting solution?
+\end_layout
+
+\begin_layout Standard
+For all of the quantitative approaches below, i suggest playing a sound
+ to the listener originating from a location chosen at random from a predefined
+ set, and ask them to point in the room to where they believe the sound
+ to be coming from.
+ Markings can be placed placed at equal distances inside the room, allowing
+ the user to choose a marking, and a vector can be calculated.
+ This vector can then be compared to that of the virtual source.
+ This can be used for far sounds.
+ For near sounds, when the sound originates close to the listener's head
+ (that is, where head displacement makes a significant change to the sound
+ of the source), we place a number of objects (ping pong balls would work)
+ around the listener in concentric rings, and ask them to pick the ball
+ they believe is making the sound.
+ This allows us to test for depth perception as well as direction.
+\end_layout
+
+\begin_layout Subsubsection
+What is the average localisation accuracy using the software only?
+\end_layout
+
+\begin_layout Standard
+i.e.
+ how well can users locate sound using only the HRTF model.
+ This evaluates how well the software approximates spatialisation.
+ Before we introduce head tracking, we can also evaluate the benefit gained
+ from allowing the user to customise his HRTF:
+\end_layout
+
+\begin_layout Subsubsection
+What is the quantitative gain in localisation when using a customised HRTF?
+\end_layout
+
+\begin_layout Standard
+i.e.
+ how well does the customisation idea work? It may not work at all ...
+ but this result will at least teach us (me?) something.
+\end_layout
+
+\begin_layout Subsubsection
+What is the quantitative gain in localisation accuracy when using head tracking?
+\end_layout
+
+\begin_layout Standard
 \begin_inset Newpage pagebreak
 \end_inset
 

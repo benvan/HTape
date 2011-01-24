@@ -105,3 +105,6 @@ NOTES: Entire book. 3d sound for virtual reality and multimedia. Pretty useful.
 URL: http://ixbtlabs.com/articles2/sound-technology/
 NOTES: Go (though poorly worded) breakdown of sound technology
 
+URL: http://www.aes.org/e-lib/browse.cfm?elib=14762
+NOTES: Near-Field compensation for HRTF processing. May be able to give some insight into how we go about simulating close-to-head audio
+

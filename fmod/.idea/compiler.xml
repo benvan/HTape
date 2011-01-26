@@ -4,6 +4,7 @@
     <option name="DEFAULT_COMPILER" value="Javac" />
     <excludeFromCompile>
       <file url="file://$PROJECT_DIR$/src/org/jouvieje/fmodex/examples/Geometry_.java" />
+      <file url="file://$PROJECT_DIR$/src/htape/util/ListenHRTFFactory.java" />
     </excludeFromCompile>
     <resourceExtensions />
     <wildcardResourcePatterns>

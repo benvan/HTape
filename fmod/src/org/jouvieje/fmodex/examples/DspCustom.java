@@ -34,6 +34,7 @@ import javax.swing.text.Highlighter;
 
 import htape.util.HRIR;
 import htape.util.HRTF;
+import htape.util.HRTFFactory;
 import htape.util.HistoryBuffer;
 import org.jouvieje.fmodex.Channel;
 import org.jouvieje.fmodex.DSP;
@@ -74,17 +75,16 @@ public class DspCustom extends ConsoleGUI {
 
     private HRTF hrtf;
     private HRIR hrir;
-    private int az = 2;
-    private int el = 2;
-    private int AZMAX = 12;
-    private int ELMAX = 6;
-
+    private int az = 0;
+    private int el = 0;
 
 	public DspCustom() {
 		super();
 
-        File f = new File("/home/ben/play/hrtf/NG");
+        File f = new File("/home/ben/project/resources/hrtfs/listen/21/hrtf_compensated");
         try {
+
+            /*
 
             Scanner s = new Scanner(f);
             int[] azimuths = new int[]{180,150,120,90,60,30,0,-30,-60,-90,-120,-150};
@@ -95,9 +95,11 @@ public class DspCustom extends ConsoleGUI {
                 for (int j = 0; j < elevations.length; j++) {
                     hrirs[i][j] = createHRIR(azimuths[i], elevations[j],s);
                 }
-            }
+            }*/
 
-            hrtf = new HRTF(hrirs);
+            //hrtf = new HRTF(hrirs);
+            HRTFFactory fac = new HRTFFactory();
+            hrtf = fac.listen(f);
             hrir = hrtf.get(az,el);
 
         } catch (FileNotFoundException e) {
@@ -107,15 +109,7 @@ public class DspCustom extends ConsoleGUI {
 		initialize();
 	}
 
-    private HRIR createHRIR(int azimuth, int elevation, Scanner s) {
-        float[] coeffs = new float[512];
-        int delay;
-        for (int i = 0; i < 512; i++) {
-            coeffs[i] = s.nextFloat();
-        }
-        delay = (int)s.nextFloat();
-        return new HRIR(azimuth, elevation, coeffs, delay);
-    }
+
 
     public JPanel getPanel() {
 		return this;
@@ -140,8 +134,8 @@ public class DspCustom extends ConsoleGUI {
 	private FMOD_DSP_READCALLBACK myDSPCallback = new FMOD_DSP_READCALLBACK(){
 		ByteBuffer nameBuffer = newByteBuffer(256);
 
-        HistoryBuffer lhist = new HistoryBuffer(256, 128);
-        HistoryBuffer rhist = new HistoryBuffer(256, 128);
+        HistoryBuffer lhist = new HistoryBuffer(512, 0);
+        HistoryBuffer rhist = new HistoryBuffer(512, 0);
 
         int pos = 0;
 
@@ -174,20 +168,10 @@ public class DspCustom extends ConsoleGUI {
                 rhist.add(inbuffer.get());
 
                 float l=0,r=0;
-                int ldel=0,rdel=0;
-                int del = hrir.getDelay();
-
-                if (del > 0) {
-                    rdel = del;
-                }else{
-                    ldel = -del;
-                }
-
-
 
                 for (int i = 0; i < lhist.length(); i++) {
-                    l += lhist.get(i+ldel) * hrir.getLeft(i);
-                    r += rhist.get(i+rdel) * hrir.getRight(i);
+                    l += lhist.get(i) * hrir.getLeft(i);
+                    r += rhist.get(i) * hrir.getRight(i);
                 }
 
                 outbuffer.put(l);
@@ -305,29 +289,24 @@ public class DspCustom extends ConsoleGUI {
 					break;
                 case 'a':
                 case 'A':
-                    az--;
-                    az = (az + AZMAX) % AZMAX;
+                    az -= 15;
                     changed = true;
                     break;
                 case 's':
                 case 'S':
-                    el--;
-                    el = (el + ELMAX) % ELMAX;
+                    el -= 15;
                     changed = true;
                     break;
                 case 'd':
                 case 'D':
-                    az++;
-                    az %= AZMAX;
+                    az += 15;
                     changed = true;
                     break;
                 case 'w':
                 case 'W':
-                    el++;
-                    el %= ELMAX;
+                    el += 15;
                     changed = true;
                     break;
-
 				case 'e':
 				case 'E':
 					exit = true;
@@ -337,7 +316,7 @@ public class DspCustom extends ConsoleGUI {
             if (changed){
                 hrir = hrtf.get(az, el);
 
-                this.print("delay: " + hrir.getDelay());
+                //this.print("delay: " + hrir.getDelay());
                 this.print("Azimuth: " + hrir.getAzimuth() + " , Elevation: " + hrir.getElevation() + "\n");
                 errorCheck(system.playSound(FMOD_CHANNEL_FREE, sound, false, channel));
                 changed = false;
@@ -376,7 +355,5 @@ public class DspCustom extends ConsoleGUI {
 			errorCheck(system.close());
 			errorCheck(system.release());
 		}
-
-		printExit("Shutdown\n");
 	}
 }

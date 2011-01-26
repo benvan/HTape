@@ -7,6 +7,7 @@ import java.awt.GridBagConstraints;
 import java.awt.GridBagLayout;
 import java.awt.event.KeyAdapter;
 import java.awt.event.KeyEvent;
+import java.awt.event.KeyListener;
 
 import javax.swing.JLabel;
 import javax.swing.JOptionPane;
@@ -167,6 +168,22 @@ public abstract class ConsoleGUI extends JPanel implements FmodExExample {
 	private JScrollPane getOutputSP() {
 		if(outputSP == null) {
 			outputSP = new JScrollPane();
+            outputSP.addKeyListener(new KeyListener() {
+                public void keyTyped(KeyEvent keyEvent) {
+                    //To change body of implemented methods use File | Settings | File Templates.
+                }
+
+                public void keyPressed(KeyEvent keyEvent) {
+                    //To change body of implemented methods use File | Settings | File Templates.
+                }
+
+                public void keyReleased(KeyEvent keyEvent) {
+                    switch (keyEvent.getKeyCode()) {
+                        case KeyEvent.VK_SPACE:
+                            System.out.println("something happened...");
+                    }
+                }
+            });
 			outputSP.setViewportView(getOutputTA());
 		}
 		return outputSP;

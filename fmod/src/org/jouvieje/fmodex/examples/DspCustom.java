@@ -81,7 +81,7 @@ public class DspCustom extends ConsoleGUI {
 	public DspCustom() {
 		super();
 
-        File f = new File("/home/ben/project/HTape/resources/hrtfs/listen/32.hrtf");
+        File f = new File("/home/ben/project/resources/hrtfs/listen/21/hrtf_compensated");
         try {
 
             /*

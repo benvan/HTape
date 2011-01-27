@@ -12,11 +12,9 @@ public class HRIR {
     int azimuth;
     int elevation;
     float[] coefficients;
-    int delay;
 
-    public HRIR(int azimuth, int elevation, float[] coefficients, int delay) {
+    public HRIR(int azimuth, int elevation, float[] coefficients) {
         this.coefficients = coefficients;
-        this.delay = delay;
         this.azimuth = azimuth;
         this.elevation = elevation;
     }
@@ -27,10 +25,6 @@ public class HRIR {
 
     public float getRight(int c){
         return coefficients[c+(coefficients.length / 2)];
-    }
-
-    public int getDelay(){
-        return delay;
     }
 
     public int getAzimuth(){

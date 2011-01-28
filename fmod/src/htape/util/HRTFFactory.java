@@ -1,7 +1,11 @@
 package htape.util;
 
-import java.io.File;
-import java.io.FileNotFoundException;
+import htape.util.io.hrir.BarettoHRIR;
+import htape.util.io.hrir.IHRIRReader;
+import htape.util.io.hrir.ListenBinaryHRIR;
+import htape.util.io.hrir.ListenHRIR;
+
+import java.io.*;
 import java.util.Scanner;
 
 /**
@@ -13,25 +17,47 @@ import java.util.Scanner;
  */
 public class HRTFFactory {
 
-    public HRTF baretto(File f) throws FileNotFoundException {
 
-        Scanner s = new Scanner(f);
-        int[] azimuths = new int[]{180,150,120,90,60,30,0,-30,-60,-90,-120,-150};
-        int[] elevations = new int[]{54,36,18,0,-18,-36};
-        HRIR[][] hrirs = new HRIR[azimuths.length][elevations.length];
+    private final static int[][] baretto_positions = new int[][]{{-36,12},{-18,12},{0,12},{18,12},{36,12},{54,12}};
+    private final static int[][] listen_positions = new int[][]{{-45,24},{-30,24},{-15,24},{0,24},{15,24},{30,24},{45,24},{60,12},{75,6},{90,1}};
 
-        for (int i = 0; i < azimuths.length; i++) {
-            for (int j = 0; j < elevations.length; j++) {
-                hrirs[i][j] = createBarettoHRIR(azimuths[i], elevations[j],s);
+    private HRIR[][] createHRIRs(int[][] positions, DataInputStream in, IHRIRReader reader) throws IOException {
+
+        HRIR[][] hrirs = new HRIR[positions.length][];
+        for (int i = 0; i < positions.length; i++) {
+            HRIR[] ring = new HRIR[positions[i][1]];
+            for (int j = 0; j < ring.length; j++) {
+                ring[j] = reader.read(in, (360 / positions[i][1]) * j, positions[i][0]);
             }
+            hrirs[i] = ring;
         }
-
-        return new HRTF(hrirs);
+        return hrirs;
 
     }
 
-    public HRTF listen(File f) throws FileNotFoundException {
+    private HRIR[][] baretto(DataInputStream s, IHRIRReader reader) throws IOException {
+        return createHRIRs(listen_positions, s, reader);
+    }
 
+    private HRIR[][] listen(DataInputStream s, IHRIRReader reader) throws IOException {
+        return createHRIRs(baretto_positions, s, reader);
+    }
+
+    public HRTF listen(File f) throws IOException {
+        return fromFile(f, listen_positions, new ListenHRIR());
+    }
+
+    public HRTF listenBinary(File f) throws IOException {
+        return fromFile(f, listen_positions, new ListenBinaryHRIR());
+    }
+
+    public HRTF baretto(File f) throws IOException {
+        return fromFile(f, baretto_positions, new BarettoHRIR());
+    }
+
+
+
+    public HRTF fallbackWTF(File f) throws FileNotFoundException {
         Scanner s = new Scanner(f);
         int[][] positions = new int[][]{
                 {-45,24},
@@ -50,34 +76,23 @@ public class HRTFFactory {
         for (int i = 0; i < positions.length; i++) {
             HRIR[] ring = new HRIR[positions[i][1]];
             for (int j = 0; j < ring.length; j++) {
-                ring[j] = createListenHRIR((360 / positions[i][1]) * j, positions[i][0], s);
+                float[] coeffs = new float[1024];
+                for (int k = 0; k < 1024; k++) {
+                    coeffs[k] = s.nextFloat();
+                }
+                ring[j] = new HRIR((360 / positions[i][1]) * j, positions[i][0], coeffs);
             }
             hrirs[i] = ring;
         }
 
         return new HRTF(hrirs);
-
     }
 
 
-    private HRIR createListenHRIR(int azimuth, int elevation, Scanner s) {
-        float[] coeffs = new float[1024];
-        int delay;
-        for (int i = 0; i < 1024; i++) {
-            coeffs[i] = s.nextFloat();
-        }
-        return new HRIR(azimuth, elevation, coeffs);
-    }
 
-
-    private HRIR createBarettoHRIR(int azimuth, int elevation, Scanner s) {
-        float[] coeffs = new float[512];
-        int delay;
-        for (int i = 0; i < 512; i++) {
-            coeffs[i] = s.nextFloat();
-        }
-        delay = (int)s.nextFloat();
-        return new DelayedHRIR(azimuth, elevation, coeffs, delay);
+    public HRTF fromFile(File f, int[][] positions, IHRIRReader reader) throws IOException {
+        DataInputStream in = new DataInputStream(new BufferedInputStream(new FileInputStream(f)));
+        return new HRTF(createHRIRs(positions, in, reader));
     }
 
 }

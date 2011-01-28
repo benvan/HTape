@@ -9,52 +9,32 @@
 
 package org.jouvieje.fmodex.examples;
 
-import static org.jouvieje.fmodex.defines.FMOD_INITFLAGS.FMOD_INIT_NORMAL;
-import static org.jouvieje.fmodex.defines.FMOD_MODE.FMOD_LOOP_NORMAL;
-import static org.jouvieje.fmodex.defines.FMOD_MODE.FMOD_OPENMEMORY;
-import static org.jouvieje.fmodex.defines.FMOD_MODE.FMOD_SOFTWARE;
-import static org.jouvieje.fmodex.defines.VERSIONS.FMOD_VERSION;
-import static org.jouvieje.fmodex.defines.VERSIONS.NATIVEFMODEX_JAR_VERSION;
-import static org.jouvieje.fmodex.defines.VERSIONS.NATIVEFMODEX_LIBRARY_VERSION;
-import static org.jouvieje.fmodex.enumerations.FMOD_CHANNELINDEX.FMOD_CHANNEL_FREE;
-import static org.jouvieje.fmodex.enumerations.FMOD_RESULT.FMOD_OK;
-import static org.jouvieje.fmodex.utils.BufferUtils.newByteBuffer;
-import static org.jouvieje.fmodex.utils.BufferUtils.SIZEOF_INT;
-
-import java.awt.event.KeyAdapter;
-import java.awt.event.KeyEvent;
-import java.io.DataInput;
-import java.io.DataInputStream;
-import java.io.File;
-import java.io.FileNotFoundException;
-import java.nio.ByteBuffer;
-import java.nio.FloatBuffer;
-import java.util.Scanner;
-
-import javax.swing.JPanel;
-import javax.swing.text.Highlighter;
-
-import htape.util.HRIR;
-import htape.util.HRTF;
-import htape.util.HRTFFactory;
-import htape.util.HistoryBuffer;
-import org.jouvieje.fmodex.Channel;
-import org.jouvieje.fmodex.DSP;
-import org.jouvieje.fmodex.FmodEx;
-import org.jouvieje.fmodex.Init;
-import org.jouvieje.fmodex.Sound;
+import htape.util.*;
+import org.jouvieje.fmodex.*;
 import org.jouvieje.fmodex.System;
 import org.jouvieje.fmodex.callbacks.FMOD_DSP_READCALLBACK;
-
 import org.jouvieje.fmodex.enumerations.FMOD_RESULT;
-import org.jouvieje.fmodex.examples.utils.ConsoleGUI;
-import org.jouvieje.fmodex.examples.utils.FmodExExampleFrame;
-import org.jouvieje.fmodex.examples.utils.Medias;
 import org.jouvieje.fmodex.exceptions.InitException;
-import org.jouvieje.fmodex.utils.BufferUtils;
 import org.jouvieje.fmodex.structures.FMOD_CREATESOUNDEXINFO;
 import org.jouvieje.fmodex.structures.FMOD_DSP_DESCRIPTION;
 import org.jouvieje.fmodex.structures.FMOD_DSP_STATE;
+import org.jouvieje.fmodex.utils.BufferUtils;
+
+import java.awt.event.KeyEvent;
+import java.awt.event.KeyListener;
+import java.awt.image.ImageFilter;
+import java.io.*;
+import java.nio.ByteBuffer;
+import java.nio.FloatBuffer;
+import java.util.HashMap;
+
+import static org.jouvieje.fmodex.defines.FMOD_INITFLAGS.FMOD_INIT_NORMAL;
+import static org.jouvieje.fmodex.defines.FMOD_MODE.FMOD_SOFTWARE;
+import static org.jouvieje.fmodex.defines.VERSIONS.*;
+import static org.jouvieje.fmodex.enumerations.FMOD_CHANNELINDEX.FMOD_CHANNEL_FREE;
+import static org.jouvieje.fmodex.enumerations.FMOD_RESULT.FMOD_OK;
+import static org.jouvieje.fmodex.utils.BufferUtils.SIZEOF_INT;
+import static org.jouvieje.fmodex.utils.BufferUtils.newByteBuffer;
 
 /**
  * Based on FMOD Ex C++ example. Ported to Java with NativeFmodEx by J�r�me JOUVIE (Jouvieje.
@@ -63,13 +43,8 @@ import org.jouvieje.fmodex.structures.FMOD_DSP_STATE;
  * @site   http://jerome.jouvie.free.fr/
  * @mail   jerome.jouvie@gmail.com
  */
-public class DspCustom extends ConsoleGUI {
+public class HRTFTest {
 	private static final long serialVersionUID = 1L;
-    private static FmodExExampleFrame frame;
-
-    public static void main(String[] args) {
-        frame = new FmodExExampleFrame(new DspCustom());
-    }
 
 	private boolean init = false;
 	private boolean deinit = false;
@@ -77,35 +52,40 @@ public class DspCustom extends ConsoleGUI {
 
     private HRTF hrtf;
     private HRIR hrir;
-    private int az = 0;
-    private int el = 0;
+    private int elevation;
+    private int azimuth;
+    private Channel channel;
+    private HashMap<String, HRTF> hrtfMap;
 
-	public DspCustom() {
-		super();
+    public void setElevation(int elevation) {
+        this.elevation = elevation;
+    }
 
-        /*File f = new File("/home/ben/project/resources/hrtfs/listen/59/59.hrtf");
-        try {
+    public void setAzimuth(int azimuth) {
+        this.azimuth = azimuth;
+    }
 
-            HRTFFactory fac = new HRTFFactory();
-            hrtf = fac.listen(new DataInputStream(new ));
-            hrir = hrtf.get(az,el);
+    public void update(int az, int el) {
+        setAzimuth(az);
+        setElevation(el);
+        hrir = hrtf.get(az, el);
+    }
 
-        } catch (FileNotFoundException e) {
-            throw new RuntimeException("Couldn't initialise HRTF: " + e.getMessage());
-        }*/
+    public HRTFTest() {
 
-		initialize();
-	}
+        hrtfMap = new HashMap<String, HRTF>();
+
+        loadHRTF("/home/ben/project/resources/hrtfs/listen/18.hrtf");
+
+        init();
+        run();
+
+
+    }
 
 
 
-    public JPanel getPanel() {
-		return this;
-	}
 
-	public String getTitle() {
-		return "FMOD Ex DspCustom example.";
-	}
 
 	private void errorCheck(FMOD_RESULT result) {
 		if(result != FMOD_RESULT.FMOD_OK) {
@@ -113,7 +93,11 @@ public class DspCustom extends ConsoleGUI {
 		}
 	}
 
-	private boolean active = false;
+    private void printfExit(String s, int nativefmodexLibraryVersion, String nativefmodexJarVersion) {
+        //To change body of created methods use File | Settings | File Templates.
+    }
+
+    private boolean active = false;
 
 	private System system = new System();
 	private Sound sound = new Sound();
@@ -199,12 +183,19 @@ public class DspCustom extends ConsoleGUI {
 		init = true;
 	}
 
-	public void run() {
-		if(!init) return;
+    private void printfExit(String s, String message) {
+        //To change body of created methods use File | Settings | File Templates.
+    }
+
+    private void printfExit(String s, int nativefmodexLibraryVersion, int nativefmodexJarVersion) {
+        //To change body of created methods use File | Settings | File Templates.
+    }
+
+    public void run() {
 
 		ByteBuffer soundBuffer;
 		FMOD_CREATESOUNDEXINFO exinfo;
-		Channel channel = new Channel();
+        channel = new Channel();
 		int version;
 
 		ByteBuffer buffer = newByteBuffer(SIZEOF_INT);
@@ -228,7 +219,7 @@ public class DspCustom extends ConsoleGUI {
 //		soundBuffer = Medias.loadMediaIntoMemory("/home/ben/.local/share/Trash/files/Viva La Vida/06_Yes.mp3");
 //		exinfo = FMOD_CREATESOUNDEXINFO.allocate();
 //		exinfo.setLength(soundBuffer.capacity());
-		errorCheck(system.createStream("/home/ben/play/sample.wav", FMOD_SOFTWARE, null, sound));
+		errorCheck(system.createStream("/home/ben/thermo.wav", FMOD_SOFTWARE, null, sound));
 //		exinfo.release();
 
 		printf("===============================================================================\n");
@@ -238,11 +229,9 @@ public class DspCustom extends ConsoleGUI {
 		printf("Press 'e' to quit\n");
 		printf("\n");
 
-		errorCheck(system.playSound(FMOD_CHANNEL_FREE, sound, false, channel));
-		
-		/*
-		 * Create the DSP effects.
-		 */
+        /*
+           * Create the DSP effects.
+           */
 		{
 			FMOD_DSP_DESCRIPTION dspdesc = FMOD_DSP_DESCRIPTION.allocate();
 
@@ -253,76 +242,21 @@ public class DspCustom extends ConsoleGUI {
 			errorCheck(system.createDSP(dspdesc, mydsp));
 		}
 
-		/*
-		 * Inactive by default.
-		 */
-		mydsp.setBypass(false);
-
+        mydsp.setBypass(false);
 		errorCheck(system.addDSP(mydsp, null));
 
-		/*
-		 * Main loop.
-		 */
 
-
-
-		boolean exit = false;
-        boolean changed = true;
-		do {
-			switch(getKey()) {
-				case 'f':
-				case 'F':
-					mydsp.setBypass(active);
-					active = !active;
-					break;
-                case 'a':
-                case 'A':
-                    az -= 15;
-                    changed = true;
-                    break;
-                case 's':
-                case 'S':
-                    el -= 15;
-                    changed = true;
-                    break;
-                case 'd':
-                case 'D':
-                    az += 15;
-                    changed = true;
-                    break;
-                case 'w':
-                case 'W':
-                    el += 15;
-                    changed = true;
-                    break;
-				case 'e':
-				case 'E':
-					exit = true;
-					break;
-			}
-
-            if (changed){
-                hrir = hrtf.get(az, el);
-
-                //this.print("delay: " + hrir.getDelay());
-                this.print("Azimuth: " + hrir.getAzimuth() + " , Elevation: " + hrir.getElevation() + "\n");
-                errorCheck(system.playSound(FMOD_CHANNEL_FREE, sound, false, channel));
-                changed = false;
-            }
-
-			system.update();
-
-			try {
-				Thread.sleep(10);
-			}
-			catch(InterruptedException e) {}
-		}
-		while(!exit && !deinit);
-
-		stop();
 	}
 
-	public boolean isRunning() { return deinit; }
+    public void play() {
+        errorCheck(system.playSound(FMOD_CHANNEL_FREE, sound, false, channel));
+    }
+
+    private void printf(String s) {
+        //To change body of created methods use File | Settings | File Templates.
+    }
+
+    public boolean isRunning() { return deinit; }
 	public void stop() {
 		if(!init || deinit) return;
 		deinit = true;
@@ -344,4 +278,41 @@ public class DspCustom extends ConsoleGUI {
 			errorCheck(system.release());
 		}
 	}
+
+    private void print(String s) {
+        //To change body of created methods use File | Settings | File Templates.
+    }
+
+    public void loadHRTF(String s) {
+
+        java.lang.System.out.println("Loading " + s);
+
+        if (hrtfMap.containsKey(s)) {
+            java.lang.System.out.println("Using cached version");
+            hrtf = hrtfMap.get(s);
+        }else{
+
+            try {
+
+                HRTFFactory fac = new HRTFFactory();
+                hrtf = fac.listenBinary(new File(s));
+                hrtfMap.put(s, hrtf);
+
+                hrir = hrtf.get(azimuth, elevation);
+
+            } catch (FileNotFoundException e) {
+                throw new RuntimeException("Couldn't initialise HRTF: " + e.getMessage());
+            } catch (IOException e) {
+                e.printStackTrace();  //To change body of catch statement use File | Settings | File Templates.
+            }
+
+        }
+
+
+
+    }
+
+    public void loadWav(String s) {
+        errorCheck(system.createStream(s, FMOD_SOFTWARE, null, sound));
+    }
 }

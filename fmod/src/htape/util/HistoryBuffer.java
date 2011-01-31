@@ -33,12 +33,7 @@ public class HistoryBuffer {
         if (pos >= 0){
             return values[pos];
         }else {
-
-            if (size + extra + pos == -1) {
-                System.out.println("position:" + position + " c-p:" + pos + " size:" + size + " pointer:" + pointer + " result: " + (size + (pos % size)));
-            }
             return values[size + extra + pos];
-
         }
     }
 

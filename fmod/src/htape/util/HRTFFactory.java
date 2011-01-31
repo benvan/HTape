@@ -1,9 +1,7 @@
 package htape.util;
 
-import htape.util.io.hrir.BarettoHRIR;
-import htape.util.io.hrir.IHRIRReader;
-import htape.util.io.hrir.ListenBinaryHRIR;
-import htape.util.io.hrir.ListenHRIR;
+import htape.util.io.UnrecognisedHRTFException;
+import htape.util.io.hrir.*;
 
 import java.io.*;
 import java.util.Scanner;
@@ -18,8 +16,21 @@ import java.util.Scanner;
 public class HRTFFactory {
 
 
-    private final static int[][] baretto_positions = new int[][]{{-36,12},{-18,12},{0,12},{18,12},{36,12},{54,12}};
-    private final static int[][] listen_positions = new int[][]{{-45,24},{-30,24},{-15,24},{0,24},{15,24},{30,24},{45,24},{60,12},{75,6},{90,1}};
+    private final static int[][] baretto_positions;
+    private final static int[][] listen_positions;
+    private final static int[][] cipic_positions;
+
+    static {
+        baretto_positions = new int[][]{{-36, 12}, {-18, 12}, {0, 12}, {18, 12}, {36, 12}, {54, 12}};
+        listen_positions = new int[][]{{-45, 24}, {-30, 24}, {-15, 24}, {0, 24}, {15, 24}, {30, 24}, {45, 24}, {60, 12}, {75, 6}, {90, 1}};
+
+        int[] cipic_azimuths = new int[]{-80, -65, -55, -45, -40, -35, -30, -25, -20, -15, -10, -5, 0, 5, 10, 15, 20, 25, 30, 35, 40, 45, 55, 65, 80};
+        cipic_positions = new int[cipic_azimuths.length][2];
+        for (int i = 0; i < cipic_azimuths.length; i++) {
+            cipic_positions[i] = new int[]{cipic_azimuths[i], 50};
+        }
+
+    }
 
     private HRIR[][] createHRIRs(int[][] positions, DataInputStream in, IHRIRReader reader) throws IOException {
 
@@ -90,9 +101,27 @@ public class HRTFFactory {
 
 
 
-    public HRTF fromFile(File f, int[][] positions, IHRIRReader reader) throws IOException {
+    private HRTF fromFile(File f, int[][] positions, IHRIRReader reader) throws IOException {
         DataInputStream in = new DataInputStream(new BufferedInputStream(new FileInputStream(f)));
         return new HRTF(createHRIRs(positions, in, reader));
+    }
+
+    public HRTF fromFile(String s) throws UnrecognisedHRTFException, IOException {
+        File f = new File(s);
+
+        if (!f.exists()) {
+            throw new FileNotFoundException(s);
+        }
+
+        if (s.contains(".cipic")) {
+            return fromFile(f, cipic_positions, new CipicHRIR());
+        } else if (s.contains(".listen")) {
+            return fromFile(f, listen_positions, (s.endsWith(".bin") ? new ListenBinaryHRIR() : new ListenHRIR()));
+        } else if (s.contains(".baretto")) {
+            return fromFile(f, baretto_positions, new BarettoHRIR());
+        }
+
+        throw new UnrecognisedHRTFException(s);
     }
 
 }

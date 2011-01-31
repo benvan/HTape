@@ -10,6 +10,7 @@
 package org.jouvieje.fmodex.examples;
 
 import htape.util.*;
+import htape.util.io.UnrecognisedHRTFException;
 import org.jouvieje.fmodex.*;
 import org.jouvieje.fmodex.System;
 import org.jouvieje.fmodex.callbacks.FMOD_DSP_READCALLBACK;
@@ -32,6 +33,7 @@ import static org.jouvieje.fmodex.defines.FMOD_INITFLAGS.FMOD_INIT_NORMAL;
 import static org.jouvieje.fmodex.defines.FMOD_MODE.FMOD_SOFTWARE;
 import static org.jouvieje.fmodex.defines.VERSIONS.*;
 import static org.jouvieje.fmodex.enumerations.FMOD_CHANNELINDEX.FMOD_CHANNEL_FREE;
+import static org.jouvieje.fmodex.enumerations.FMOD_RESULT.FMOD_ERR_DSP_NOTFOUND;
 import static org.jouvieje.fmodex.enumerations.FMOD_RESULT.FMOD_OK;
 import static org.jouvieje.fmodex.utils.BufferUtils.SIZEOF_INT;
 import static org.jouvieje.fmodex.utils.BufferUtils.newByteBuffer;
@@ -74,13 +76,8 @@ public class HRTFTest {
     public HRTFTest() {
 
         hrtfMap = new HashMap<String, HRTF>();
-
-        loadHRTF("/home/ben/project/resources/hrtfs/listen/18.hrtf");
-
         init();
         run();
-
-
     }
 
 
@@ -113,33 +110,35 @@ public class HRTFTest {
 
 		public FMOD_RESULT FMOD_DSP_READCALLBACK(FMOD_DSP_STATE dsp_state, FloatBuffer inbuffer, FloatBuffer outbuffer,
 				int length, int inchannels, int outchannels) {
-			DSP thisdsp = dsp_state.getInstance();
 
-			/*
-			 * This redundant call just shows using the instance parameter of FMOD_DSP_STATE and using it to 
-			 * call a DSP information function. 
-			 */
-			thisdsp.getInfo(nameBuffer, null, null, null, null);
-			String name = BufferUtils.toString(nameBuffer);
+            if (hrir == null) {
+                return FMOD_ERR_DSP_NOTFOUND;
+            }
 
-			/*
-			 * This loop assumes inchannels = outchannels, which it will be if the DSP is created with '0' 
-			 * as the number of channels in FMOD_DSP_DESCRIPTION.  
-			 * Specifying an actual channel count will mean you have to take care of any number of channels coming in,
-			 * but outputting the number of channels specified.  Generally it is best to keep the channel 
-			 * count at 0 for maximum compatibility.
-			 */
+            DSP thisdsp = dsp_state.getInstance();
+
+            /*
+                * This redundant call just shows using the instance parameter of FMOD_DSP_STATE and using it to
+                * call a DSP information function.
+                */
+            thisdsp.getInfo(nameBuffer, null, null, null, null);
+            String name = BufferUtils.toString(nameBuffer);
+
+            /*
+                * This loop assumes inchannels = outchannels, which it will be if the DSP is created with '0'
+                * as the number of channels in FMOD_DSP_DESCRIPTION.
+                * Specifying an actual channel count will mean you have to take care of any number of channels coming in,
+                * but outputting the number of channels specified.  Generally it is best to keep the channel
+                * count at 0 for maximum compatibility.
+                */
 
 
-			for(int sample = 0; sample < length; sample++) {
-				/*
-				 * Feel free to unroll this.
-				 */
+            for (int sample = 0; sample < length; sample++) {
 
                 lhist.add(inbuffer.get());
                 rhist.add(inbuffer.get());
 
-                float l=0,r=0;
+                float l = 0, r = 0;
 
                 for (int i = 0; i < lhist.length(); i++) {
                     l += lhist.get(i) * hrir.getLeft(i);
@@ -149,12 +148,12 @@ public class HRTFTest {
                 outbuffer.put(l);
                 outbuffer.put(r);
 
-			}
-			inbuffer.rewind();
-			outbuffer.rewind();
+            }
+            inbuffer.rewind();
+            outbuffer.rewind();
 
-			return FMOD_OK;
-		}
+            return FMOD_OK;
+        }
 	};
 
 	public void init() {
@@ -283,7 +282,7 @@ public class HRTFTest {
         //To change body of created methods use File | Settings | File Templates.
     }
 
-    public void loadHRTF(String s) {
+    public void loadHRTF(String s) throws IOException, UnrecognisedHRTFException {
 
         java.lang.System.out.println("Loading " + s);
 
@@ -291,25 +290,12 @@ public class HRTFTest {
             java.lang.System.out.println("Using cached version");
             hrtf = hrtfMap.get(s);
         }else{
+            HRTFFactory fac = new HRTFFactory();
+            hrtf = fac.fromFile(s);
+            hrtfMap.put(s, hrtf);
 
-            try {
-
-                HRTFFactory fac = new HRTFFactory();
-                hrtf = fac.listenBinary(new File(s));
-                hrtfMap.put(s, hrtf);
-
-                hrir = hrtf.get(azimuth, elevation);
-
-            } catch (FileNotFoundException e) {
-                throw new RuntimeException("Couldn't initialise HRTF: " + e.getMessage());
-            } catch (IOException e) {
-                e.printStackTrace();  //To change body of catch statement use File | Settings | File Templates.
-            }
-
+            hrir = hrtf.get(azimuth, elevation);
         }
-
-
-
     }
 
     public void loadWav(String s) {

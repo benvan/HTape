@@ -1,12 +1,10 @@
-import htape.util.ExitListener;
+import htape.gui.HRTFTest;
 import htape.util.LocationPicker;
 import htape.util.io.UnrecognisedHRTFException;
-import org.jouvieje.fmodex.examples.HRTFTest;
 
 import javax.swing.*;
 import java.awt.*;
 import java.awt.event.*;
-import java.io.File;
 import java.io.IOException;
 
 /**
@@ -18,16 +16,22 @@ import java.io.IOException;
  */
 public class testmain {
 
+    private static String hrtf_location = "/home/ben/project/resources/hrtfs/listen/38.hrtf.listen.bin";//"/home/ben/subject_008.hrtf.cipic.bin";
+    private static String hrtf_directory = "/home/ben/project/resources/hrtfs/listen/";
+    private static String wav_location = "/home/ben/play/sample.wav";
+
     public static void main(String[] args) {
+
+
 
         final int[] hrtfIndex = {18};
         final LocationPicker loc = new LocationPicker();
         final HRTFTest player = new HRTFTest();
 
-        //player.loadWav("/home/ben/play/sample.wav");
-        player.loadWav("/home/ben/play/sample.wav");
+        player.loadWav(wav_location);
         try {
-            player.loadHRTF("/home/ben/subject_008.hrtf.cipic.bin");
+            player.loadHRTF(hrtf_location);
+            loc.represent(player.getHRTF());
         }catch (IOException e) {
             java.lang.System.err.println(e.getMessage());
         } catch (UnrecognisedHRTFException e) {
@@ -47,7 +51,7 @@ public class testmain {
 
         JFrame frame = new JFrame();
 
-        frame.setPreferredSize(new Dimension(700, 500));
+        frame.setPreferredSize(new Dimension(1100, 500));
         frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 
         frame.add(loc);
@@ -67,13 +71,13 @@ public class testmain {
                         case KeyEvent.VK_PAGE_UP:
                             hrtfIndex[0] = Math.min(59, hrtfIndex[0]);
                             hrtfIndex[0] = Math.max(2, hrtfIndex[0]);
-                            player.loadHRTF(String.format("/home/ben/project/resources/hrtfs/listen/%02d.hrtf_bin", ++hrtfIndex[0]));
+                            player.loadHRTF(String.format("%s/%02d.hrtf_bin", hrtf_directory, ++hrtfIndex[0]));
                             player.play();
                             break;
                         case KeyEvent.VK_PAGE_DOWN:
                             hrtfIndex[0] = Math.min(59, hrtfIndex[0]);
                             hrtfIndex[0] = Math.max(2, hrtfIndex[0]);
-                            player.loadHRTF(String.format("/home/ben/project/resources/hrtfs/listen/%02d.hrtf_bin", --hrtfIndex[0]));
+                            player.loadHRTF(String.format("%s/%02d.hrtf_bin", hrtf_directory, --hrtfIndex[0]));
                             player.play();
                             break;
                     }

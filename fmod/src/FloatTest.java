@@ -1,6 +1,5 @@
-import com.sun.org.apache.bcel.internal.generic.D2F;
-import htape.util.HRTF;
-import htape.util.HRTFFactory;
+import htape.util.filtering.hrtf.HRTF;
+import htape.util.filtering.hrtf.HRTFFactory;
 
 import java.io.*;
 
@@ -14,36 +13,19 @@ import java.io.*;
 public class FloatTest {
 
     public static void main(String[] args) {
-        try {
 
-            HRTFFactory fac = new HRTFFactory();
+        int[] cipic_azimuths = new int[]{-80, -65, -55, -45, -40, -35, -30, -25, -20, -15, -10, -5, 0, 5, 10, 15, 20, 25, 30, 35, 40, 45, 55, 65, 80};
 
-            HRTF str = fac.fallbackWTF(new File("/home/ben/project/resources/hrtfs/listen/18.hrtf"));
-            HRTF bin = fac.listenBinary(new File("/home/ben/18.hrtf_bin"));
-
-            for (int i = 0; i < 512; i++) {
-                if (str.get(0,0).getLeft(i) != bin.get(0,0).getLeft(i)){
-                    System.out.println(str.get(0,0).getLeft(i) / bin.get(0,0).getLeft(i));
-
-                }
-
-                if (str.get(0, 0).getRight(i) != bin.get(0, 0).getRight(i)) {
-                    System.out.println(str.get(0,0).getRight(i) / bin.get(0,0).getRight(i));
-                }
-
+        for (int i = 0; i < cipic_azimuths.length; i++) {
+            int azimuth = cipic_azimuths[i];
+            System.out.print(azimuth);
+            System.out.print(": ");
+            for (double j = -45; j < 231; j += 5.625){
+                System.out.print(" " + j);
             }
-
-            System.out.println("ready to begin");
-
-
-
-
-
-        } catch (FileNotFoundException e) {
-            e.printStackTrace();  //To change body of catch statement use File | Settings | File Templates.
-        } catch (IOException e) {
-            e.printStackTrace();  //To change body of catch statement use File | Settings | File Templates.
+            System.out.println();
         }
+
     }
 
 }

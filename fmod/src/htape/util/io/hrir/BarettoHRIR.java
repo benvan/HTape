@@ -1,7 +1,7 @@
 package htape.util.io.hrir;
 
-import htape.util.DelayedHRIR;
-import htape.util.HRIR;
+import htape.util.filtering.hrtf.DelayedHRIR;
+import htape.util.filtering.hrtf.HRIR;
 
 import java.io.DataInputStream;
 import java.io.IOException;

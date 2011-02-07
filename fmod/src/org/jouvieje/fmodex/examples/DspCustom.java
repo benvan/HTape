@@ -10,8 +10,6 @@
 package org.jouvieje.fmodex.examples;
 
 import static org.jouvieje.fmodex.defines.FMOD_INITFLAGS.FMOD_INIT_NORMAL;
-import static org.jouvieje.fmodex.defines.FMOD_MODE.FMOD_LOOP_NORMAL;
-import static org.jouvieje.fmodex.defines.FMOD_MODE.FMOD_OPENMEMORY;
 import static org.jouvieje.fmodex.defines.FMOD_MODE.FMOD_SOFTWARE;
 import static org.jouvieje.fmodex.defines.VERSIONS.FMOD_VERSION;
 import static org.jouvieje.fmodex.defines.VERSIONS.NATIVEFMODEX_JAR_VERSION;
@@ -21,22 +19,13 @@ import static org.jouvieje.fmodex.enumerations.FMOD_RESULT.FMOD_OK;
 import static org.jouvieje.fmodex.utils.BufferUtils.newByteBuffer;
 import static org.jouvieje.fmodex.utils.BufferUtils.SIZEOF_INT;
 
-import java.awt.event.KeyAdapter;
-import java.awt.event.KeyEvent;
-import java.io.DataInput;
-import java.io.DataInputStream;
-import java.io.File;
-import java.io.FileNotFoundException;
 import java.nio.ByteBuffer;
 import java.nio.FloatBuffer;
-import java.util.Scanner;
 
 import javax.swing.JPanel;
-import javax.swing.text.Highlighter;
 
-import htape.util.HRIR;
-import htape.util.HRTF;
-import htape.util.HRTFFactory;
+import htape.util.filtering.hrtf.HRIR;
+import htape.util.filtering.hrtf.HRTF;
 import htape.util.HistoryBuffer;
 import org.jouvieje.fmodex.Channel;
 import org.jouvieje.fmodex.DSP;
@@ -49,7 +38,6 @@ import org.jouvieje.fmodex.callbacks.FMOD_DSP_READCALLBACK;
 import org.jouvieje.fmodex.enumerations.FMOD_RESULT;
 import org.jouvieje.fmodex.examples.utils.ConsoleGUI;
 import org.jouvieje.fmodex.examples.utils.FmodExExampleFrame;
-import org.jouvieje.fmodex.examples.utils.Medias;
 import org.jouvieje.fmodex.exceptions.InitException;
 import org.jouvieje.fmodex.utils.BufferUtils;
 import org.jouvieje.fmodex.structures.FMOD_CREATESOUNDEXINFO;

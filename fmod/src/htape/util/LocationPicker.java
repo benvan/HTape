@@ -1,5 +1,9 @@
 package htape.util;
 
+import htape.util.filtering.hrtf.HRIR;
+import htape.util.filtering.hrtf.HRTF;
+import htape.util.filtering.hrtf.IHRTF;
+
 import javax.swing.*;
 import java.awt.*;
 import java.awt.event.MouseEvent;
@@ -22,6 +26,9 @@ public class LocationPicker extends JPanel {
     private Point2D.Double upperBound, lowerBound;
     private Point2D.Double location;
     private static final int PADDING = 10;
+    private int[] azimuths, elevations;
+    private HRIR[][] positions;
+    private IHRTF hrtf;
 
     public LocationPicker() {
         super();
@@ -47,6 +54,12 @@ public class LocationPicker extends JPanel {
     }
 
 
+    public void represent(HRTF hrtf) {
+
+        positions = hrtf.getHrirs();
+        this.hrtf = hrtf;
+    }
+
 
     public void paintComponent(Graphics g) {
 
@@ -57,8 +70,8 @@ public class LocationPicker extends JPanel {
 
         origin.setLocation(o_x,o_y);
         location.setLocation(
-                lowerBound.getX() + (mouseVector.getX() + o_x) * (upperBound.getX() - lowerBound.getX()) / getWidth(),
-                upperBound.getY() - (mouseVector.getY() + o_y) * (upperBound.getY() - lowerBound.getY()) / getHeight()
+                lowerBound.getX() + (mouseVector.getX() + o_x) * (upperBound.getX() - lowerBound.getX()) / w,
+                upperBound.getY() - (mouseVector.getY() + o_y) * (upperBound.getY() - lowerBound.getY()) / h
         );
 
         g.setColor(Color.WHITE);
@@ -70,19 +83,46 @@ public class LocationPicker extends JPanel {
         //draw dragline
         g.setColor(Color.LIGHT_GRAY);
         g.drawLine(o_x, o_y, (int) mouseVector.getX() + o_x, (int) mouseVector.getY() + o_y);
+        g.setColor(Color.RED);
+        int az = (hrtf.get((int)location.getX(), (int)location.getY()).getAzimuth());
+        if (az > 180) az -= 360;
+        int mark_x = (int) (w * ((double) (az) + 180) / 360);
+        int mark_y = h - (int) (h * ((double) ((hrtf.get((int)location.getX(), (int)location.getY()).getElevation()) + 45) / 135));
+        g.drawLine((int) mouseVector.getX() + o_x, (int) mouseVector.getY() + o_y, mark_x, mark_y );
+        g.drawOval(mark_x -3, mark_y - 3, 6, 6 );
         g.setColor(Color.LIGHT_GRAY);
         int diameter = 10;
         g.fillOval((int) (mouseVector.getX() + o_x - diameter / 2), (int) mouseVector.getY() + o_y - diameter / 2, diameter, diameter);
+
         g.setColor(Color.DARK_GRAY);
         g.drawOval((int) (mouseVector.getX() + o_x - diameter/2), (int) mouseVector.getY() + o_y - diameter/2, diameter, diameter);
-        g.drawString(String.format("(%.0f , %.0f)", location.getX(),location.getY()), (int)mouseVector.getX()+o_x , (int)mouseVector.getY()+o_y - 10);
+        g.drawString(String.format("(%d , %d)", (int)location.getX(),(int)location.getY()), (int)mouseVector.getX()+o_x , (int)mouseVector.getY()+o_y - 10);
+
 
         //draw axes
         g.setColor(Color.DARK_GRAY);
         g.drawLine(0,o_y, w, o_y);
-        int x_marks = 24;
-        for (int i = 0; i <= x_marks; i++) {
-            int markx = (int) (((double)i/(x_marks)) * w);
+        g.drawLine(o_x,0, o_x, h);
+
+        for (int i = 0; i < positions.length; i++) {
+            HRIR[] row = positions[i];
+            for (int j = 0; j < row.length; j++) {
+                HRIR hrir = row[j];
+                az = hrir.getAzimuth();
+                if (az > 180) az -= 360;
+                mark_x = (int) (w * ((double) (az + 180) / 360));
+                mark_y = h - (int) (h * ((double) ((hrir.getElevation()) + 45) / 135));
+                g.drawLine(mark_x -2, mark_y, mark_x +2, mark_y);
+                g.drawLine(mark_x, mark_y+2, mark_x, mark_y-2);
+
+            }
+
+        }
+
+        /*int spread_x = azimuths[azimuths.length-1] - azimuths[0];
+        for (int i = 0; i < azimuths.length; i++) {
+            double grad = (double) w / (double)spread_x;
+            int markx = o_x + (int)(grad*azimuths[i]);
             g.drawLine(markx, o_y - 3, markx, o_y + 3);
             g.drawString(String.valueOf(-180 + i *15), markx - 5, o_y + 12);
         }
@@ -93,7 +133,7 @@ public class LocationPicker extends JPanel {
             int marky = (int) (((double)i/(y_marks-1)) * h);
             g.drawLine(o_x - 3, marky, o_x + 3, marky);
             g.drawString(String.valueOf(90 - i * 15), o_x + 8, marky);
-        }
+        }*/
 
         g.translate(-PADDING,-PADDING);
 

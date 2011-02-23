@@ -45,6 +45,20 @@ public class HRTFFactory {
 
     }
 
+    private HRIR[][] createCIPIC_HRIRs(int[][] positions, DataInputStream in, IHRIRReader reader) throws IOException {
+
+        HRIR[][] hrirs = new HRIR[positions.length][];
+        for (int i = 0; i < positions.length; i++) {
+            HRIR[] ring = new HRIR[positions[i][1]];
+            for (int j = 0; j < ring.length; j++) {
+                ring[j] = reader.read(in, positions[i][0], -45 + 5.625*j);
+            }
+            hrirs[i] = ring;
+        }
+        return hrirs;
+
+    }
+
     private HRIR[][] baretto(DataInputStream s, IHRIRReader reader) throws IOException {
         return createHRIRs(listen_positions, s, reader);
     }
@@ -53,24 +67,24 @@ public class HRTFFactory {
         return createHRIRs(baretto_positions, s, reader);
     }
 
-    public HRTF listen(File f) throws IOException {
+    public IHRTF listen(File f) throws IOException {
         return fromFile(f, listen_positions, new ListenHRIR());
     }
 
-    public HRTF listenBinary(File f) throws IOException {
+    public IHRTF listenBinary(File f) throws IOException {
         return fromFile(f, listen_positions, new ListenBinaryHRIR());
     }
 
-    public HRTF baretto(File f) throws IOException {
+    public IHRTF baretto(File f) throws IOException {
         return fromFile(f, baretto_positions, new BarettoHRIR());
     }
 
-    private HRTF fromFile(File f, int[][] positions, IHRIRReader reader) throws IOException {
+    private IHRTF fromFile(File f, int[][] positions, IHRIRReader reader) throws IOException {
         DataInputStream in = new DataInputStream(new BufferedInputStream(new FileInputStream(f)));
         return new HRTF(createHRIRs(positions, in, reader));
     }
 
-    public HRTF fromFile(String s) throws UnrecognisedHRTFException, IOException {
+    public IHRTF fromFile(String s) throws UnrecognisedHRTFException, IOException {
         File f = new File(s);
 
         if (!f.exists()) {
@@ -78,7 +92,8 @@ public class HRTFFactory {
         }
 
         if (s.contains(".cipic")) {
-            return fromFile(f, cipic_positions, new CipicHRIR());
+            DataInputStream in = new DataInputStream(new BufferedInputStream(new FileInputStream(f)));
+            return new CipicHRTF(createCIPIC_HRIRs(cipic_positions, in, new CipicHRIR()));
         } else if (s.contains(".listen")) {
             return fromFile(f, listen_positions, (s.endsWith(".bin") ? new ListenBinaryHRIR() : new ListenHRIR()));
         } else if (s.contains(".baretto")) {

@@ -15,7 +15,7 @@ import java.io.IOException;
 public class CipicHRIR implements IHRIRReader {
 
 
-    public HRIR read(DataInputStream in, int azimuth, int elevation) throws IOException {
+    public HRIR read(DataInputStream in, double azimuth, double elevation) throws IOException {
         float[] coeffs = new float[400];
         for (int i = 0; i < 400; i++) {
             coeffs[i] = in.readFloat();

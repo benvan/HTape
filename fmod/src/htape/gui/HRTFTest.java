@@ -1,18 +1,10 @@
-/*===============================================================================================
- Custom DSP Example
- Copyright (c), Firelight Technologies Pty, Ltd 2004-2010.
-
- This example shows how to add a user created DSP callback to process audio data.
- A read callback is generated at runtime, and can be added anywhere in the DSP network.
-
-===============================================================================================*/
-
 package htape.gui;
 
-import htape.util.*;
+import htape.util.ExtendedHistoryBuffer;
 import htape.util.filtering.hrtf.HRIR;
 import htape.util.filtering.hrtf.HRTF;
 import htape.util.filtering.hrtf.HRTFFactory;
+import htape.util.filtering.hrtf.IHRTF;
 import htape.util.io.UnrecognisedHRTFException;
 import org.jouvieje.fmodex.*;
 import org.jouvieje.fmodex.System;
@@ -24,7 +16,7 @@ import org.jouvieje.fmodex.structures.FMOD_DSP_DESCRIPTION;
 import org.jouvieje.fmodex.structures.FMOD_DSP_STATE;
 import org.jouvieje.fmodex.utils.BufferUtils;
 
-import java.io.*;
+import java.io.IOException;
 import java.nio.ByteBuffer;
 import java.nio.FloatBuffer;
 import java.util.HashMap;
@@ -38,26 +30,25 @@ import static org.jouvieje.fmodex.enumerations.FMOD_RESULT.FMOD_OK;
 import static org.jouvieje.fmodex.utils.BufferUtils.SIZEOF_INT;
 import static org.jouvieje.fmodex.utils.BufferUtils.newByteBuffer;
 
-/**
- * Based on FMOD Ex C++ example. Ported to Java with NativeFmodEx by J�r�me JOUVIE (Jouvieje.
- * 
- * @author J�r�me JOUVIE (Jouvieje)
- * @site   http://jerome.jouvie.free.fr/
- * @mail   jerome.jouvie@gmail.com
- */
+
 public class HRTFTest {
 	private static final long serialVersionUID = 1L;
 
 	private boolean init = false;
 	private boolean deinit = false;
 
-
-    private HRTF hrtf;
+    private IHRTF hrtf;
     private HRIR hrir;
     private int elevation;
     private int azimuth;
     private Channel channel;
-    private HashMap<String, HRTF> hrtfMap;
+    private HashMap<String, IHRTF> hrtfMap;
+
+    public HRTFTest() {
+        hrtfMap = new HashMap<String, IHRTF>();
+        init();
+        run();
+    }
 
     public void setElevation(int elevation) {
         this.elevation = elevation;
@@ -73,12 +64,7 @@ public class HRTFTest {
         hrir = hrtf.get(az, el);
     }
 
-    public HRTFTest() {
 
-        hrtfMap = new HashMap<String, HRTF>();
-        init();
-        run();
-    }
 
 
 
@@ -103,8 +89,8 @@ public class HRTFTest {
 	private FMOD_DSP_READCALLBACK myDSPCallback = new FMOD_DSP_READCALLBACK(){
 		ByteBuffer nameBuffer = newByteBuffer(256);
 
-        HistoryBuffer lhist = new HistoryBuffer(512, 0);
-        HistoryBuffer rhist = new HistoryBuffer(512, 0);
+        ExtendedHistoryBuffer lhist = new ExtendedHistoryBuffer(512, 0);
+        ExtendedHistoryBuffer rhist = new ExtendedHistoryBuffer(512, 0);
 
         int pos = 0;
 
@@ -158,15 +144,12 @@ public class HRTFTest {
 	};
 
 	public void init() {
-		/*
-		 * NativeFmodEx Init
-		 */
 		try {
 			Init.loadLibraries();
 		}
 		catch(InitException e) {
-			printfExit("NativeFmodEx error! %s\n", e.getMessage());
-			return;
+			java.lang.System.err.println(String.format("NativeFmodEx error! %s\n", e.getMessage()));
+			java.lang.System.exit(1);
 		}
 
 		/*
@@ -183,13 +166,7 @@ public class HRTFTest {
 		init = true;
 	}
 
-    private void printfExit(String s, String message) {
-        //To change body of created methods use File | Settings | File Templates.
-    }
 
-    private void printfExit(String s, int nativefmodexLibraryVersion, int nativefmodexJarVersion) {
-        //To change body of created methods use File | Settings | File Templates.
-    }
 
     public void run() {
 
@@ -303,7 +280,12 @@ public class HRTFTest {
         errorCheck(system.createStream(s, FMOD_SOFTWARE, null, sound));
     }
 
-    public HRTF getHRTF() {
+    public IHRTF getHRTF() {
         return hrtf;
+    }
+
+    private void printfExit(String s, Object... args) {
+        java.lang.System.out.print(String.format(s, args));
+        java.lang.System.exit(1);
     }
 }

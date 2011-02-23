@@ -1,30 +1,21 @@
 package htape.util;
 
-/**
- * Created by IntelliJ IDEA.
- * User: ben
- * Date: 1/23/11
- * Time: 7:07 PM
- * To change this template use File | Settings | File Templates.
- */
 public class HistoryBuffer {
 
     private float[] values;
     private int pointer = 0;
     private int maxSoFar = 0;
     private int size;
-    private int extra;
 
-    public HistoryBuffer(int size, int extra) {
+    public HistoryBuffer(int size) {
         this.size = size;
-        this.extra = extra;
-        values = new float[size + extra];
+        values = new float[size];
     }
 
     public void add(float data){
         values[pointer] = data;
         pointer++;
-        pointer %= size + extra;
+        pointer %= size;
         if (maxSoFar < (size)) maxSoFar++;
     }
 
@@ -33,11 +24,20 @@ public class HistoryBuffer {
         if (pos >= 0){
             return values[pos];
         }else {
-            return values[size + extra + pos];
+            return values[size+pos];
         }
     }
 
     public int length() {
         return maxSoFar;
+    }
+
+    public void resize(int size) {
+        if (size > this.size) {
+            float[] resized = new float[size];
+            System.arraycopy(values, 0, resized, 0, maxSoFar);
+            values = resized;
+        }
+        this.size = size;
     }
 }

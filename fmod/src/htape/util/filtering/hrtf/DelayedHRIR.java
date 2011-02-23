@@ -11,7 +11,7 @@ public class DelayedHRIR extends HRIR {
 
     int delay;
 
-    public DelayedHRIR(int azimuth, int elevation, float[] coefficients, int delay) {
+    public DelayedHRIR(double azimuth, double elevation, float[] coefficients, int delay) {
         super(azimuth, elevation, coefficients);
         this.delay = delay;
         processDelay();

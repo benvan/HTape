@@ -24,9 +24,9 @@ import java.nio.FloatBuffer;
 
 import javax.swing.JPanel;
 
+import htape.util.ExtendedHistoryBuffer;
 import htape.util.filtering.hrtf.HRIR;
 import htape.util.filtering.hrtf.HRTF;
-import htape.util.HistoryBuffer;
 import org.jouvieje.fmodex.Channel;
 import org.jouvieje.fmodex.DSP;
 import org.jouvieje.fmodex.FmodEx;
@@ -110,8 +110,8 @@ public class DspCustom extends ConsoleGUI {
 	private FMOD_DSP_READCALLBACK myDSPCallback = new FMOD_DSP_READCALLBACK(){
 		ByteBuffer nameBuffer = newByteBuffer(256);
 
-        HistoryBuffer lhist = new HistoryBuffer(512, 0);
-        HistoryBuffer rhist = new HistoryBuffer(512, 0);
+        ExtendedHistoryBuffer lhist = new ExtendedHistoryBuffer(512, 0);
+        ExtendedHistoryBuffer rhist = new ExtendedHistoryBuffer(512, 0);
 
         int pos = 0;
 

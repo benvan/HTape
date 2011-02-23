@@ -8,7 +8,6 @@ package htape.util.filtering.hrtf;
  * To change this template use File | Settings | File Templates.
  */
 public interface IHRTF {
-    HRIR get(int azimuth, int elevation);
-
+    HRIR get(double azimuth, double elevation);
     HRIR[][] getHrirs();
 }

@@ -14,6 +14,6 @@ import java.io.IOException;
  */
 public interface IHRIRReader {
 
-    HRIR read(DataInputStream in, int azimuth, int elevation ) throws IOException;
+    HRIR read(DataInputStream in, double azimuth, double elevation ) throws IOException;
 
 }

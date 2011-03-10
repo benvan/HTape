@@ -1,7 +1,5 @@
 package htape;
 
-import htape.util.ExtendedHistoryBuffer;
-import htape.util.HistoryBuffer;
 import htape.util.StereoHistoryBuffer;
 import htape.util.filtering.IFilter;
 import org.jouvieje.fmodex.*;
@@ -10,55 +8,50 @@ import org.jouvieje.fmodex.callbacks.FMOD_DSP_READCALLBACK;
 import org.jouvieje.fmodex.enumerations.FMOD_RESULT;
 import org.jouvieje.fmodex.exceptions.InitException;
 import org.jouvieje.fmodex.structures.FMOD_DSP_DESCRIPTION;
-import org.jouvieje.fmodex.structures.FMOD_DSP_STATE;
-
-import java.nio.ByteBuffer;
-import java.nio.FloatBuffer;
 
 import static org.jouvieje.fmodex.defines.FMOD_INITFLAGS.FMOD_INIT_NORMAL;
 import static org.jouvieje.fmodex.defines.FMOD_MODE.FMOD_SOFTWARE;
 import static org.jouvieje.fmodex.defines.VERSIONS.*;
 import static org.jouvieje.fmodex.enumerations.FMOD_CHANNELINDEX.FMOD_CHANNEL_FREE;
-import static org.jouvieje.fmodex.enumerations.FMOD_RESULT.FMOD_OK;
-import static org.jouvieje.fmodex.utils.BufferUtils.newByteBuffer;
 
 
 public class Player {
-	private static final long serialVersionUID = 1L;
+    private static final long serialVersionUID = 1L;
 
-	private boolean init = false;
-	private boolean deinit = false;
+    private boolean init = false;
+    private boolean deinit = false;
 
     private System system = new System();
-	private Sound sound = new Sound();
-	private DSP mydsp = new DSP();
+    private Sound sound = new Sound();
+    private DSP mydsp = new DSP();
+    private FMOD_DSP_READCALLBACK myDSPCallback;
 
     private Channel channel;
     private IFilter filter;
     private StereoHistoryBuffer hist = new StereoHistoryBuffer();
 
     public Player() {
+        myDSPCallback = new HistoricalDSPCallback();
         init();
         run();
     }
 
     public void init() {
-		try {
-			Init.loadLibraries();
-		}
-		catch(InitException e) {
-			java.lang.System.err.println(String.format("NativeFmodEx error! %s\n", e.getMessage()));
-			java.lang.System.exit(1);
-		}
+        try {
+            Init.loadLibraries();
+        } catch (InitException e) {
+            java.lang.System.err.println(String.format("NativeFmodEx error! %s\n", e.getMessage()));
+            java.lang.System.exit(1);
+        }
 
-		if(NATIVEFMODEX_LIBRARY_VERSION != NATIVEFMODEX_JAR_VERSION) {
-			printfExit("Error!  NativeFmodEx library version (%08x) is different to jar version (%08x)\n",
-					NATIVEFMODEX_LIBRARY_VERSION, NATIVEFMODEX_JAR_VERSION);
-			return;
-		}
+        if (NATIVEFMODEX_LIBRARY_VERSION != NATIVEFMODEX_JAR_VERSION) {
+            printfExit("Error!  NativeFmodEx library version (%08x) is different to jar version (%08x)\n",
+                    NATIVEFMODEX_LIBRARY_VERSION, NATIVEFMODEX_JAR_VERSION);
+            return;
+        }
 
-		init = true;
-	}
+        init = true;
+    }
 
     public void setFilter(IFilter filter) {
         this.filter = filter;
@@ -66,80 +59,54 @@ public class Player {
         mydsp.setBypass(false);
     }
 
-	private FMOD_DSP_READCALLBACK myDSPCallback = new FMOD_DSP_READCALLBACK(){
 
-        int pos = 0;
 
-		public FMOD_RESULT FMOD_DSP_READCALLBACK(FMOD_DSP_STATE dsp_state, FloatBuffer inbuffer, FloatBuffer outbuffer,
-				int length, int inchannels, int outchannels) {
-
-            for (int sample = 0; sample < length; sample++) {
-
-                hist.getLeft().add(inbuffer.get());
-                hist.getRight().add(inbuffer.get());
-
-                float l = 0, r = 0;
-                int limit = Math.min(hist.length(), filter.getTaps());
-
-                for (int i = 0; i < limit; i++) {
-                    l += hist.getLeft().get(i) * filter.getLeft(i);
-                    r += hist.getRight().get(i) * filter.getRight(i);
-                }
-
-                outbuffer.put(l);
-                outbuffer.put(r);
-
-            }
-            inbuffer.rewind();
-            outbuffer.rewind();
-
-            return FMOD_OK;
-        }
-    };
 
     public void run() {
 
         channel = new Channel();
 
         //Create a System object and initialize.
-		errorCheck(FmodEx.System_Create(system));
-		errorCheck(system.init(32, FMOD_INIT_NORMAL, null));
+        errorCheck(FmodEx.System_Create(system));
+        errorCheck(system.init(32, FMOD_INIT_NORMAL, null));
 
         {
-			FMOD_DSP_DESCRIPTION dspdesc = FMOD_DSP_DESCRIPTION.allocate();
-			dspdesc.setChannels(0); // 0 = whatever comes in, else specify.
-			dspdesc.setRead(myDSPCallback);
-			errorCheck(system.createDSP(dspdesc, mydsp));
-		}
+            FMOD_DSP_DESCRIPTION dspdesc = FMOD_DSP_DESCRIPTION.allocate();
+            dspdesc.setChannels(0); // 0 = whatever comes in, else specify.
+            dspdesc.setRead(myDSPCallback);
+            errorCheck(system.createDSP(dspdesc, mydsp));
+        }
 
         mydsp.setBypass(true);
-		errorCheck(system.addDSP(mydsp, null));
-	}
+        errorCheck(system.addDSP(mydsp, null));
+    }
 
     public void play() {
         errorCheck(system.playSound(FMOD_CHANNEL_FREE, sound, false, channel));
     }
 
-    public boolean isRunning() { return deinit; }
+    public boolean isRunning() {
+        return deinit;
+    }
 
     public void stop() {
-		if(!init || deinit) return;
-		deinit = true;
+        if (!init || deinit) return;
+        deinit = true;
 
 
         //shutdown
-		if(!sound.isNull()) {
-			errorCheck(sound.release());
-		}
-		if(!mydsp.isNull()) {
-			errorCheck(mydsp.release());
-		}
+        if (!sound.isNull()) {
+            errorCheck(sound.release());
+        }
+        if (!mydsp.isNull()) {
+            errorCheck(mydsp.release());
+        }
 
-		if(!system.isNull()) {
-			errorCheck(system.close());
-			errorCheck(system.release());
-		}
-	}
+        if (!system.isNull()) {
+            errorCheck(system.close());
+            errorCheck(system.release());
+        }
+    }
 
     public void loadAudioFile(String s) {
         java.lang.System.out.println("Loading: " + s);
@@ -152,8 +119,9 @@ public class Player {
     }
 
     private void errorCheck(FMOD_RESULT result) {
-		if(result != FMOD_RESULT.FMOD_OK) {
-			printfExit("FMOD error! (%d) %s\n", result.asInt(), FmodEx.FMOD_ErrorString(result));
-		}
-	}
+        if (result != FMOD_RESULT.FMOD_OK) {
+            printfExit("FMOD error! (%d) %s\n", result.asInt(), FmodEx.FMOD_ErrorString(result));
+        }
+    }
+
 }

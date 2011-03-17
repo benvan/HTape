@@ -8,6 +8,7 @@ public class HistoryBuffer {
     private int size;
 
     public HistoryBuffer(int size) {
+        if (size == 0) size = 1;
         this.size = size;
         values = new float[size];
     }

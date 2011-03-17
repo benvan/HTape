@@ -1,5 +1,6 @@
 package htape;
 
+import htape.audio.HistoricalDSPCallback;
 import htape.util.StereoHistoryBuffer;
 import htape.util.filtering.IFilter;
 import org.jouvieje.fmodex.*;

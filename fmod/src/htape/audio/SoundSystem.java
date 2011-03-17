@@ -1,10 +1,12 @@
 package htape.audio;
 
-import htape.geometry.SourceTag;
 import org.jouvieje.fmodex.*;
 import org.jouvieje.fmodex.System;
+import org.jouvieje.fmodex.callbacks.FMOD_DSP_READCALLBACK;
 import org.jouvieje.fmodex.enumerations.FMOD_RESULT;
 import org.jouvieje.fmodex.exceptions.InitException;
+import org.jouvieje.fmodex.structures.FMOD_DSP_DESCRIPTION;
+import sun.nio.cs.HistoricallyNamedCharset;
 
 import java.util.ArrayList;
 import java.util.Collection;
@@ -24,14 +26,14 @@ public class SoundSystem {
     org.jouvieje.fmodex.System fmodSystem;
     org.jouvieje.fmodex.Channel fmodChannel;
     org.jouvieje.fmodex.DSP fmodDSP;
+    FMOD_DSP_READCALLBACK fmodDSPCallback;
 
     public SoundSystem() {
         sources = new ArrayList<ISource>();
         fmodSystem = new System();
         fmodChannel = new Channel();
         fmodDSP = new DSP();
-
-
+        fmodDSPCallback = new HistoricalDSPCallback();
 
         init();
     }
@@ -52,6 +54,16 @@ public class SoundSystem {
         //Create a System object and initialize.
 		errorCheck(FmodEx.System_Create(fmodSystem));
 		errorCheck(fmodSystem.init(32, FMOD_INIT_NORMAL, null));
+
+
+        FMOD_DSP_DESCRIPTION dspdesc = FMOD_DSP_DESCRIPTION.allocate();
+        dspdesc.setChannels(0); // 0 = whatever comes in, else specify.
+        dspdesc.setRead(fmodDSPCallback);
+
+        errorCheck(fmodSystem.createDSP(dspdesc, fmodDSP));
+
+        //fmodDSP.setBypass(true);
+        errorCheck(fmodSystem.addDSP(fmodDSP, null));
 
     }
 

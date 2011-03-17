@@ -24,4 +24,8 @@ public class PointSource {
         position.setY(point.getY());
         position.setZ(point.getZ());
     }
+
+    public Point getPosition(){
+        return position;
+    }
 }

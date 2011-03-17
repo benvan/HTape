@@ -40,4 +40,8 @@ public class Point {
     public void setZ(double z) {
         this.z = z;
     }
+
+    public double dot(Point v) {
+        return x*v.x + y*v.y + z*v.z;
+    }
 }

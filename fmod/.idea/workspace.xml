@@ -20,7 +20,7 @@
   </component>
   <component name="DebuggerManager">
     <method_breakpoints>
-      <breakpoint url="jar://$PROJECT_DIR$/lib/NativeFmodEx.jar!/org/jouvieje/fmodex/System.class" line="127" class="org.jouvieje.fmodex.System" package="">
+      <breakpoint url="jar://$PROJECT_DIR$/lib/NativeFmodEx.jar!/org/jouvieje/fmodex/System.class" line="127" class="org.jouvieje.fmodex.System" package="org.jouvieje.fmodex">
         <option name="WATCH_ENTRY" value="true" />
         <option name="WATCH_EXIT" value="true" />
         <option name="ENABLED" value="true" />
@@ -93,29 +93,33 @@
   </component>
   <component name="FileEditorManager">
     <leaf>
-      <file leaf-file-name="World.java" pinned="false" current="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/htape/World.java">
+      <file leaf-file-name="MatrixTest.java" pinned="false" current="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/MatrixTest.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="91" column="48" selection-start="2496" selection-end="2496" vertical-scroll-proportion="0.0">
+            <state line="54" column="35" selection-start="1595" selection-end="1595" vertical-scroll-proportion="0.0">
+              <folding>
+                <element signature="imports" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="Camera.java" pinned="false" current="true" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/src/htape/geometry/Camera.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state line="53" column="52" selection-start="870" selection-end="870" vertical-scroll-proportion="1.2579114">
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="HistoryBuffer.java" pinned="false" current="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/htape/util/HistoryBuffer.java">
+      <file leaf-file-name="WorldView.java" pinned="false" current="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/htape/gui/WorldView.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="10" column="32" selection-start="230" selection-end="230" vertical-scroll-proportion="0.0">
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="PointSource.java" pinned="false" current="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/htape/geometry/PointSource.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state line="28" column="24" selection-start="598" selection-end="598" vertical-scroll-proportion="0.0">
-              <folding />
+            <state line="42" column="57" selection-start="1185" selection-end="1185" vertical-scroll-proportion="0.0">
+              <folding>
+                <element signature="imports" expanded="true" />
+              </folding>
             </state>
           </provider>
         </entry>
@@ -123,34 +127,34 @@
       <file leaf-file-name="Matrix.java" pinned="false" current="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/htape/geometry/Matrix.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="24" column="17" selection-start="468" selection-end="468" vertical-scroll-proportion="0.0">
+            <state line="91" column="18" selection-start="2336" selection-end="2336" vertical-scroll-proportion="0.0">
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="Point.java" pinned="false" current="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/htape/geometry/Point.java">
+      <file leaf-file-name="Component.class" pinned="false" current="false" current-in-tab="false">
+        <entry file="jar:///usr/lib/jvm/java-6-openjdk/jre/lib/rt.jar!/java/awt/Component.class">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="37" column="5" selection-start="556" selection-end="556" vertical-scroll-proportion="0.0">
+            <state line="422" column="16" selection-start="15384" selection-end="15384" vertical-scroll-proportion="0.0">
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="Camera.java" pinned="false" current="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/htape/geometry/Camera.java">
+      <file leaf-file-name="World.java" pinned="false" current="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/htape/World.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="38" column="16" selection-start="541" selection-end="541" vertical-scroll-proportion="0.0">
+            <state line="63" column="24" selection-start="1408" selection-end="1408" vertical-scroll-proportion="0.0">
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="MatrixTest.java" pinned="false" current="true" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/src/MatrixTest.java">
+      <file leaf-file-name="WorldViewCanvas.java" pinned="false" current="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/htape/gui/WorldViewCanvas.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="15" column="36" selection-start="385" selection-end="385" vertical-scroll-proportion="0.34562212">
+            <state line="73" column="20" selection-start="2132" selection-end="2132" vertical-scroll-proportion="0.0">
               <folding>
                 <element signature="imports" expanded="true" />
               </folding>
@@ -158,31 +162,31 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="HTapeWorld.java" pinned="false" current="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/HTapeWorld.java">
+      <file leaf-file-name="LocationPicker.java" pinned="false" current="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/htape/util/LocationPicker.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="15" column="33" selection-start="374" selection-end="374" vertical-scroll-proportion="0.0">
+            <state line="87" column="37" selection-start="2392" selection-end="2421" vertical-scroll-proportion="0.0">
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="HRTFTest.java" pinned="false" current="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/htape/gui/HRTFTest.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state line="33" column="13" selection-start="1415" selection-end="1415" vertical-scroll-proportion="0.0">
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="HTape.java" pinned="false" current="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/HTape.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state line="101" column="18" selection-start="3604" selection-end="3604" vertical-scroll-proportion="0.0">
               <folding>
                 <element signature="imports" expanded="true" />
               </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="Vector.java" pinned="false" current="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/htape/geometry/Vector.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state line="6" column="0" selection-start="97" selection-end="97" vertical-scroll-proportion="0.0">
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="HRIR.java" pinned="false" current="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/htape/util/filtering/hrtf/HRIR.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state line="11" column="13" selection-start="236" selection-end="236" vertical-scroll-proportion="0.0">
-              <folding />
             </state>
           </provider>
         </entry>
@@ -201,8 +205,6 @@
   <component name="IdeDocumentHistory">
     <option name="changedFiles">
       <list>
-        <option value="$PROJECT_DIR$/src/htape/HistoricalDSPCallback.java" />
-        <option value="$PROJECT_DIR$/src/htape/audio/EmptyFilter.java" />
         <option value="$PROJECT_DIR$/src/htape/Player.java" />
         <option value="$PROJECT_DIR$/src/htape/EmptyHRTF.java" />
         <option value="$PROJECT_DIR$/src/htape/util/filtering/hrtf/EmptyHRTF.java" />
@@ -210,13 +212,15 @@
         <option value="$PROJECT_DIR$/src/htape/audio/HistoricalDSPCallback.java" />
         <option value="$PROJECT_DIR$/src/htape/geometry/Vector.java" />
         <option value="$PROJECT_DIR$/src/htape/geometry/PointSource.java" />
-        <option value="$PROJECT_DIR$/src/htape/geometry/Camera.java" />
         <option value="$PROJECT_DIR$/src/htape/geometry/Point.java" />
         <option value="$PROJECT_DIR$/src/htape/util/HistoryBuffer.java" />
         <option value="$PROJECT_DIR$/src/HTapeWorld.java" />
-        <option value="$PROJECT_DIR$/src/htape/geometry/Matrix.java" />
         <option value="$PROJECT_DIR$/src/htape/World.java" />
+        <option value="$PROJECT_DIR$/src/htape/geometry/Camera.java" />
+        <option value="$PROJECT_DIR$/src/htape/gui/WorldViewCanvas.java" />
         <option value="$PROJECT_DIR$/src/MatrixTest.java" />
+        <option value="$PROJECT_DIR$/src/htape/gui/WorldView.java" />
+        <option value="$PROJECT_DIR$/src/htape/geometry/Matrix.java" />
       </list>
     </option>
   </component>
@@ -337,6 +341,28 @@
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
             <PATH_ELEMENT>
+              <option name="myItemId" value="gui" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="fmod" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="fmod" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="src" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="htape" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
               <option name="myItemId" value="geometry" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
@@ -394,11 +420,11 @@
       <recent name="htape.util" />
     </key>
     <key name="CreateClassDialog.RecentsKey">
+      <recent name="htape.gui" />
       <recent name="htape.geometry" />
       <recent name="htape" />
       <recent name="htape.audio" />
       <recent name="htape.util" />
-      <recent name="htape.util.filtering" />
     </key>
     <key name="MoveClassesOrPackagesDialog.RECENTS_KEY">
       <recent name="htape.util.filtering.hrtf" />
@@ -671,7 +697,7 @@
     <servers />
   </component>
   <component name="ToolWindowManager">
-    <frame x="0" y="27" width="1920" height="1150" extended-state="0" />
+    <frame x="0" y="27" width="1280" height="1150" extended-state="0" />
     <editor active="true" />
     <layout>
       <window_info id="Changes" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
@@ -681,10 +707,10 @@
       <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Messages" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32767233" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
-      <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.15034778" sideWeight="0.4755245" order="1" side_tool="true" content_ui="tabs" />
+      <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.22864117" sideWeight="0.32767233" order="1" side_tool="true" content_ui="tabs" />
       <window_info id="Maven Projects" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Commander" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.4" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
-      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.15034778" sideWeight="0.19480519" order="0" side_tool="false" content_ui="tabs" />
+      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.22864117" sideWeight="0.34265736" order="0" side_tool="false" content_ui="tabs" />
       <window_info id="Dependency Viewer" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.3216783" sideWeight="0.9978046" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Cvs" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
@@ -731,69 +757,6 @@
     <option name="FILTER_TARGETS" value="false" />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/src/htape/audio/ISource.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="7" column="17" selection-start="123" selection-end="123" vertical-scroll-proportion="0.0" />
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/FloatTest.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="28" column="56" selection-start="780" selection-end="780" vertical-scroll-proportion="0.0" />
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/htape/audio/SoundSystem.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="64" column="34" selection-start="2176" selection-end="2176" vertical-scroll-proportion="0.0" />
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/htape/audio/HistoricalDSPCallback.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="23" column="11" selection-start="627" selection-end="627" vertical-scroll-proportion="0.0" />
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/htape/Player.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="2" column="18" selection-start="34" selection-end="34" vertical-scroll-proportion="0.0" />
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/htape/util/filtering/hrtf/EmptyHRTF.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="2" column="30" selection-start="66" selection-end="66" vertical-scroll-proportion="0.0" />
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/htape/util/filtering/hrtf/HRIR.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="11" column="13" selection-start="236" selection-end="236" vertical-scroll-proportion="0.0" />
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/htape/geometry/Vector.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="6" column="0" selection-start="97" selection-end="97" vertical-scroll-proportion="0.0">
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/htape/geometry/PointSource.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="28" column="24" selection-start="598" selection-end="598" vertical-scroll-proportion="0.0">
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/htape/util/HistoryBuffer.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="10" column="32" selection-start="230" selection-end="230" vertical-scroll-proportion="0.0">
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/htape/geometry/Camera.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="38" column="16" selection-start="541" selection-end="541" vertical-scroll-proportion="0.0">
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/htape/geometry/Point.java">
       <provider selected="true" editor-type-id="text-editor">
         <state line="37" column="5" selection-start="556" selection-end="556" vertical-scroll-proportion="0.0">
@@ -801,9 +764,99 @@
         </state>
       </provider>
     </entry>
+    <entry file="jar:///usr/lib/jvm/java-6-openjdk/jre/lib/rt.jar!/javax/swing/Timer.class">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="21" column="11" selection-start="956" selection-end="956" vertical-scroll-proportion="0.0">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="jar:///usr/lib/jvm/java-6-openjdk/jre/lib/rt.jar!/java/util/Timer.class">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="13" column="11" selection-start="417" selection-end="417" vertical-scroll-proportion="0.0">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/FloatTest.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="28" column="56" selection-start="780" selection-end="780" vertical-scroll-proportion="0.0" />
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/src/HTapeWorld.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="15" column="33" selection-start="374" selection-end="374" vertical-scroll-proportion="0.0">
+        <state line="17" column="18" selection-start="438" selection-end="438" vertical-scroll-proportion="0.0">
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/htape/util/filtering/hrtf/HRTFFactory.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="27" column="0" selection-start="933" selection-end="933" vertical-scroll-proportion="0.0">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="jar:///usr/lib/jvm/java-6-openjdk/jre/lib/rt.jar!/java/awt/Component.class">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="422" column="16" selection-start="15384" selection-end="15384" vertical-scroll-proportion="0.0">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/htape/util/LocationPicker.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="87" column="37" selection-start="2392" selection-end="2421" vertical-scroll-proportion="0.0">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/htape/gui/HRTFTest.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="33" column="13" selection-start="1415" selection-end="1415" vertical-scroll-proportion="0.0">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/htape/gui/WorldViewCanvas.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="73" column="20" selection-start="2132" selection-end="2132" vertical-scroll-proportion="0.0">
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/HTape.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="101" column="18" selection-start="3604" selection-end="3604" vertical-scroll-proportion="0.0">
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/MatrixTest.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="54" column="35" selection-start="1595" selection-end="1595" vertical-scroll-proportion="0.0">
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/htape/World.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="63" column="24" selection-start="1408" selection-end="1408" vertical-scroll-proportion="0.0">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/htape/gui/WorldView.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="42" column="57" selection-start="1185" selection-end="1185" vertical-scroll-proportion="0.0">
           <folding>
             <element signature="imports" expanded="true" />
           </folding>
@@ -812,24 +865,15 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/htape/geometry/Matrix.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="24" column="17" selection-start="468" selection-end="468" vertical-scroll-proportion="0.0">
+        <state line="91" column="18" selection-start="2336" selection-end="2336" vertical-scroll-proportion="0.0">
           <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/htape/World.java">
+    <entry file="file://$PROJECT_DIR$/src/htape/geometry/Camera.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="91" column="48" selection-start="2496" selection-end="2496" vertical-scroll-proportion="0.0">
+        <state line="53" column="52" selection-start="870" selection-end="870" vertical-scroll-proportion="1.2579114">
           <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/MatrixTest.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="15" column="36" selection-start="385" selection-end="385" vertical-scroll-proportion="0.34562212">
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
         </state>
       </provider>
     </entry>

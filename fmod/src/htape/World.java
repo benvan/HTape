@@ -78,7 +78,7 @@ public class World {
         //find az / elevation
 
         double el = Math.atan2(projection.getY(), projection.getZ());
-        System.out.println(el*180/Math.PI);
+//        System.out.println(el*180/Math.PI);
 
         Matrix elevationPlane = new Matrix(new double[][]{
                 {1,0,0,0},
@@ -89,7 +89,7 @@ public class World {
 
         projection = elevationPlane.mult(projection).toPoint();
         double az = Math.atan2(projection.getZ(), projection.getX());
-        System.out.println(90- (az*180/Math.PI));
+        //System.out.println(90- (az*180/Math.PI));
 
 
     }
@@ -98,5 +98,24 @@ public class World {
         for (PointSource pointSource : sources) {
             update(pointSource);
         }
+    }
+
+    //TODO marked for deletion
+    public IHRTF getHRTF(){
+        return hrtf;
+    }
+
+    //TODO marked for deletion
+    public Camera getCamera(){
+        return camera;
+    }
+
+    //TODO marked for deletion
+    public Collection<PointSource> getSources() {
+        return sources;
+    }
+
+    public void setHRTF(IHRTF HRTF) {
+        this.hrtf = HRTF;
     }
 }

@@ -7,6 +7,7 @@ public class Camera {
 
     Point u,v,w;
     Point c;
+    double f = 300; //focal length
 
     public Camera() {
         c = new Point();
@@ -38,5 +39,19 @@ public class Camera {
 
     public Point getPos() {
         return c;
+    }
+
+    public void transform(Matrix m) {
+        u = m.mult(u).toPoint();
+        v = m.mult(v).toPoint();
+        w = m.mult(w).toPoint();
+    }
+
+    public double getFocalLength(){
+        return f;
+    }
+
+    public void setFocalLength(double focalLength) {
+        this.f = focalLength;
     }
 }

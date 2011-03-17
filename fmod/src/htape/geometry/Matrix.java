@@ -70,6 +70,33 @@ public class Matrix {
         return m;
     }
 
+    public static Matrix rotX(double ang){
+        return new Matrix(new double[][]{
+            {1,0,0,0},
+            {0,Math.cos(ang),-Math.sin(ang),0},
+            {0,Math.sin(ang),Math.cos(ang),0},
+            {0,0,0,1}
+        });
+    }
+    public static Matrix rotZ(double ang){
+        return new Matrix(new double[][]{
+            {Math.cos(ang),-Math.sin(ang),0,0},
+            {Math.sin(ang),Math.cos(ang),0,0},
+            {0,0,1,0},
+            {0,0,0,1}
+        });
+    }
+    public static Matrix rotY(double ang){
+        return new Matrix(new double[][]{
+            {Math.cos(ang) ,0,Math.sin(ang),0},
+            {0,1,0,0},
+            {-Math.sin(ang),0,Math.cos(ang),0},
+            {0,0,0,1}
+        });
+    }
+
+
+
    public void print () {
        System.out.println();
       for (int i = 0; i < rowCount(); i++) {

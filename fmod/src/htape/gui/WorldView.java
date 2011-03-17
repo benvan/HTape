@@ -31,19 +31,38 @@ public class WorldView {
             }
 
             public void keyPressed(KeyEvent keyEvent) {
-                Point pos = w.getCamera().getPos();
+                Camera camera = w.getCamera();
+                Point pos = camera.getPos();
                 switch (keyEvent.getKeyCode()) {
-                    case KeyEvent.VK_UP:
+                    case KeyEvent.VK_Q:
+                        camera.setFocalLength(camera.getFocalLength()-10);
+                        break;
+                    case KeyEvent.VK_E:
+                        camera.setFocalLength(camera.getFocalLength()+10);
+                        break;
+                    case KeyEvent.VK_W:
                         pos.setZ(pos.getZ() + 50);
                         break;
-                    case KeyEvent.VK_DOWN:
+                    case KeyEvent.VK_S:
                         pos.setZ(pos.getZ() - 50);
                         break;
+                    case KeyEvent.VK_A:
+                        pos.setX(pos.getX() - 50);
+                        break;
+                    case KeyEvent.VK_D:
+                        pos.setX(pos.getX() + 50);
+                        break;
                     case KeyEvent.VK_LEFT:
-                        w.getCamera().transform(Matrix.rotY(-Math.PI/32));
+                        camera.transform(Matrix.rotY(-Math.PI / 32));
                         break;
                     case KeyEvent.VK_RIGHT:
-                        w.getCamera().transform(Matrix.rotY(Math.PI/32));
+                        camera.transform(Matrix.rotY(Math.PI / 32));
+                        break;
+                    case KeyEvent.VK_UP:
+                        camera.transform(Matrix.rotX(Math.PI / 64));
+                        break;
+                    case KeyEvent.VK_DOWN:
+                        camera.transform(Matrix.rotX(-Math.PI / 64));
                         break;
                 }
             }

@@ -58,13 +58,17 @@ public class WorldViewCanvas extends JPanel {
                 {0,0,0,1},
         });
 
+        drawOrigin(g, f, m, o_x, o_y);
+
+
+
         for (int i = 0; i < positions.length; i++) {
             Point[] positionRow = positions[i];
             projections[i] = new Point[positionRow.length];
             for (int j = 0; j < positionRow.length; j++) {
                 Point pos = positionRow[j];
 
-                Point coord = m.mult(pos).toPoint();
+                Point coord = pos.dup();
                 coord.setX(f*coord.getX() / coord.getZ());
                 coord.setY(f*coord.getY() / coord.getZ());
                 projections[i][j] = new Matrix(new double[][]{
@@ -85,13 +89,18 @@ public class WorldViewCanvas extends JPanel {
                 Point point = projectionRow[j];
 
                 if (prev.getZ() > 0){
-                    g.drawLine((int) (prev.getX()), (int) (prev.getY()), (int) (point.getX()), (int) (point.getY()));
+                    if (point.getZ() > 0) {
+                        g.drawLine((int) (prev.getX()), (int) (prev.getY()), (int) (point.getX()), (int) (point.getY()));
+                        if (i + 1 < projections.length) {
+                            Point neighbour = projections[i+1][j];
+                            if (neighbour.getZ() > 0) {
+                                g.drawLine((int)(neighbour.getX()), (int)(neighbour.getY()), (int)(point.getX()), (int)(point.getY()));
+                            }
+                        }
+                    }
                     g.drawRect((int)prev.getX()-1, (int) prev.getY()-1, 2,2);
 
-                    if (i + 1 < projections.length) {
-                        Point neighbour = projections[i+1][j];
-                        g.drawLine((int)(neighbour.getX()), (int)(neighbour.getY()), (int)(point.getX()), (int)(point.getY()));
-                    }
+
                 }
 
 
@@ -103,9 +112,43 @@ public class WorldViewCanvas extends JPanel {
         //draw point sources
         g.setColor(Color.red);
         for (PointSource pointSource : world.getSources()) {
-            Point p = m.mult(pointSource.getPosition()).toPoint();
+
+            Point coord = m.mult(pointSource.getPosition()).toPoint();
+            coord.setX(f*coord.getX() / coord.getZ());
+            coord.setY(f*coord.getY() / coord.getZ());
+            Point p = new Matrix(new double[][]{
+                {1,0,0,o_x},
+                {0,1,0,o_y},
+                {0,0,1,0},
+                {0,0,0,1}
+            }).mult(coord).toPoint();
+            
             g.drawRect((int)p.getX()-3, (int) p.getY()-3, 6,6);
+
+            //draw line to hrtf found
+            coord = m.mult(getPosition(world.hrir)).toPoint();
+            coord.setX(f*coord.getX() / coord.getZ());
+            coord.setY(f*coord.getY() / coord.getZ());
+            Point hrir = new Matrix(new double[][]{
+                {1,0,0,o_x},
+                {0,1,0,o_y},
+                {0,0,1,0},
+                {0,0,0,1}
+            }).mult(coord).toPoint();
+
+            g.drawRect((int)hrir.getX()-3, (int) hrir.getY()-3, 6,6);
+            g.drawLine((int) p.getX(), (int) p.getY(), (int) hrir.getX(), (int) hrir.getY());
+
+
+
         }
+
+
+
+        g.drawString("x: " + camera.getPos().getX(), width - 100, 10);
+        g.drawString("y: " + camera.getPos().getY(), width - 100, 20);
+        g.drawString("z: " + camera.getPos().getZ(), width - 100, 30);
+
 
 
 
@@ -114,17 +157,50 @@ public class WorldViewCanvas extends JPanel {
 
     }
 
+    private void drawOrigin(Graphics g, double f, Matrix m, int o_x, int o_y) {
+        g.setColor(Color.green);
+        int originSize = 100;
+        Point o_a = m.mult(new Point(-originSize,0,0)).toPoint()
+                ,o_b = m.mult(new Point(originSize,0,0)).toPoint()
+                ,o_c = m.mult(new Point(0,0,-originSize)).toPoint()
+                ,o_d = m.mult(new Point(0,0,originSize)).toPoint();
+
+        Matrix centre = new Matrix(new double[][]{
+                    {1,0,0,o_x},
+                    {0,1,0,o_y},
+                    {0,0,1,0},
+                    {0,0,0,1}
+                });
+
+        o_a.setX(f*o_a.getX() / o_a.getZ());
+        o_a.setY(f*o_a.getY() / o_a.getZ());
+
+        o_b.setX(f*o_b.getX() / o_b.getZ());
+        o_b.setY(f*o_b.getY() / o_b.getZ());
+
+        o_c.setX(f*o_c.getX() / o_c.getZ());
+        o_c.setY(f*o_c.getY() / o_c.getZ());
+
+        o_d.setX(f*o_d.getX() / o_d.getZ());
+        o_d.setY(f*o_d.getY() / o_d.getZ());
+
+        o_a = centre.mult(o_a).toPoint();
+        o_b = centre.mult(o_b).toPoint();
+        o_c = centre.mult(o_c).toPoint();
+        o_d = centre.mult(o_d).toPoint();
+
+        g.drawLine((int) o_a.getX(), (int)o_a.getY(), (int)o_b.getX(), (int)o_b.getY());
+        g.drawLine((int) o_c.getX(), (int)o_c.getY(), (int)o_d.getX(), (int)o_d.getY());
+
+        g.setColor(Color.black);
+
+    }
+
     private void createPositions() {
         HRIR[][] hrirs = world.getHRTF().getHrirs();
         positions = new Point[hrirs.length][];
 
-        int scale = 200;
-        Matrix resize = new Matrix(new double[][]{
-            {scale,0,0,0},
-            {0,scale,0,0},
-            {0,0,scale,0},
-            {0,0,0,1}
-        });
+
 
         for (int i = 0; i < hrirs.length; i++) {
             HRIR[] hrir = hrirs[i];
@@ -132,25 +208,38 @@ public class WorldViewCanvas extends JPanel {
             for (int j = 0; j < hrir.length; j++) {
                 HRIR hrir1 = hrir[j];
 
-                double az = Math.toRadians(90 - hrir1.getAzimuth());
-                double el = Math.toRadians(hrir1.getElevation());
-                Point p = new Point(Math.cos(az), 0, Math.sin(az));
-
-
-
-                Matrix m = new Matrix(new double[][]{
-                    {1,0,0,0},
-                    {0,Math.cos(el),-Math.sin(el),0},
-                    {0,Math.sin(el),Math.cos(el),0},
-                    {0,0,0,1},
-                }).mult(resize);
-
-
-
-                positions[i][j] = m.mult(p).toPoint();
+                positions[i][j] = getPosition(hrir1);
 
             }
         }
+    }
+
+    private Point getPosition(HRIR hrir1) {
+        if (hrir1 == null) {
+            return new Point();
+        }
+        int scale = 1000;
+        Matrix resize = new Matrix(new double[][]{
+                {scale, 0, 0, 0},
+                {0, scale, 0, 0},
+                {0, 0, scale, 0},
+                {0, 0, 0, 1}
+        });
+
+        double az = Math.toRadians(90 - hrir1.getAzimuth());
+        double el = Math.toRadians(hrir1.getElevation());
+        Point p = new Point(Math.cos(az), 0, Math.sin(az));
+
+
+        Matrix m = new Matrix(new double[][]{
+                {1, 0, 0, 0},
+                {0, Math.cos(el), -Math.sin(el), 0},
+                {0, Math.sin(el), Math.cos(el), 0},
+                {0, 0, 0, 1},
+        }).mult(resize);
+
+
+        return m.mult(p).toPoint();
     }
 
 

@@ -18,7 +18,7 @@ public class MatrixTest {
         World world = new World();
         PointSource p = world.createSource();
         world.bind(p, "media/sample.wav");
-        world.move(p, new Point(-300, -200, 0));
+        world.move(p, new Point(30,30,30));
         
 
         double ang = 0.5;
@@ -37,7 +37,7 @@ public class MatrixTest {
         }));
 
         //world.getCamera().transform(m);
-        world.getCamera().setPos(new Point(0,0,-1000));
+        world.getCamera().setPos(new Point(0,-50,0));
         world.getCamera().setFocalLength(1000);
 
 

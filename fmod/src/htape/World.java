@@ -7,6 +7,7 @@ import htape.geometry.Matrix;
 import htape.geometry.PointSource;
 import htape.geometry.Point;
 import htape.util.filtering.hrtf.EmptyHRTF;
+import htape.util.filtering.hrtf.HRIR;
 import htape.util.filtering.hrtf.IHRTF;
 
 import java.awt.*;
@@ -26,6 +27,8 @@ public class World {
     Point origin;
     Matrix f;
     public Camera camera;
+
+    public HRIR hrir = null;
 
     public World() {
         soundSystem = new SoundSystem();
@@ -90,6 +93,8 @@ public class World {
         projection = elevationPlane.mult(projection).toPoint();
         double az = Math.atan2(projection.getZ(), projection.getX());
         //System.out.println(90- (az*180/Math.PI));
+
+        hrir = hrtf.get(az, el);
 
 
     }

@@ -44,4 +44,8 @@ public class Point {
     public double dot(Point v) {
         return x*v.x + y*v.y + z*v.z;
     }
+
+    public Point dup() {
+        return new Point(x,y,z);
+    }
 }

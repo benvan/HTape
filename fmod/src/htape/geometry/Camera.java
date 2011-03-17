@@ -9,6 +9,10 @@ public class Camera {
     Point c;
     double f = 300; //focal length
 
+    double fov = 10;
+    double nearPlane = 10;
+    double farPlane = 100000;
+
     public Camera() {
         c = new Point();
         u = new Point();
@@ -53,5 +57,9 @@ public class Camera {
 
     public void setFocalLength(double focalLength) {
         this.f = focalLength;
+    }
+
+    public String info() {
+        return String.format("x: %.2f\ny: %.2f\n z:%.2f", c.getX(), c.getY(), c.getZ());
     }
 }

@@ -5,6 +5,7 @@ import htape.util.io.UnrecognisedHRTFException;
 import javax.swing.*;
 import java.awt.*;
 import java.awt.event.*;
+import java.io.File;
 import java.io.IOException;
 
 /**
@@ -16,13 +17,21 @@ import java.io.IOException;
  */
 public class testmain {
 
-    private static String hrtf_location = "/home/ben/project/resources/hrtfs/listen/38.hrtf.listen.bin";//"/home/ben/subject_008.hrtf.cipic.bin";
+//    private static String hrtf_location = "/home/ben/project/resources/hrtfs/listen/38.hrtf.listen.bin";
+    private static String hrtf_location = "/home/ben/subject_008.hrtf.cipic.bin";
     private static String hrtf_directory = "/home/ben/project/resources/hrtfs/listen/";
     private static String wav_location = "/home/ben/play/sample.wav";
 
     public static void main(String[] args) {
 
-
+        if (args.length > 0) {
+            if (args.length != 2) {
+                System.out.println("Usage: testmain hrtf_file wav_file");
+                System.exit(0);
+            }
+            hrtf_location = args[0];
+            wav_location = args[1];
+        }
 
         final int[] hrtfIndex = {18};
         final LocationPicker loc = new LocationPicker();
@@ -32,7 +41,7 @@ public class testmain {
         try {
             player.loadHRTF(hrtf_location);
             loc.represent(player.getHRTF());
-        }catch (IOException e) {
+        } catch (IOException e) {
             java.lang.System.err.println(e.getMessage());
         } catch (UnrecognisedHRTFException e) {
             java.lang.System.err.println(e.getMessage());
@@ -50,13 +59,20 @@ public class testmain {
 
 
         JFrame frame = new JFrame();
-
         frame.setPreferredSize(new Dimension(1100, 500));
         frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+        frame.getContentPane().add(loc);
 
-        frame.add(loc);
+        loc.getActionMap().put("foo", new AbstractAction() {
+            public void actionPerformed(ActionEvent actionEvent) {
 
-        frame.addKeyListener(new KeyListener() {
+            }
+        });
+
+        loc.getInputMap().put(KeyStroke.getKeyStroke(KeyEvent.VK_A,  0), "foo");
+
+
+        /*frame.addKeyListener(new KeyListener() {
 
             public void keyTyped(KeyEvent keyEvent) {
             }
@@ -69,6 +85,7 @@ public class testmain {
                             player.play();
                             break;
                         case KeyEvent.VK_PAGE_UP:
+
                             hrtfIndex[0] = Math.min(59, hrtfIndex[0]);
                             hrtfIndex[0] = Math.max(2, hrtfIndex[0]);
                             player.loadHRTF(String.format("%s/%02d.hrtf_bin", hrtf_directory, ++hrtfIndex[0]));
@@ -91,11 +108,10 @@ public class testmain {
 
             public void keyReleased(KeyEvent keyEvent) {
             }
-        });
+        });*/
 
         frame.pack();
         frame.setVisible(true);
-
 
 
         Timer t = new Timer(10, new ActionListener() {
@@ -110,8 +126,9 @@ public class testmain {
         t.start();
 
 
+    }
 
-
+    private static void nextTrack() {
 
     }
 

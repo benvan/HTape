@@ -3,12 +3,13 @@ package htape.util.filtering.hrtf;
 public class HRTF implements IHRTF {
 
     HRIR[][] hrirs;
-    private int maxEl=0, minEl=0;
+    protected double maxEl=0;
+    protected double minEl=0;
 
     public HRTF(HRIR[][] positions) {
         this.hrirs = positions;
         for (int i = 0; i < hrirs.length; i++) {
-            int el = positions[i][0].getElevation();
+            double el = positions[i][0].getElevation();
             maxEl = Math.max(el, maxEl);
             minEl = Math.min(el, minEl);
         }
@@ -16,7 +17,7 @@ public class HRTF implements IHRTF {
         System.out.println(minEl);
     }
 
-    public HRIR get(int azimuth, int elevation) {
+    public HRIR get(int azimuth, double elevation) {
 
         azimuth = ((azimuth % 360) + 360) % 360;
 
@@ -34,7 +35,7 @@ public class HRTF implements IHRTF {
         int upper = hrirs.length -1;
         boolean foundUpper = false;
         for (int i = 0; i < hrirs.length; i++) {
-            int el = hrirs[i][0].getElevation();
+            double el = hrirs[i][0].getElevation();
             lower = (el < elevation) ? i : lower;
             if (el > elevation && !foundUpper){
                 upper = i;
@@ -54,7 +55,7 @@ public class HRTF implements IHRTF {
         upper = hrirs[elIndex].length -1;
         foundUpper = false;
         for (int i = 0; i < hrirs[elIndex].length; i++) {
-            int az = hrirs[elIndex][i].getAzimuth();
+            double az = hrirs[elIndex][i].getAzimuth();
             lower = (az < azimuth) ? i : lower;
             if (az > azimuth && !foundUpper) {
                 upper = i;

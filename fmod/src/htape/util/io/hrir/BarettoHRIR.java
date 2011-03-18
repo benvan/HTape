@@ -16,7 +16,7 @@ import java.io.IOException;
 public class BarettoHRIR implements IHRIRReader {
 
 
-    public HRIR read(DataInputStream in, int azimuth, int elevation) throws IOException {
+    public HRIR read(DataInputStream in, double azimuth, double elevation) throws IOException {
         float[] coeffs = new float[512];
         int delay;
         for (int i = 0; i < 512; i++) {

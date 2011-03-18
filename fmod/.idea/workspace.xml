@@ -19,86 +19,6 @@
     <disable_hints />
   </component>
   <component name="DebuggerManager">
-    <line_breakpoints>
-      <breakpoint url="file://$PROJECT_DIR$/src/org/jouvieje/fmodex/examples/_3D.java" line="194" class="org.jouvieje.fmodex.examples._3D" package="org.jouvieje.fmodex.examples">
-        <option name="ENABLED" value="true" />
-        <option name="LOG_ENABLED" value="false" />
-        <option name="LOG_EXPRESSION_ENABLED" value="false" />
-        <option name="SUSPEND_POLICY" value="SuspendAll" />
-        <option name="COUNT_FILTER_ENABLED" value="false" />
-        <option name="COUNT_FILTER" value="0" />
-        <option name="CONDITION_ENABLED" value="false" />
-        <option name="CLASS_FILTERS_ENABLED" value="false" />
-        <option name="INSTANCE_FILTERS_ENABLED" value="false" />
-        <option name="CONDITION" value="" />
-        <option name="LOG_MESSAGE" value="" />
-      </breakpoint>
-      <breakpoint url="file://$PROJECT_DIR$/../../resources/NativeFmodEx Sdk/src/NativeFmodEx/java/org/jouvieje/fmodex/System.java" line="778" class="org.jouvieje.fmodex.System" package="org.jouvieje.fmodex">
-        <option name="ENABLED" value="true" />
-        <option name="LOG_ENABLED" value="false" />
-        <option name="LOG_EXPRESSION_ENABLED" value="false" />
-        <option name="SUSPEND_POLICY" value="SuspendAll" />
-        <option name="COUNT_FILTER_ENABLED" value="false" />
-        <option name="COUNT_FILTER" value="0" />
-        <option name="CONDITION_ENABLED" value="false" />
-        <option name="CLASS_FILTERS_ENABLED" value="false" />
-        <option name="INSTANCE_FILTERS_ENABLED" value="false" />
-        <option name="CONDITION" value="" />
-        <option name="LOG_MESSAGE" value="" />
-      </breakpoint>
-      <breakpoint url="file://$PROJECT_DIR$/../../resources/NativeFmodEx Sdk/src/NativeFmodEx/java/org/jouvieje/fmodex/System.java" line="804" class="org.jouvieje.fmodex.System" package="org.jouvieje.fmodex">
-        <option name="ENABLED" value="true" />
-        <option name="LOG_ENABLED" value="false" />
-        <option name="LOG_EXPRESSION_ENABLED" value="false" />
-        <option name="SUSPEND_POLICY" value="SuspendAll" />
-        <option name="COUNT_FILTER_ENABLED" value="false" />
-        <option name="COUNT_FILTER" value="0" />
-        <option name="CONDITION_ENABLED" value="false" />
-        <option name="CLASS_FILTERS_ENABLED" value="false" />
-        <option name="INSTANCE_FILTERS_ENABLED" value="false" />
-        <option name="CONDITION" value="" />
-        <option name="LOG_MESSAGE" value="" />
-      </breakpoint>
-      <breakpoint url="file://$PROJECT_DIR$/../../resources/NativeFmodEx Sdk/src/NativeFmodEx/java/org/jouvieje/fmodex/System.java" line="806" class="org.jouvieje.fmodex.System" package="org.jouvieje.fmodex">
-        <option name="ENABLED" value="true" />
-        <option name="LOG_ENABLED" value="false" />
-        <option name="LOG_EXPRESSION_ENABLED" value="false" />
-        <option name="SUSPEND_POLICY" value="SuspendAll" />
-        <option name="COUNT_FILTER_ENABLED" value="false" />
-        <option name="COUNT_FILTER" value="0" />
-        <option name="CONDITION_ENABLED" value="false" />
-        <option name="CLASS_FILTERS_ENABLED" value="false" />
-        <option name="INSTANCE_FILTERS_ENABLED" value="false" />
-        <option name="CONDITION" value="" />
-        <option name="LOG_MESSAGE" value="" />
-      </breakpoint>
-      <breakpoint url="file://$PROJECT_DIR$/../../resources/NativeFmodEx Sdk/src/NativeFmodEx/java/org/jouvieje/fmodex/System.java" line="805" class="org.jouvieje.fmodex.System" package="org.jouvieje.fmodex">
-        <option name="ENABLED" value="true" />
-        <option name="LOG_ENABLED" value="false" />
-        <option name="LOG_EXPRESSION_ENABLED" value="false" />
-        <option name="SUSPEND_POLICY" value="SuspendAll" />
-        <option name="COUNT_FILTER_ENABLED" value="false" />
-        <option name="COUNT_FILTER" value="0" />
-        <option name="CONDITION_ENABLED" value="false" />
-        <option name="CLASS_FILTERS_ENABLED" value="false" />
-        <option name="INSTANCE_FILTERS_ENABLED" value="false" />
-        <option name="CONDITION" value="" />
-        <option name="LOG_MESSAGE" value="" />
-      </breakpoint>
-      <breakpoint url="file://$PROJECT_DIR$/../../resources/NativeFmodEx Sdk/src/NativeFmodEx/java/org/jouvieje/fmodex/System.java" line="777" class="org.jouvieje.fmodex.System" package="org.jouvieje.fmodex">
-        <option name="ENABLED" value="true" />
-        <option name="LOG_ENABLED" value="false" />
-        <option name="LOG_EXPRESSION_ENABLED" value="false" />
-        <option name="SUSPEND_POLICY" value="SuspendAll" />
-        <option name="COUNT_FILTER_ENABLED" value="false" />
-        <option name="COUNT_FILTER" value="0" />
-        <option name="CONDITION_ENABLED" value="false" />
-        <option name="CLASS_FILTERS_ENABLED" value="false" />
-        <option name="INSTANCE_FILTERS_ENABLED" value="false" />
-        <option name="CONDITION" value="" />
-        <option name="LOG_MESSAGE" value="" />
-      </breakpoint>
-    </line_breakpoints>
     <method_breakpoints>
       <breakpoint url="jar://$PROJECT_DIR$/lib/NativeFmodEx.jar!/org/jouvieje/fmodex/System.class" line="127" class="org.jouvieje.fmodex.System" package="">
         <option name="WATCH_ENTRY" value="true" />
@@ -173,19 +93,30 @@
   </component>
   <component name="FileEditorManager">
     <leaf>
-      <file leaf-file-name="HRTF.java" pinned="false" current="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/htape/util/filtering/hrtf/HRTF.java">
+      <file leaf-file-name="MatrixTest.java" pinned="false" current="true" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/src/MatrixTest.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="56" column="50" selection-start="1764" selection-end="1764" vertical-scroll-proportion="0.0">
+            <state line="39" column="48" selection-start="1109" selection-end="1109" vertical-scroll-proportion="0.56962025">
+              <folding>
+                <element signature="imports" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="Camera.java" pinned="false" current="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/htape/geometry/Camera.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state line="62" column="54" selection-start="1068" selection-end="1068" vertical-scroll-proportion="0.0">
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="ThreeDTest.java" pinned="false" current="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/htape/util/ThreeDTest.java">
+      <file leaf-file-name="WorldView.java" pinned="false" current="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/htape/gui/WorldView.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="12" column="13" selection-start="226" selection-end="226" vertical-scroll-proportion="0.0">
+            <state line="89" column="21" selection-start="2890" selection-end="2890" vertical-scroll-proportion="0.0">
               <folding>
                 <element signature="imports" expanded="true" />
               </folding>
@@ -193,13 +124,49 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="testmain.java" pinned="false" current="true" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/src/testmain.java">
+      <file leaf-file-name="Matrix.java" pinned="false" current="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/htape/geometry/Matrix.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="25" column="64" selection-start="731" selection-end="731" vertical-scroll-proportion="0.3582395">
+            <state line="91" column="18" selection-start="2336" selection-end="2336" vertical-scroll-proportion="0.0">
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="World.java" pinned="false" current="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/htape/World.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state line="101" column="16" selection-start="2630" selection-end="2630" vertical-scroll-proportion="0.0">
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="PointSource.java" pinned="false" current="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/htape/geometry/PointSource.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state line="7" column="13" selection-start="116" selection-end="116" vertical-scroll-proportion="0.0">
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="WorldViewCanvas.java" pinned="false" current="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/htape/gui/WorldViewCanvas.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state line="60" column="36" selection-start="1552" selection-end="1552" vertical-scroll-proportion="0.0">
               <folding>
                 <element signature="imports" expanded="true" />
               </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="Point.java" pinned="false" current="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/htape/geometry/Point.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state line="48" column="32" selection-start="753" selection-end="753" vertical-scroll-proportion="0.0">
+              <folding />
             </state>
           </provider>
         </entry>
@@ -207,46 +174,19 @@
       <file leaf-file-name="HRTFTest.java" pinned="false" current="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/htape/gui/HRTFTest.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="62" column="28" selection-start="2383" selection-end="2383" vertical-scroll-proportion="0.0">
+            <state line="33" column="13" selection-start="1415" selection-end="1415" vertical-scroll-proportion="0.0">
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="LocationPicker.java" pinned="false" current="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/htape/util/LocationPicker.java">
+      <file leaf-file-name="HTape.java" pinned="false" current="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/HTape.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="2" column="0" selection-start="21" selection-end="21" vertical-scroll-proportion="0.0">
+            <state line="101" column="18" selection-start="3604" selection-end="3604" vertical-scroll-proportion="0.0">
               <folding>
                 <element signature="imports" expanded="true" />
               </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="HRIR.java" pinned="false" current="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/htape/util/filtering/hrtf/HRIR.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state line="33" column="15" selection-start="701" selection-end="701" vertical-scroll-proportion="0.0">
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="CipicHRTF.java" pinned="false" current="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/htape/util/filtering/hrtf/CipicHRTF.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state line="2" column="7" selection-start="43" selection-end="43" vertical-scroll-proportion="0.0">
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="HRTFFactory.java" pinned="false" current="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/htape/util/filtering/hrtf/HRTFFactory.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state line="82" column="20" selection-start="2892" selection-end="2892" vertical-scroll-proportion="0.0">
-              <folding />
             </state>
           </provider>
         </entry>
@@ -265,22 +205,22 @@
   <component name="IdeDocumentHistory">
     <option name="changedFiles">
       <list>
+        <option value="$PROJECT_DIR$/src/htape/Player.java" />
+        <option value="$PROJECT_DIR$/src/htape/EmptyHRTF.java" />
+        <option value="$PROJECT_DIR$/src/htape/util/filtering/hrtf/EmptyHRTF.java" />
+        <option value="$PROJECT_DIR$/src/htape/audio/SoundSystem.java" />
+        <option value="$PROJECT_DIR$/src/htape/audio/HistoricalDSPCallback.java" />
+        <option value="$PROJECT_DIR$/src/htape/geometry/Vector.java" />
+        <option value="$PROJECT_DIR$/src/htape/geometry/PointSource.java" />
         <option value="$PROJECT_DIR$/src/htape/util/HistoryBuffer.java" />
-        <option value="$PROJECT_DIR$/src/htape/util/HRIR.java" />
-        <option value="$PROJECT_DIR$/src/htape/util/HRTFFactory.java" />
-        <option value="$PROJECT_DIR$/src/htape/util/HRTF.java" />
-        <option value="$PROJECT_DIR$/src/htape/util/hrtf/HRTF.java" />
-        <option value="$PROJECT_DIR$/src/htape/util/filtering/hrtf/Ring.java" />
-        <option value="$PROJECT_DIR$/src/htape/util/filtering/hrtf/Arc.java" />
-        <option value="$PROJECT_DIR$/src/FloatTest.java" />
-        <option value="$PROJECT_DIR$/src/htape/util/filtering/hrtf/HRTFFactory.java" />
-        <option value="$PROJECT_DIR$/src/testmain.java" />
-        <option value="$PROJECT_DIR$/src/org/jouvieje/fmodex/examples/HRTFTest.java" />
-        <option value="$PROJECT_DIR$/src/htape/util/filtering/hrtf/CipicHRTF.java" />
-        <option value="$PROJECT_DIR$/src/htape/util/LocationPicker.java" />
-        <option value="$PROJECT_DIR$/src/htape/util/filtering/hrtf/HRTF.java" />
-        <option value="$PROJECT_DIR$/src/htape/HRTFTest.java" />
-        <option value="$PROJECT_DIR$/src/htape/gui/HRTFTest.java" />
+        <option value="$PROJECT_DIR$/src/HTapeWorld.java" />
+        <option value="$PROJECT_DIR$/src/htape/geometry/Matrix.java" />
+        <option value="$PROJECT_DIR$/src/htape/geometry/Camera.java" />
+        <option value="$PROJECT_DIR$/src/htape/gui/WorldView.java" />
+        <option value="$PROJECT_DIR$/src/htape/World.java" />
+        <option value="$PROJECT_DIR$/src/htape/geometry/Point.java" />
+        <option value="$PROJECT_DIR$/src/htape/gui/WorldViewCanvas.java" />
+        <option value="$PROJECT_DIR$/src/MatrixTest.java" />
       </list>
     </option>
   </component>
@@ -298,13 +238,13 @@
         </expanded-state>
         <selected-state>
           <State>
-            <id>Abstraction issues</id>
+            <id>General</id>
           </State>
         </selected-state>
       </profile-state>
     </entry>
   </component>
-  <component name="ProjectLevelVcsManager">
+  <component name="ProjectLevelVcsManager" settingsEditedManually="false">
     <OptionsSetting value="true" id="Add" />
     <OptionsSetting value="true" id="Remove" />
     <OptionsSetting value="true" id="Checkout" />
@@ -330,9 +270,9 @@
       <sortByType />
     </navigator>
     <panes>
+      <pane id="Scope" />
       <pane id="PackagesPane" />
       <pane id="Favorites" />
-      <pane id="Scope" />
       <pane id="ProjectPane">
         <subPane>
           <PATH>
@@ -382,8 +322,26 @@
               <option name="myItemId" value="htape" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
+          </PATH>
+          <PATH>
             <PATH_ELEMENT>
-              <option name="myItemId" value="util" />
+              <option name="myItemId" value="fmod" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="fmod" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="src" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="htape" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="gui" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
           </PATH>
@@ -404,6 +362,10 @@
               <option name="myItemId" value="htape" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="geometry" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
           </PATH>
           <PATH>
             <PATH_ELEMENT>
@@ -415,11 +377,15 @@
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
             <PATH_ELEMENT>
-              <option name="myItemId" value="resources" />
+              <option name="myItemId" value="src" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
             <PATH_ELEMENT>
-              <option name="myItemId" value="hrtfs" />
+              <option name="myItemId" value="htape" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="audio" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
           </PATH>
@@ -434,7 +400,7 @@
     <property name="project.structure.proportion" value="0.15" />
     <property name="options.splitter.main.proportions" value="0.3" />
     <property name="recentsLimit" value="5" />
-    <property name="options.lastSelected" value="preferences.keymap" />
+    <property name="options.lastSelected" value="preferences.editor" />
     <property name="MemberChooser.sorted" value="false" />
     <property name="project.structure.side.proportion" value="0.2" />
     <property name="MemberChooser.copyJavadoc" value="false" />
@@ -454,70 +420,18 @@
       <recent name="htape.util" />
     </key>
     <key name="CreateClassDialog.RecentsKey">
-      <recent name="htape.util.io" />
+      <recent name="htape.gui" />
+      <recent name="htape.geometry" />
+      <recent name="htape" />
+      <recent name="htape.audio" />
+      <recent name="htape.util" />
+    </key>
+    <key name="MoveClassesOrPackagesDialog.RECENTS_KEY">
+      <recent name="htape.util.filtering.hrtf" />
+      <recent name="htape" />
     </key>
   </component>
-  <component name="RunManager" selected="Application.testmain">
-    <configuration default="false" name="DspCustom" type="Application" factoryName="Application" temporary="true">
-      <option name="MAIN_CLASS_NAME" value="org.jouvieje.fmodex.examples.DspCustom" />
-      <option name="VM_PARAMETERS" value="-Djava.library.path=$PROJECT_DIR$/lib" />
-      <option name="PROGRAM_PARAMETERS" value="" />
-      <option name="WORKING_DIRECTORY" value="file://$PROJECT_DIR$" />
-      <option name="ALTERNATIVE_JRE_PATH_ENABLED" value="false" />
-      <option name="ALTERNATIVE_JRE_PATH" value="" />
-      <option name="ENABLE_SWING_INSPECTOR" value="false" />
-      <option name="ENV_VARIABLES" />
-      <option name="PASS_PARENT_ENVS" value="true" />
-      <module name="fmod" />
-      <envs />
-      <RunnerSettings RunnerId="Debug">
-        <option name="DEBUG_PORT" value="54200" />
-        <option name="TRANSPORT" value="0" />
-        <option name="LOCAL" value="true" />
-      </RunnerSettings>
-      <RunnerSettings RunnerId="Run" />
-      <ConfigurationWrapper RunnerId="Debug" />
-      <ConfigurationWrapper RunnerId="Run" />
-      <method />
-    </configuration>
-    <configuration default="false" name="testmain" type="Application" factoryName="Application" temporary="true">
-      <option name="MAIN_CLASS_NAME" value="testmain" />
-      <option name="VM_PARAMETERS" value="-Djava.library.path=$PROJECT_DIR$/lib" />
-      <option name="PROGRAM_PARAMETERS" value="" />
-      <option name="WORKING_DIRECTORY" value="file://$PROJECT_DIR$" />
-      <option name="ALTERNATIVE_JRE_PATH_ENABLED" value="false" />
-      <option name="ALTERNATIVE_JRE_PATH" value="" />
-      <option name="ENABLE_SWING_INSPECTOR" value="false" />
-      <option name="ENV_VARIABLES" />
-      <option name="PASS_PARENT_ENVS" value="true" />
-      <module name="fmod" />
-      <envs />
-      <RunnerSettings RunnerId="Debug">
-        <option name="DEBUG_PORT" value="36493" />
-        <option name="TRANSPORT" value="0" />
-        <option name="LOCAL" value="true" />
-      </RunnerSettings>
-      <RunnerSettings RunnerId="Run" />
-      <ConfigurationWrapper RunnerId="Debug" />
-      <ConfigurationWrapper RunnerId="Run" />
-      <method />
-    </configuration>
-    <configuration default="false" name="LocationPicker" type="Application" factoryName="Application" temporary="true">
-      <option name="MAIN_CLASS_NAME" value="htape.util.LocationPicker" />
-      <option name="VM_PARAMETERS" value="-Djava.library.path=$PROJECT_DIR$/lib" />
-      <option name="PROGRAM_PARAMETERS" value="" />
-      <option name="WORKING_DIRECTORY" value="file://$PROJECT_DIR$" />
-      <option name="ALTERNATIVE_JRE_PATH_ENABLED" value="false" />
-      <option name="ALTERNATIVE_JRE_PATH" value="" />
-      <option name="ENABLE_SWING_INSPECTOR" value="false" />
-      <option name="ENV_VARIABLES" />
-      <option name="PASS_PARENT_ENVS" value="true" />
-      <module name="fmod" />
-      <envs />
-      <RunnerSettings RunnerId="Run" />
-      <ConfigurationWrapper RunnerId="Run" />
-      <method />
-    </configuration>
+  <component name="RunManager" selected="Application.MatrixTest">
     <configuration default="false" name="HRTFTest" type="Application" factoryName="Application" temporary="true">
       <option name="MAIN_CLASS_NAME" value="org.jouvieje.fmodex.examples.HRTFTest" />
       <option name="VM_PARAMETERS" value="-Djava.library.path=$PROJECT_DIR$/lib" />
@@ -548,6 +462,66 @@
       <envs />
       <RunnerSettings RunnerId="Debug">
         <option name="DEBUG_PORT" value="42652" />
+        <option name="TRANSPORT" value="0" />
+        <option name="LOCAL" value="true" />
+      </RunnerSettings>
+      <RunnerSettings RunnerId="Run" />
+      <ConfigurationWrapper RunnerId="Debug" />
+      <ConfigurationWrapper RunnerId="Run" />
+      <method />
+    </configuration>
+    <configuration default="false" name="HTape" type="Application" factoryName="Application" temporary="true">
+      <option name="MAIN_CLASS_NAME" value="HTape" />
+      <option name="VM_PARAMETERS" value="-Djava.library.path=$PROJECT_DIR$/lib" />
+      <option name="PROGRAM_PARAMETERS" value="" />
+      <option name="WORKING_DIRECTORY" value="file://$PROJECT_DIR$" />
+      <option name="ALTERNATIVE_JRE_PATH_ENABLED" value="false" />
+      <option name="ALTERNATIVE_JRE_PATH" value="" />
+      <option name="ENABLE_SWING_INSPECTOR" value="false" />
+      <option name="ENV_VARIABLES" />
+      <option name="PASS_PARENT_ENVS" value="true" />
+      <module name="fmod" />
+      <envs />
+      <RunnerSettings RunnerId="Debug">
+        <option name="DEBUG_PORT" value="34973" />
+        <option name="TRANSPORT" value="0" />
+        <option name="LOCAL" value="true" />
+      </RunnerSettings>
+      <RunnerSettings RunnerId="Run" />
+      <ConfigurationWrapper RunnerId="Debug" />
+      <ConfigurationWrapper RunnerId="Run" />
+      <method />
+    </configuration>
+    <configuration default="false" name="HTapeWorld" type="Application" factoryName="Application" temporary="true">
+      <option name="MAIN_CLASS_NAME" value="HTapeWorld" />
+      <option name="VM_PARAMETERS" value="-Djava.library.path=$PROJECT_DIR$/lib" />
+      <option name="PROGRAM_PARAMETERS" value="" />
+      <option name="WORKING_DIRECTORY" value="file://$PROJECT_DIR$" />
+      <option name="ALTERNATIVE_JRE_PATH_ENABLED" value="false" />
+      <option name="ALTERNATIVE_JRE_PATH" value="" />
+      <option name="ENABLE_SWING_INSPECTOR" value="false" />
+      <option name="ENV_VARIABLES" />
+      <option name="PASS_PARENT_ENVS" value="true" />
+      <module name="fmod" />
+      <envs />
+      <RunnerSettings RunnerId="Run" />
+      <ConfigurationWrapper RunnerId="Run" />
+      <method />
+    </configuration>
+    <configuration default="false" name="MatrixTest" type="Application" factoryName="Application" temporary="true">
+      <option name="MAIN_CLASS_NAME" value="MatrixTest" />
+      <option name="VM_PARAMETERS" value="-Djava.library.path=$PROJECT_DIR$/lib" />
+      <option name="PROGRAM_PARAMETERS" value="" />
+      <option name="WORKING_DIRECTORY" value="file://$PROJECT_DIR$" />
+      <option name="ALTERNATIVE_JRE_PATH_ENABLED" value="false" />
+      <option name="ALTERNATIVE_JRE_PATH" value="" />
+      <option name="ENABLE_SWING_INSPECTOR" value="false" />
+      <option name="ENV_VARIABLES" />
+      <option name="PASS_PARENT_ENVS" value="true" />
+      <module name="fmod" />
+      <envs />
+      <RunnerSettings RunnerId="Debug">
+        <option name="DEBUG_PORT" value="40858" />
         <option name="TRANSPORT" value="0" />
         <option name="LOCAL" value="true" />
       </RunnerSettings>
@@ -685,12 +659,12 @@
       <method />
     </configuration>
     <list size="6">
-      <item index="0" class="java.lang.String" itemvalue="Application.DspCustom" />
-      <item index="1" class="java.lang.String" itemvalue="Application.testmain" />
-      <item index="2" class="java.lang.String" itemvalue="Application.LocationPicker" />
-      <item index="3" class="java.lang.String" itemvalue="Application.HRTFTest" />
-      <item index="4" class="java.lang.String" itemvalue="Application.FloatTest" />
-      <item index="5" class="java.lang.String" itemvalue="Application._3D" />
+      <item index="0" class="java.lang.String" itemvalue="Application.HRTFTest" />
+      <item index="1" class="java.lang.String" itemvalue="Application.FloatTest" />
+      <item index="2" class="java.lang.String" itemvalue="Application._3D" />
+      <item index="3" class="java.lang.String" itemvalue="Application.HTape" />
+      <item index="4" class="java.lang.String" itemvalue="Application.HTapeWorld" />
+      <item index="5" class="java.lang.String" itemvalue="Application.MatrixTest" />
     </list>
     <configuration name="&lt;template&gt;" type="WebApp" default="true" selected="false">
       <Host>localhost</Host>
@@ -702,7 +676,6 @@
     <option name="USER" value="" />
     <option name="PASSWORD" value="" />
     <option name="LAST_MERGED_REVISION" />
-    <option name="UPDATE_RUN_STATUS" value="false" />
     <option name="MERGE_DRY_RUN" value="false" />
     <option name="MERGE_DIFF_USE_ANCESTRY" value="true" />
     <option name="UPDATE_LOCK_ON_DEMAND" value="false" />
@@ -711,6 +684,7 @@
     <option name="CHECK_NESTED_FOR_QUICK_MERGE" value="false" />
     <option name="IGNORE_SPACES_IN_ANNOTATE" value="true" />
     <option name="SHOW_MERGE_SOURCES_IN_ANNOTATE" value="true" />
+    <option name="FORCE_UPDATE" value="false" />
     <configuration useDefault="true">$USER_HOME$/.subversion_IDEA</configuration>
     <myIsUseDefaultProxy>false</myIsUseDefaultProxy>
   </component>
@@ -723,26 +697,26 @@
     <servers />
   </component>
   <component name="ToolWindowManager">
-    <frame x="-1" y="27" width="1922" height="1154" extended-state="6" />
+    <frame x="0" y="27" width="1280" height="1150" extended-state="0" />
     <editor active="false" />
     <layout>
       <window_info id="Changes" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Palette" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
-      <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32935324" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Ant Build" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
-      <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.39900497" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
+      <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.3986014" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
-      <window_info id="Messages" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.3283582" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
+      <window_info id="Messages" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32767233" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
-      <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.15072154" sideWeight="0.32537314" order="1" side_tool="true" content_ui="tabs" />
+      <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.22864117" sideWeight="0.32767233" order="1" side_tool="true" content_ui="tabs" />
       <window_info id="Maven Projects" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Commander" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.4" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
-      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.15072154" sideWeight="0.6666667" order="0" side_tool="false" content_ui="tabs" />
+      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.22864117" sideWeight="0.34265736" order="0" side_tool="false" content_ui="tabs" />
       <window_info id="Dependency Viewer" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
-      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.3283582" sideWeight="0.9978046" order="2" side_tool="false" content_ui="tabs" />
+      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.3216783" sideWeight="0.9978046" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Cvs" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
       <window_info id="Message" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
-      <window_info id="Hierarchy" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="2" side_tool="false" content_ui="combo" />
+      <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32935324" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
+      <window_info id="Hierarchy" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.24986623" sideWeight="0.6723277" order="2" side_tool="false" content_ui="combo" />
       <window_info id="Inspection" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.4" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
     </layout>
   </component>
@@ -759,6 +733,7 @@
     <option name="ENABLE_BACKGROUND_PROCESSES" value="false" />
     <option name="CHANGED_ON_SERVER_INTERVAL" value="60" />
     <option name="SHOW_ONLY_CHANGED_IN_SELECTION_DIFF" value="true" />
+    <option name="CHECK_COMMIT_MESSAGE_SPELLING" value="true" />
     <option name="FORCE_NON_EMPTY_COMMENT" value="false" />
     <option name="LAST_COMMIT_MESSAGE" />
     <option name="MAKE_NEW_CHANGELIST_ACTIVE" value="true" />
@@ -782,118 +757,120 @@
     <option name="FILTER_TARGETS" value="false" />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/src/htape/util/filtering/hrtf/IHRTF.java">
+    <entry file="jar:///usr/lib/jvm/java-6-openjdk/jre/lib/rt.jar!/java/util/Timer.class">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="9" column="17" selection-start="202" selection-end="202" vertical-scroll-proportion="0.0">
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/htape/util/io/hrir/ListenBinaryHRIR.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="18" column="9" selection-start="435" selection-end="435" vertical-scroll-proportion="0.0">
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/htape/util/io/hrir/ListenHRIR.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="21" column="0" selection-start="543" selection-end="543" vertical-scroll-proportion="0.0">
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/htape/util/io/hrir/BarettoHRIR.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="25" column="36" selection-start="690" selection-end="690" vertical-scroll-proportion="0.0">
+        <state line="13" column="11" selection-start="417" selection-end="417" vertical-scroll-proportion="0.0">
           <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/FloatTest.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="16" column="8" selection-start="335" selection-end="335" vertical-scroll-proportion="0.30139104">
-          <folding />
-        </state>
+        <state line="28" column="56" selection-start="780" selection-end="780" vertical-scroll-proportion="0.0" />
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/htape/util/io/hrir/CipicHRIR.java">
+    <entry file="file://$PROJECT_DIR$/src/HTapeWorld.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="17" column="50" selection-start="379" selection-end="379" vertical-scroll-proportion="0.32457495">
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/htape/util/filtering/hrtf/Ring.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="35" column="25" selection-start="903" selection-end="903" vertical-scroll-proportion="0.8114374">
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/htape/util/filtering/hrtf/Arc.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="22" column="31" selection-start="595" selection-end="595" vertical-scroll-proportion="0.51004636">
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/htape/util/filtering/hrtf/CipicHRTF.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="2" column="7" selection-start="43" selection-end="43" vertical-scroll-proportion="0.0">
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/htape/util/filtering/hrtf/HRIR.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="33" column="15" selection-start="701" selection-end="701" vertical-scroll-proportion="0.0">
-          <folding />
+        <state line="17" column="18" selection-start="438" selection-end="438" vertical-scroll-proportion="0.0">
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/htape/util/filtering/hrtf/HRTFFactory.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="82" column="20" selection-start="2892" selection-end="2892" vertical-scroll-proportion="0.0">
+        <state line="27" column="0" selection-start="933" selection-end="933" vertical-scroll-proportion="0.0">
           <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/htape/util/ThreeDTest.java">
+    <entry file="jar:///usr/lib/jvm/java-6-openjdk/jre/lib/rt.jar!/java/awt/Component.class">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="12" column="13" selection-start="226" selection-end="226" vertical-scroll-proportion="0.0">
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
+        <state line="422" column="16" selection-start="15384" selection-end="15384" vertical-scroll-proportion="0.0">
+          <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/htape/util/LocationPicker.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="2" column="0" selection-start="21" selection-end="21" vertical-scroll-proportion="0.0">
+        <state line="87" column="37" selection-start="2392" selection-end="2421" vertical-scroll-proportion="0.0">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/htape/gui/HRTFTest.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="33" column="13" selection-start="1415" selection-end="1415" vertical-scroll-proportion="0.0">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/HTape.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="101" column="18" selection-start="3604" selection-end="3604" vertical-scroll-proportion="0.0">
           <folding>
             <element signature="imports" expanded="true" />
           </folding>
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/htape/gui/HRTFTest.java">
+    <entry file="file://$PROJECT_DIR$/src/htape/geometry/Matrix.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="62" column="28" selection-start="2383" selection-end="2383" vertical-scroll-proportion="0.0">
+        <state line="91" column="18" selection-start="2336" selection-end="2336" vertical-scroll-proportion="0.0">
           <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/htape/util/filtering/hrtf/HRTF.java">
+    <entry file="file://$PROJECT_DIR$/src/htape/geometry/PointSource.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="56" column="50" selection-start="1764" selection-end="1764" vertical-scroll-proportion="0.0">
+        <state line="7" column="13" selection-start="116" selection-end="116" vertical-scroll-proportion="0.0">
           <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/testmain.java">
+    <entry file="file://$PROJECT_DIR$/src/htape/gui/WorldView.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="25" column="64" selection-start="731" selection-end="731" vertical-scroll-proportion="0.3582395">
+        <state line="89" column="21" selection-start="2890" selection-end="2890" vertical-scroll-proportion="0.0">
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/htape/World.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="101" column="16" selection-start="2630" selection-end="2630" vertical-scroll-proportion="0.0">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/htape/geometry/Point.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="48" column="32" selection-start="753" selection-end="753" vertical-scroll-proportion="0.0">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/htape/geometry/Camera.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="62" column="54" selection-start="1068" selection-end="1068" vertical-scroll-proportion="0.0">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/htape/gui/WorldViewCanvas.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="60" column="36" selection-start="1552" selection-end="1552" vertical-scroll-proportion="0.0">
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/MatrixTest.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="39" column="48" selection-start="1109" selection-end="1109" vertical-scroll-proportion="0.56962025">
           <folding>
             <element signature="imports" expanded="true" />
           </folding>
@@ -903,14 +880,78 @@
   </component>
   <component name="masterDetails">
     <states>
-      <state key="Copyright.UI">
+      <state key="ArtifactsStructureConfigurable.UI">
         <settings>
-          <splitter-proportions />
+          <artifact-editor />
+          <last-edited>fmod:jar</last-edited>
+          <splitter-proportions>
+            <option name="proportions">
+              <list>
+                <option value="0.2" />
+                <option value="0.5" />
+              </list>
+            </option>
+          </splitter-proportions>
         </settings>
       </state>
-      <state key="ScopeChooserConfigurable.UI">
+      <state key="FacetStructureConfigurable.UI">
         <settings>
-          <splitter-proportions />
+          <last-edited>Android</last-edited>
+          <splitter-proportions>
+            <option name="proportions">
+              <list>
+                <option value="0.2" />
+              </list>
+            </option>
+          </splitter-proportions>
+        </settings>
+      </state>
+      <state key="GlobalLibrariesConfigurable.UI">
+        <settings>
+          <splitter-proportions>
+            <option name="proportions">
+              <list>
+                <option value="0.2" />
+              </list>
+            </option>
+          </splitter-proportions>
+        </settings>
+      </state>
+      <state key="JdkListConfigurable.UI">
+        <settings>
+          <last-edited>1.6</last-edited>
+          <splitter-proportions>
+            <option name="proportions">
+              <list>
+                <option value="0.2" />
+              </list>
+            </option>
+          </splitter-proportions>
+        </settings>
+      </state>
+      <state key="ModuleStructureConfigurable.UI">
+        <settings>
+          <last-edited>fmod</last-edited>
+          <splitter-proportions>
+            <option name="proportions">
+              <list>
+                <option value="0.2" />
+                <option value="0.5" />
+              </list>
+            </option>
+          </splitter-proportions>
+        </settings>
+      </state>
+      <state key="ProjectLibrariesConfigurable.UI">
+        <settings>
+          <last-edited>Unnamed</last-edited>
+          <splitter-proportions>
+            <option name="proportions">
+              <list>
+                <option value="0.2" />
+              </list>
+            </option>
+          </splitter-proportions>
         </settings>
       </state>
     </states>

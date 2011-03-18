@@ -15,7 +15,7 @@ import java.io.IOException;
 public class ListenBinaryHRIR implements IHRIRReader {
 
 
-    public HRIR read(DataInputStream in, int azimuth, int elevation) throws IOException {
+    public HRIR read(DataInputStream in, double azimuth, double elevation) throws IOException {
         float[] coeffs = new float[1024];
         for (int i = 0; i < 1024; i++) {
             coeffs[i] = in.readFloat();

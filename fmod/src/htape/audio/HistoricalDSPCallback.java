@@ -15,13 +15,18 @@ import static org.jouvieje.fmodex.enumerations.FMOD_RESULT.FMOD_OK;
 /**
 * Created by ben, on 3/10/11 at 7:43 PM
 */
-public class HistoricalDSPCallback implements FMOD_DSP_READCALLBACK {
+public class HistoricalDSPCallback implements FilterCallback {
 
     int pos = 0;
     StereoHistoryBuffer hist;
     IFilter filter;
 
-    public HistoricalDSPCallback(int initialSize, IFilter filter) {
+    public void setFilter(IFilter filter) {
+		this.filter = filter;
+		hist.resize(filter.getTaps());
+	}
+
+	public HistoricalDSPCallback(int initialSize, IFilter filter) {
         this(filter);
         hist.resize(initialSize);
     }

@@ -16,8 +16,12 @@ public class CipicHRTF implements IHRTF {
         int azIndex = 0, elIndex = 0;
 
         //constrain coords
-        elevation = Math.min(elevation, maxEl);
-        elevation = Math.max(elevation, minEl);
+        if (elevation > maxEl){
+        	double dMax = elevation - maxEl;
+        	double dMin = (elevation - 360) - minEl;
+        	elevation = (dMax < Math.abs(dMin)) ? dMax : (dMin < 0) ? minEl : 360 - elevation; 
+        }
+        
         azimuth = Math.min(azimuth, 80);
         azimuth = Math.max(azimuth, -80);
 

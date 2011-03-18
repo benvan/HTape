@@ -9,7 +9,7 @@ public class EmptyFilter implements IFilter {
 
 
     public int getTaps() {
-        return 0;
+        return 1;
     }
 
     public float getLeft(int i) {

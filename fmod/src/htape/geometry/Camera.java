@@ -7,11 +7,13 @@ public class Camera {
 
     Point u,v,w;
     Point c;
-    double f = 300; //focal length
+    double f = -300; //focal length
 
     double fov = 10;
     double nearPlane = 10;
     double farPlane = 100000;
+	
+    private float[] binding;
 
     public Camera() {
         c = new Point();
@@ -62,4 +64,19 @@ public class Camera {
     public String info() {
         return String.format("x: %.2f\ny: %.2f\n z:%.2f", c.getX(), c.getY(), c.getZ());
     }
+
+	public void alignToBinding() {
+		if (binding == null) return;
+		
+		int scale = 20;
+    	double zOffset = 0.7;
+    	
+    	c.setX(binding[0]*scale);
+    	c.setY(binding[1]*scale);
+    	c.setZ(zOffset-binding[2]*scale);
+	}
+
+	public void bind(float[] pos) {
+		binding = pos;
+	}
 }

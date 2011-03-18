@@ -8,6 +8,8 @@ import org.jouvieje.fmodex.exceptions.InitException;
 import org.jouvieje.fmodex.structures.FMOD_DSP_DESCRIPTION;
 import sun.nio.cs.HistoricallyNamedCharset;
 
+import htape.util.filtering.hrtf.HRIR;
+
 import java.util.ArrayList;
 import java.util.Collection;
 
@@ -26,7 +28,7 @@ public class SoundSystem {
     org.jouvieje.fmodex.System fmodSystem;
     org.jouvieje.fmodex.Channel fmodChannel;
     org.jouvieje.fmodex.DSP fmodDSP;
-    FMOD_DSP_READCALLBACK fmodDSPCallback;
+    FilterCallback fmodDSPCallback;
 
     public SoundSystem() {
         sources = new ArrayList<ISource>();
@@ -92,5 +94,9 @@ public class SoundSystem {
 		if(result != FMOD_RESULT.FMOD_OK) {
 			printfExit("FMOD error! (%d) %s\n", result.asInt(), FmodEx.FMOD_ErrorString(result));
 		}
+	}
+
+	public void setFilter(HRIR hrir) {
+		fmodDSPCallback.setFilter(hrir);
 	}
 }

@@ -81,31 +81,36 @@ public class World {
         //find az / elevation
 
         double el = Math.atan2(projection.getY(), projection.getZ());
-//        System.out.println(el*180/Math.PI);
+        
 
         Matrix elevationPlane = new Matrix(new double[][]{
                 {1,0,0,0},
-                {0,Math.cos(el),-Math.sin(el),0},
-                {0,Math.sin(el),Math.cos(el),0},
+                {0,Math.cos(-el),-Math.sin(-el),0},
+                {0,Math.sin(-el),Math.cos(-el),0},
                 {0,0,0,1},
         });
 
         projection = elevationPlane.mult(projection).toPoint();
         double az = Math.atan2(projection.getZ(), projection.getX());
-        //System.out.println(90- (az*180/Math.PI));
+        
 
-        hrir = hrtf.get(az, el);
+        hrir = hrtf.get(90 - Math.toDegrees(az), Math.toDegrees(el));
+        
+        soundSystem.setFilter(hrir);
 
 
     }
 
     public void update(){
+    	
+    	camera.alignToBinding();
+    	
         for (PointSource pointSource : sources) {
             update(pointSource);
         }
     }
 
-    //TODO marked for deletion
+	//TODO marked for deletion
     public IHRTF getHRTF(){
         return hrtf;
     }

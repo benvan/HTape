@@ -13,7 +13,12 @@ import java.nio.ByteOrder;
 
 
 import htape.Player;
+import htape.World;
+import htape.geometry.Matrix;
+import htape.geometry.Point;
+import htape.geometry.PointSource;
 import htape.gui.HRTFTest;
+import htape.gui.WorldView;
 import htape.util.CIPICLocationPicker;
 import htape.util.LocationPicker;
 import htape.util.ResourcePool;
@@ -41,7 +46,7 @@ public class ThreeDTest {
 	
 	private static String hrtf_location = "C:\\Ben\\workspace\\HTape\\fmod\\resources\\hrtfs\\subject_008.hrtf.cipic.bin";//"/home/ben/subject_008.hrtf.cipic.bin";
     private static String hrtf_directory = "c:\\temp\\";
-    private static String wav_location = "media/sample.wav";
+    private static String wav_location = "media/s";
 	
 	public static void main(String[] args) throws IOException {
 
@@ -55,7 +60,7 @@ public class ThreeDTest {
             final DatagramSocket s = new DatagramSocket(29129);
             s.setSoTimeout(0);
             final byte[] bs = new byte[64];
-            final DatagramPacket p = new DatagramPacket(bs, bs.length);
+            final DatagramPacket packet = new DatagramPacket(bs, bs.length);
             final float[] pos = new float[6];
             
 
@@ -68,13 +73,13 @@ public class ThreeDTest {
 					while(true){
 					
 						try {
-							s.receive(p);
+							s.receive(packet);
 						} catch (IOException e) {
 							// TODO Auto-generated catch block
 							e.printStackTrace();
 						}
 		            	
-		            	ByteBuffer b = ByteBuffer.wrap(p.getData());
+		            	ByteBuffer b = ByteBuffer.wrap(packet.getData());
 		            	b.order(ByteOrder.BIG_ENDIAN);
 		            	
 		            	
@@ -84,11 +89,11 @@ public class ThreeDTest {
 		            	try{
 		            	for (String  st : str.trim().split(" ")){
 		            		pos[i++] = Float.parseFloat(st);
-		            		System.out.print(st);
-		            		System.out.print(" ");
+//		            		System.out.print(st);
+//		            		System.out.print(" ");
 		            		
 		            	}
-		            	System.out.println();
+		            	//System.out.println();
 		            	}
 		            	catch(NumberFormatException e){
 		            		System.err.println("******** Some numerical error **********");
@@ -102,16 +107,36 @@ public class ThreeDTest {
             
             
             
-            final int[] hrtfIndex = {18};
-            final CIPICLocationPicker loc = new CIPICLocationPicker();
-            final Player player = new Player();
-            
-            final ResourcePool pool = new ResourcePool();
+            World world = new World();
+            PointSource p = world.createSource();
+            world.bind(p, "media/sample.wav");
+            world.move(p, new Point(0,1,0));
             
 
-            player.loadAudioFile(wav_location);
+            double ang = 0.5;
+            Matrix m = new Matrix(new double[][]{
+                {1,0,0,0},
+                {0,Math.cos(ang),-Math.sin(ang),0},
+                {0,Math.sin(ang),Math.cos(ang),0},
+                {0,0,0,1}
+            });
+
+            m = m.mult(new Matrix(new double[][]{
+                {Math.cos(ang),-Math.sin(ang),0,0},
+                {Math.sin(ang),Math.cos(ang),0,0},
+                {0,0,1,0},
+                {0,0,0,1}
+            }));
+
+            //world.getCamera().transform(m);
+            world.getCamera().setFocalLength(1000);
+            
+            world.getCamera().bind(pos);
+
+
+
             try {
-                pool.hrtfs().add(new HRTFFactory().fromFile(hrtf_location));
+                world.setHRTF(new HRTFFactory().fromFile(hrtf_location));
             } catch (UnrecognisedHRTFException e) {
                 System.err.println("Failed to recognise HRTF format.");
                 System.exit(0);
@@ -119,61 +144,11 @@ public class ThreeDTest {
                 System.err.println("Failed to read HRTF file.");
                 System.exit(0);
             }
+
+            WorldView view = new WorldView(world);
             
-            loc.represent(pool.hrtfs().get());
 
-            //38 and 31 are current favourites
-
-            /*File hrtfDir = new File("/home/ben/project/resources/hrtfs/listen");
-            for (File hrtf : hrtfDir.listFiles()) {
-                if (hrtf.isFile() && hrtf.getName().contains(".hrtf_bin")){
-                    player.loadHRTF(hrtf.getAbsolutePath());
-                }
-            }*/
-
-
-            JFrame frame = new JFrame();
-
-            frame.setPreferredSize(new Dimension(1100, 500));
-            frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
-
-            frame.add(loc);
-
-            frame.addKeyListener(new KeyListener() {
-
-                public void keyTyped(KeyEvent keyEvent) {
-                }
-
-                public void keyPressed(KeyEvent keyEvent) {
-                        switch (keyEvent.getKeyCode()) {
-                            case KeyEvent.VK_SPACE:
-                                player.play();
-                                break;
-                        }
-                }
-
-                public void keyReleased(KeyEvent keyEvent) {
-                }
-            });
-
-            frame.pack();
-            frame.setVisible(true);
-
-
-
-            Timer timer = new Timer(10, new ActionListener() {
-                public void actionPerformed(ActionEvent actionEvent) {
-
-                	loc.repaint();
-                    IHRTF hrtf = pool.hrtfs().get();
-                    if (hrtf == null) return;
-                    IFilter filter = hrtf.get(loc.getAzimuth() + pos[4] , loc.getElevation() - pos[3]);
-                    loc.highlight(filter);
-                    player.setFilter(filter);
-                }
-            });
-
-            timer.start();
+            view.run();
             	            	
             
         

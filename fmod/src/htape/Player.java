@@ -1,5 +1,6 @@
 package htape;
 
+import htape.audio.FilterCallback;
 import htape.audio.HistoricalDSPCallback;
 import htape.util.StereoHistoryBuffer;
 import htape.util.filtering.IFilter;
@@ -25,7 +26,7 @@ public class Player {
     private System system = new System();
     private Sound sound = new Sound();
     private DSP mydsp = new DSP();
-    private FMOD_DSP_READCALLBACK myDSPCallback;
+    private FilterCallback myDSPCallback;
 
     private Channel channel;
     private IFilter filter;
@@ -55,8 +56,7 @@ public class Player {
     }
 
     public void setFilter(IFilter filter) {
-        this.filter = filter;
-        hist.resize(filter.getTaps());
+        myDSPCallback.setFilter(filter);
         mydsp.setBypass(false);
     }
 

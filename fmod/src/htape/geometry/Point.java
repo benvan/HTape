@@ -48,4 +48,13 @@ public class Point {
     public Point dup() {
         return new Point(x,y,z);
     }
+
+	public Point addX(double d) {
+		x += d;
+		return this;
+	}
+	
+	public String toString(){
+		return String.format("%+.2f, %+.2f, %+.2f",x,y,z);
+	}
 }

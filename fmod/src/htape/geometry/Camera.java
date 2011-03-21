@@ -23,7 +23,7 @@ public class Camera {
 
         u.x = 1;
         v.y = 1;
-        w.z = 1;
+        w.z = -1;
 
     }
 
@@ -79,4 +79,14 @@ public class Camera {
 	public void bind(float[] pos) {
 		binding = pos;
 	}
+
+    public void translate(double x, double y, double z) {
+        
+        c = new Matrix(new double[][]{
+                {u.getX(), v.getX(), w.getX(), x},
+                {u.getY(), v.getY(), w.getY(), y},
+                {u.getZ(), v.getZ(), w.getZ(), z},
+                {0,0,0,1}
+        }).mult(c).toPoint();
+    }
 }

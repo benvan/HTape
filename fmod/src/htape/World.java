@@ -86,20 +86,23 @@ public class World {
 
         projection = m.mult(source.getPosition()).toPoint();
 
+
         //find az / elevation
 
-        double el = Math.atan2(projection.getY(), projection.getZ());
+        double el = -Math.atan2(projection.getY(), projection.getZ());
         
 
         Matrix elevationPlane = new Matrix(new double[][]{
                 {1,0,0,0},
-                {0,Math.cos(-el),-Math.sin(-el),0},
-                {0,Math.sin(-el),Math.cos(-el),0},
+                {0,Math.cos(el),-Math.sin(el),0},
+                {0,Math.sin(el),Math.cos(el),0},
                 {0,0,0,1},
         });
 
         projection = elevationPlane.mult(projection).toPoint();
         double az = Math.atan2(projection.getZ(), projection.getX());
+
+        System.out.println(projection.toString() + " az: " + Math.toDegrees(az));
         
 
         hrir = hrtf.get(90 - Math.toDegrees(az), Math.toDegrees(el));

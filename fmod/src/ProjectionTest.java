@@ -9,7 +9,7 @@ public class ProjectionTest {
         //double az = Math.toRadians(90);
         double el = Math.toRadians(90);
         //Point p = new Point(Math.cos(az), 0, Math.sin(az));
-        Point p = new Point(0,0,1);
+        Point p = new Point(0,1,1);
 
         double c = Math.cos(el), s = Math.sin(el);
 

@@ -40,4 +40,9 @@ public class HRIR implements IFilter{
     public int getTaps() {
         return coefficients.length/2;
     }
+
+    @Override
+    public String toString() {
+        return String.format("(%.2f, %.2f)", azimuth, elevation);
+    }
 }

@@ -41,6 +41,7 @@ public class HTape {
 
     private void init() {
 
+        resources.audioFiles().add("/home/ben/windows/ben/Music/Radiohead/In Rainbows/01_15_Step.mp3");
         resources.audioFiles().add("/home/ben/play/sample.wav");
         resources.audioFiles().add("media/walking-in-snow-1.wav");
         player.loadAudioFile(resources.audioFiles().get());

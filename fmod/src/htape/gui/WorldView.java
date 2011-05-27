@@ -6,10 +6,7 @@ import htape.geometry.Point;
 
 import javax.swing.*;
 import java.awt.*;
-import java.awt.event.ActionEvent;
-import java.awt.event.ActionListener;
-import java.awt.event.KeyEvent;
-import java.awt.event.KeyListener;
+import java.awt.event.*;
 
 /**
  * Created by ben, on 3/17/11 at 12:40 PM
@@ -36,9 +33,9 @@ public class WorldView {
                 Point pos = camera.getPos();
                 double f = camera.getFocalLength();
                 int pow = (int)Math.ceil(Math.log10(f));
-                int step = (int)Math.pow(10, pow-1);
+                int step = 100;//(int)Math.pow(10, pow-1);
                 int cur = (int)((f - (f%step))/step);
-                
+
                 switch (keyEvent.getKeyCode()) {
                     case KeyEvent.VK_Q:
                         camera.setFocalLength(f+100);
@@ -63,10 +60,10 @@ public class WorldView {
                     	//pos.setX(pos.getX() + 50);
                         break;
                     case KeyEvent.VK_LEFT:
-                        camera.transform(Matrix.rotY(-Math.PI / 32));
+                        camera.transform(Matrix.rotY(Math.PI / 64));
                         break;
                     case KeyEvent.VK_RIGHT:
-                        camera.transform(Matrix.rotY(Math.PI / 32));
+                        camera.transform(Matrix.rotY(-Math.PI / 64));
                         break;
                     case KeyEvent.VK_UP:
                         camera.transform(Matrix.rotX(Math.PI / 64));
@@ -86,7 +83,18 @@ public class WorldView {
                 //To change body of implemented methods use File | Settings | File Templates.
             }
         });
-        
+
+        frame.addMouseMotionListener(new MouseMotionListener() {
+            public void mouseDragged(MouseEvent mouseEvent) {
+                int x = mouseEvent.getX();
+                int y = mouseEvent.getY();
+            }
+
+            public void mouseMoved(MouseEvent mouseEvent) {
+
+            }
+        });
+
         init();
     }
 

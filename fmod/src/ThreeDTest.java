@@ -44,9 +44,9 @@ import java.nio.ByteOrder;
 
 public class ThreeDTest {
 	
-	private static String hrtf_location = "C:\\Ben\\workspace\\HTape\\fmod\\resources\\hrtfs\\subject_008.hrtf.cipic.bin";//"/home/ben/subject_008.hrtf.cipic.bin";
+	private static String hrtf_location = "/home/ben/subject_008.hrtf.cipic.bin";
     private static String hrtf_directory = "c:\\temp\\";
-    private static String wav_location = "media/s";
+    private static String wav_location = "media/sample.wav";
 	
 	public static void main(String[] args) throws IOException {
 
@@ -67,11 +67,10 @@ public class ThreeDTest {
             	
             Thread t = new Thread(new Runnable(){
 
-				@Override
 				public void run() {
 
 					while(true){
-					
+
 						try {
 							s.receive(packet);
 						} catch (IOException e) {
@@ -104,7 +103,7 @@ public class ThreeDTest {
 				}
             });
             
-            t.start();
+            //t.start();
             
             
             
@@ -132,7 +131,7 @@ public class ThreeDTest {
             //world.getCamera().transform(m);
             world.getCamera().setFocalLength(-1000);
             
-            world.getCamera().bind(pos);
+//            world.getCamera().bind(pos);
 
 
 

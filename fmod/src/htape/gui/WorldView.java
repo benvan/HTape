@@ -38,24 +38,29 @@ public class WorldView {
                 int pow = (int)Math.ceil(Math.log10(f));
                 int step = (int)Math.pow(10, pow-1);
                 int cur = (int)((f - (f%step))/step);
+                
                 switch (keyEvent.getKeyCode()) {
                     case KeyEvent.VK_Q:
-                        camera.setFocalLength(step*(cur+1));
+                        camera.setFocalLength(f+100);
                         break;
                     case KeyEvent.VK_E:
-                        camera.setFocalLength(step*(cur-1));
+                        camera.setFocalLength(f-100);
                         break;
                     case KeyEvent.VK_W:
-                        pos.setZ(pos.getZ() + 50);
+                    	camera.pz += 5;
+                        //pos.setZ(pos.getZ() + 50);
                         break;
                     case KeyEvent.VK_S:
-                        pos.setZ(pos.getZ() - 50);
+                    	camera.pz -= 5;
+                    	//pos.setZ(pos.getZ() - 50);
                         break;
                     case KeyEvent.VK_A:
-                        pos.setX(pos.getX() - 50);
+                    	camera.px -= 5;
+                        //pos.setX(pos.getX() - 50);
                         break;
                     case KeyEvent.VK_D:
-                        pos.setX(pos.getX() + 50);
+                    	camera.px += 5;
+                    	//pos.setX(pos.getX() + 50);
                         break;
                     case KeyEvent.VK_LEFT:
                         camera.transform(Matrix.rotY(-Math.PI / 32));
@@ -68,6 +73,9 @@ public class WorldView {
                         break;
                     case KeyEvent.VK_DOWN:
                         camera.transform(Matrix.rotX(-Math.PI / 64));
+                        break;
+                    case KeyEvent.VK_Z:
+                        camera.zero();
                         break;
                     case KeyEvent.VK_SPACE:
                     	w.play(getActiveSource());
@@ -91,7 +99,7 @@ public class WorldView {
 	}
 
 	private void init() {
-        frame.setPreferredSize(new Dimension(1100, 500));
+        frame.setPreferredSize(new Dimension(1500, 1000));
         frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
         frame.getContentPane().add(canvas);
     }

@@ -88,7 +88,8 @@ public class ThreeDTest {
 		            	int i = 0;
 		            	try{
 		            	for (String  st : str.trim().split(" ")){
-		            		pos[i++] = Float.parseFloat(st);
+		            		pos[i] = (i > 3) ? pos[i] + (Float.parseFloat(st)-pos[i])/10 : Float.parseFloat(st);
+		            		i++;
 //		            		System.out.print(st);
 //		            		System.out.print(" ");
 		            		
@@ -109,7 +110,7 @@ public class ThreeDTest {
             
             World world = new World();
             PointSource p = world.createSource();
-            world.bind(p, "media/sample.wav");
+            world.bind(p, "C:\\Ben\\Music\\Radiohead\\In Rainbows\\01_15_Step.mp3");
             world.move(p, new Point(0,1,0));
             
 
@@ -129,7 +130,7 @@ public class ThreeDTest {
             }));
 
             //world.getCamera().transform(m);
-            world.getCamera().setFocalLength(1000);
+            world.getCamera().setFocalLength(-1000);
             
             world.getCamera().bind(pos);
 

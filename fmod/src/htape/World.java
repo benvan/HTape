@@ -6,14 +6,19 @@ import htape.geometry.Camera;
 import htape.geometry.Matrix;
 import htape.geometry.PointSource;
 import htape.geometry.Point;
+import htape.util.filtering.DistanceFilter;
 import htape.util.filtering.hrtf.EmptyHRTF;
 import htape.util.filtering.hrtf.HRIR;
 import htape.util.filtering.hrtf.IHRTF;
 
 import java.awt.*;
+import java.awt.event.ActionEvent;
+import java.awt.event.ActionListener;
 import java.util.ArrayList;
 import java.util.Collection;
 import java.util.Iterator;
+
+import javax.swing.Timer;
 
 /**
  * Created by ben, on 3/10/11 at 1:17 PM
@@ -29,6 +34,7 @@ public class World {
     public Camera camera;
 
     public HRIR hrir = null;
+	private DistanceFilter filt;
 
     public World() {
         soundSystem = new SoundSystem();
@@ -36,6 +42,8 @@ public class World {
         camera = new Camera();
         origin = new Point(0,0,0);
         hrtf = new EmptyHRTF();
+        filt = new DistanceFilter();
+        hrir = hrtf.get(0, 0);
     }
 
     public void render(Graphics g){
@@ -95,8 +103,10 @@ public class World {
         
 
         hrir = hrtf.get(90 - Math.toDegrees(az), Math.toDegrees(el));
-        
-        soundSystem.setFilter(hrir);
+        filt.setDistance(p.distanceTo(source.getPosition()));
+        filt.wrap(hrir);
+
+        soundSystem.setFilter(filt);
 
 
     }

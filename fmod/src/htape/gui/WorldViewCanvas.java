@@ -56,14 +56,14 @@ public class WorldViewCanvas extends JPanel {
                 projections[i][j] = toScreenSpace(pos);
             }
         }
-
+        
         //draw projections on z-plane
         for (int i = 0; i < projections.length; i++) {
             Point[] projectionRow = projections[i];
             Point prev = projectionRow[projectionRow.length-1];
             for (int j = 0; j < projectionRow.length; j++) {
                 Point point = projectionRow[j];
-
+                
                 if (prev.getZ() > 0){
                     if (point.getZ() > 0) {
                         eg.line(prev,point);
@@ -77,7 +77,7 @@ public class WorldViewCanvas extends JPanel {
                     eg.square(prev,2);
                     Point p = positions[i][j];
                     g.setFont(new Font("Monospaced", Font.PLAIN, 10));
-                    g.drawString(String.valueOf(hrtf.getHrirs()[i][j].getElevation()), (int)prev.getX(), (int)(height -prev.getY()));
+                    //g.drawString(String.valueOf(hrtf.getHrirs()[i][j].getElevation()), (int)prev.getX(), (int)(height -prev.getY()));
                 }
                 prev = point;
             }
@@ -107,8 +107,6 @@ public class WorldViewCanvas extends JPanel {
 
         drawInfo(g);
     }
-
-
 
 	private void updateProjectionMatrices() {
 		Camera camera = world.getCamera();
@@ -151,8 +149,8 @@ public class WorldViewCanvas extends JPanel {
 
     private void drawInfo(Graphics g) {
     	Camera camera = world.getCamera();
-    	int w = 110;
-    	int h = 100;
+    	int w = 210;
+    	int h = 150;
     	int tr = getWidth(); //top-right
     	
     	g.setColor(Color.black);
@@ -162,13 +160,15 @@ public class WorldViewCanvas extends JPanel {
         
         g.setFont(new Font("Monospaced", Font.PLAIN, 12));
         
-        int textStart = tr - 100;
-		g.drawString(String.format("x: %+.2f",camera.getPos().getX()), textStart, 10);
-		g.drawString(String.format("y: %+.2f",camera.getPos().getY()), textStart, 20);
-		g.drawString(String.format("z: %+.2f",camera.getPos().getZ()), textStart, 30);
-        g.drawString("az: " + world.hrir.getAzimuth(), textStart, 50);
-        g.drawString("el: " + world.hrir.getElevation(), textStart, 60);
-        g.drawString(String.format("focal: %+.2f", camera.getFocalLength()), textStart, 80);
+        int textStart = tr - w + 10;
+        String[] camtext = camera.info().split("\n");
+        for (int i = 0; i < camtext.length; i++){
+        	g.drawString(camtext[i], textStart, (i+1)*10);
+        }
+        
+        g.drawString("az: " + world.hrir.getAzimuth(), textStart, camtext.length*10 + 20);
+        g.drawString("el: " + world.hrir.getElevation(), textStart, camtext.length*10 + 30);
+        g.drawString(String.format("focal: %+.2f", camera.getFocalLength()), textStart, camtext.length*10 + 50);
 	}
 
 
@@ -186,7 +186,7 @@ public class WorldViewCanvas extends JPanel {
 	}
 
 	
-		private void drawOrigin(Graphics g) {
+	private void drawOrigin(Graphics g) {
         g.setColor(Color.green);
         
         int originSize = 1;
@@ -207,9 +207,7 @@ public class WorldViewCanvas extends JPanel {
         eg.line(origin, endPoint);
         
         Point cameraSpaceOrigin = cameraProjection.mult(new Point()).toPoint();
-        g.drawString(cameraSpaceOrigin.toString(),
-			(int)origin.getX(), (int) origin.getY()
-		);
+        g.drawString(cameraSpaceOrigin.toString(),(int)origin.getX(), (int) origin.getY());
         g.setColor(Color.WHITE);
 
     }
@@ -218,7 +216,7 @@ public class WorldViewCanvas extends JPanel {
         if (hrir1 == null) {
             return new Point();
         }
-        int scale = 50;
+        int scale = 300;
         Matrix resize = new Matrix(new double[][]{
                 {scale, 0, 0, 0},
                 {0, scale, 0, 0},

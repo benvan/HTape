@@ -8,6 +8,7 @@ import org.jouvieje.fmodex.exceptions.InitException;
 import org.jouvieje.fmodex.structures.FMOD_DSP_DESCRIPTION;
 import sun.nio.cs.HistoricallyNamedCharset;
 
+import htape.util.filtering.IFilter;
 import htape.util.filtering.hrtf.HRIR;
 
 import java.util.ArrayList;
@@ -96,7 +97,7 @@ public class SoundSystem {
 		}
 	}
 
-	public void setFilter(HRIR hrir) {
+	public void setFilter(IFilter hrir) {
 		fmodDSPCallback.setFilter(hrir);
 	}
 }

@@ -14,18 +14,24 @@ public class Camera {
     double farPlane = 100000;
 	
     private float[] binding;
+	private float zx=0,zy=0,zz=0;
+	public float px=0,py=0,pz=0;
 
     public Camera() {
         c = new Point();
-        u = new Point();
+        resetOrientiation();
+
+    }
+
+	private void resetOrientiation() {
+		u = new Point();
         v = new Point();
         w = new Point();
-
+        
         u.x = 1;
         v.y = 1;
         w.z = 1;
-
-    }
+	}
 
     public Point getU() {
         return u;
@@ -62,21 +68,43 @@ public class Camera {
     }
 
     public String info() {
-        return String.format("x: %.2f\ny: %.2f\n z:%.2f", c.getX(), c.getY(), c.getZ());
+        return String.format(
+        		"pos: %.2f %.2f %.2f\n\n" +
+        		"raw: %.2f %.2f %.2f\n" +
+        		"rad: %.2f %.2f %.2f",
+        		c.getX(), c.getY(), c.getZ(),
+        		binding[3], binding[4], binding[5],
+        		Math.toRadians(binding[3] - zx), Math.toRadians(binding[4] - zy), Math.toRadians(binding[5] - zz)
+        		);
     }
 
 	public void alignToBinding() {
 		if (binding == null) return;
 		
-		int scale = 20;
-    	double zOffset = 0.7;
+		int scale = 40;
+    	double zOffset = 0.4;
     	
-    	c.setX(binding[0]*scale);
-    	c.setY(binding[1]*scale);
-    	c.setZ(zOffset-binding[2]*scale);
+    	c.setX(binding[0]*scale +px);
+    	c.setY(binding[1]*scale +py);
+    	c.setZ(binding[2]*scale +pz);
+    	
+    	resetOrientiation();
+    	transform(
+			Matrix.rotZ(Math.toRadians(binding[5] - zz))
+			.mult(Matrix.rotY(Math.toRadians(binding[4] - zy)))
+			.mult(Matrix.rotX(Math.toRadians(binding[3] - zx)))
+		);
+    	
 	}
 
 	public void bind(float[] pos) {
 		binding = pos;
+	}
+	
+	public void zero(){
+		zx = binding[3];
+		zy = binding[4];
+		zz = binding[5];
+		
 	}
 }

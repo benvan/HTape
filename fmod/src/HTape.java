@@ -2,6 +2,7 @@ import htape.Player;
 import htape.util.CIPICLocationPicker;
 import htape.util.LocationPicker;
 import htape.util.ResourcePool;
+import htape.util.filtering.DistanceFilter;
 import htape.util.filtering.IFilter;
 import htape.util.filtering.hrtf.HRTFFactory;
 import htape.util.filtering.hrtf.IHRTF;
@@ -98,14 +99,16 @@ public class HTape {
     public void run(){
         frame.pack();
         frame.setVisible(true);
+        
+        final DistanceFilter filt = new DistanceFilter();
 
         Timer t = new Timer(10, new ActionListener() {
             public void actionPerformed(ActionEvent actionEvent) {
                 loc.repaint();
                 IHRTF hrtf = resources.hrtfs().get();
                 if (hrtf == null) return;
-                IFilter filter = hrtf.get(loc.getAzimuth(), loc.getElevation());
-                player.setFilter(filter);
+                filt.wrap(hrtf.get(loc.getAzimuth(), loc.getElevation()));
+                player.setFilter(filt);
             }
         });
         t.start();

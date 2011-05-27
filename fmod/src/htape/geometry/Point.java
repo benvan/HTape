@@ -57,4 +57,9 @@ public class Point {
 	public String toString(){
 		return String.format("%+.2f, %+.2f, %+.2f",x,y,z);
 	}
+	
+	public double distanceTo(Point p){
+		return (Math.sqrt((x-p.x)*(x-p.x) + (y-p.y)*(y-p.y) + (z-p.z)*(z-p.z)));
+		
+	}
 }

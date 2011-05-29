@@ -20,7 +20,7 @@
   </component>
   <component name="DebuggerManager">
     <method_breakpoints>
-      <breakpoint url="jar://$PROJECT_DIR$/lib/NativeFmodEx.jar!/org/jouvieje/fmodex/System.class" line="127" class="org.jouvieje.fmodex.System" package="org.jouvieje.fmodex">
+      <breakpoint url="jar://$PROJECT_DIR$/lib/NativeFmodEx.jar!/org/jouvieje/fmodex/System.class" line="127" class="org.jouvieje.fmodex.System" package="">
         <option name="WATCH_ENTRY" value="true" />
         <option name="WATCH_EXIT" value="true" />
         <option name="ENABLED" value="true" />
@@ -36,6 +36,34 @@
         <option name="LOG_MESSAGE" value="" />
       </breakpoint>
     </method_breakpoints>
+    <line_breakpoints>
+      <breakpoint url="jar://C:/Program Files/Java/jdk1.6.0_17/src.zip!/java/net/URLClassLoader.java" line="188" class="java.net.URLClassLoader" package="java.net">
+        <option name="ENABLED" value="true" />
+        <option name="LOG_ENABLED" value="false" />
+        <option name="LOG_EXPRESSION_ENABLED" value="false" />
+        <option name="SUSPEND_POLICY" value="SuspendAll" />
+        <option name="COUNT_FILTER_ENABLED" value="false" />
+        <option name="COUNT_FILTER" value="0" />
+        <option name="CONDITION_ENABLED" value="false" />
+        <option name="CLASS_FILTERS_ENABLED" value="false" />
+        <option name="INSTANCE_FILTERS_ENABLED" value="false" />
+        <option name="CONDITION" value="" />
+        <option name="LOG_MESSAGE" value="" />
+      </breakpoint>
+      <breakpoint url="file://$PROJECT_DIR$/src/org/jouvieje/fmodex/examples/DspCustom.java" line="58" class="org.jouvieje.fmodex.examples.DspCustom" package="org.jouvieje.fmodex.examples">
+        <option name="ENABLED" value="true" />
+        <option name="LOG_ENABLED" value="false" />
+        <option name="LOG_EXPRESSION_ENABLED" value="false" />
+        <option name="SUSPEND_POLICY" value="SuspendAll" />
+        <option name="COUNT_FILTER_ENABLED" value="false" />
+        <option name="COUNT_FILTER" value="0" />
+        <option name="CONDITION_ENABLED" value="false" />
+        <option name="CLASS_FILTERS_ENABLED" value="false" />
+        <option name="INSTANCE_FILTERS_ENABLED" value="false" />
+        <option name="CONDITION" value="" />
+        <option name="LOG_MESSAGE" value="" />
+      </breakpoint>
+    </line_breakpoints>
     <breakpoint_any>
       <breakpoint>
         <option name="NOTIFY_CAUGHT" value="true" />
@@ -83,8 +111,8 @@
       <property name="field_breakpoints_groupByClasses" value="true" />
       <property name="method_breakpoints_groupByClasses" value="true" />
       <property name="exception_breakpoints_viewId" value="TABLE" />
-      <property name="exception_breakpoints_groupByClasses" value="true" />
       <property name="field_breakpoints_viewId" value="TABLE" />
+      <property name="exception_breakpoints_groupByClasses" value="true" />
       <property name="method_breakpoints_groupByMethods" value="false" />
     </ui_properties>
   </component>
@@ -93,112 +121,46 @@
   </component>
   <component name="FileEditorManager">
     <leaf>
-<<<<<<< HEAD
-      <file leaf-file-name="ThreeDTest.java" pinned="false" current="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/ThreeDTest.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state line="134" column="47" selection-start="3805" selection-end="3805" vertical-scroll-proportion="0.0">
-              <folding>
-                <element signature="imports" expanded="true" />
-              </folding>
-=======
-      <file leaf-file-name="HTapeWorld.java" pinned="false" current="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/HTapeWorld.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state line="15" column="38" selection-start="379" selection-end="379" vertical-scroll-proportion="0.0">
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="MatrixTest.java" pinned="false" current="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/MatrixTest.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state line="40" column="45" selection-start="1160" selection-end="1160" vertical-scroll-proportion="0.0">
-              <folding />
->>>>>>> 3d4b5968589d4532dd8876e904d4b5c796158610
-            </state>
-          </provider>
-        </entry>
-      </file>
-<<<<<<< HEAD
       <file leaf-file-name="ChannelGroups.java" pinned="false" current="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/org/jouvieje/fmodex/examples/ChannelGroups.java">
           <provider selected="true" editor-type-id="text-editor">
             <state line="44" column="28" selection-start="1946" selection-end="1946" vertical-scroll-proportion="0.0">
-=======
-      <file leaf-file-name="ProjectionTest.java" pinned="false" current="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/ProjectionTest.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state line="11" column="31" selection-start="312" selection-end="312" vertical-scroll-proportion="0.0">
->>>>>>> 3d4b5968589d4532dd8876e904d4b5c796158610
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-<<<<<<< HEAD
       <file leaf-file-name="CDPlayer.java" pinned="false" current="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/org/jouvieje/fmodex/examples/CDPlayer.java">
           <provider selected="true" editor-type-id="text-editor">
             <state line="44" column="70" selection-start="2146" selection-end="2146" vertical-scroll-proportion="0.0">
               <folding />
-=======
-      <file leaf-file-name="ThreeDTest.java" pinned="false" current="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/ThreeDTest.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state line="150" column="19" selection-start="4260" selection-end="4260" vertical-scroll-proportion="0.0">
-              <folding>
-                <element signature="imports" expanded="true" />
-              </folding>
->>>>>>> 3d4b5968589d4532dd8876e904d4b5c796158610
             </state>
           </provider>
         </entry>
       </file>
-<<<<<<< HEAD
       <file leaf-file-name="NetStream.java" pinned="false" current="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/org/jouvieje/fmodex/examples/NetStream.java">
           <provider selected="true" editor-type-id="text-editor">
             <state line="47" column="70" selection-start="2447" selection-end="2447" vertical-scroll-proportion="0.0">
-=======
-      <file leaf-file-name="WorldView.java" pinned="false" current="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/htape/gui/WorldView.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state line="52" column="36" selection-start="1653" selection-end="1653" vertical-scroll-proportion="0.0">
->>>>>>> 3d4b5968589d4532dd8876e904d4b5c796158610
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="_3D.java" pinned="false" current="true" current-in-tab="true">
+      <file leaf-file-name="_3D.java" pinned="false" current="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/org/jouvieje/fmodex/examples/_3D.java">
           <provider selected="true" editor-type-id="text-editor">
-<<<<<<< HEAD
-            <state line="57" column="39" selection-start="2767" selection-end="2767" vertical-scroll-proportion="0.69875777">
-              <folding>
-                <element signature="imports" expanded="true" />
-              </folding>
-=======
-            <state line="91" column="26" selection-start="2367" selection-end="2367" vertical-scroll-proportion="0.0">
+            <state line="57" column="39" selection-start="2767" selection-end="2767" vertical-scroll-proportion="0.0">
               <folding />
->>>>>>> 3d4b5968589d4532dd8876e904d4b5c796158610
             </state>
           </provider>
         </entry>
       </file>
-<<<<<<< HEAD
       <file leaf-file-name="DspPluginViewerParamPanel.java" pinned="false" current="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/org/jouvieje/fmodex/examples/DspPluginViewerParamPanel.java">
           <provider selected="true" editor-type-id="text-editor">
             <state line="18" column="70" selection-start="572" selection-end="572" vertical-scroll-proportion="0.0">
-=======
-      <file leaf-file-name="HRIR.java" pinned="false" current="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/htape/util/filtering/hrtf/HRIR.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state line="11" column="15" selection-start="238" selection-end="238" vertical-scroll-proportion="0.0">
->>>>>>> 3d4b5968589d4532dd8876e904d4b5c796158610
               <folding />
             </state>
           </provider>
@@ -207,49 +169,48 @@
       <file leaf-file-name="WorldViewCanvas.java" pinned="false" current="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/htape/gui/WorldViewCanvas.java">
           <provider selected="true" editor-type-id="text-editor">
-<<<<<<< HEAD
-            <state line="60" column="36" selection-start="1647" selection-end="1647" vertical-scroll-proportion="0.0">
+            <state line="106" column="14" selection-start="3379" selection-end="3379" vertical-scroll-proportion="0.0">
               <folding />
-=======
-            <state line="102" column="0" selection-start="3400" selection-end="3400" vertical-scroll-proportion="0.0">
-              <folding>
-                <element signature="imports" expanded="true" />
-              </folding>
->>>>>>> 3d4b5968589d4532dd8876e904d4b5c796158610
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="Camera.java" pinned="false" current="true" current-in-tab="true">
+      <file leaf-file-name="URLClassLoader.java" pinned="false" current="false" current-in-tab="false">
+        <entry file="jar://C:/Program Files/Java/jdk1.6.0_17/src.zip!/java/net/URLClassLoader.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state line="179" column="49" selection-start="6985" selection-end="6985" vertical-scroll-proportion="0.0">
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="DspCustom.java" pinned="false" current="true" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/src/org/jouvieje/fmodex/examples/DspCustom.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state line="58" column="0" selection-start="2455" selection-end="2455" vertical-scroll-proportion="0.42080745">
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="Camera.java" pinned="false" current="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/htape/geometry/Camera.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="15" column="28" selection-start="273" selection-end="273" vertical-scroll-proportion="0.33987916">
+            <state line="15" column="28" selection-start="273" selection-end="273" vertical-scroll-proportion="0.0">
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="Object.class" pinned="false" current="false" current-in-tab="false">
-        <entry file="jar:///usr/lib/jvm/java-6-openjdk/jre/lib/rt.jar!/java/lang/Object.class">
-          <provider selected="true" editor-type-id="text-editor">
-            <state line="19" column="28" selection-start="566" selection-end="566" vertical-scroll-proportion="0.0">
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-<<<<<<< HEAD
       <file leaf-file-name="HTape.java" pinned="false" current="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/HTape.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="101" column="18" selection-start="3604" selection-end="3604" vertical-scroll-proportion="0.0">
+            <state line="101" column="18" selection-start="3719" selection-end="3719" vertical-scroll-proportion="0.0">
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-=======
->>>>>>> 3d4b5968589d4532dd8876e904d4b5c796158610
     </leaf>
   </component>
   <component name="FindManager">
@@ -264,13 +225,10 @@
   <component name="IdeDocumentHistory">
     <option name="changedFiles">
       <list>
-<<<<<<< HEAD
         <option value="$PROJECT_DIR$/src/htape/EmptyHRTF.java" />
         <option value="$PROJECT_DIR$/src/htape/util/filtering/hrtf/EmptyHRTF.java" />
         <option value="$PROJECT_DIR$/src/htape/audio/SoundSystem.java" />
         <option value="$PROJECT_DIR$/src/htape/audio/HistoricalDSPCallback.java" />
-=======
->>>>>>> 3d4b5968589d4532dd8876e904d4b5c796158610
         <option value="$PROJECT_DIR$/src/htape/geometry/Vector.java" />
         <option value="$PROJECT_DIR$/src/htape/geometry/PointSource.java" />
         <option value="$PROJECT_DIR$/src/htape/util/HistoryBuffer.java" />
@@ -278,19 +236,8 @@
         <option value="$PROJECT_DIR$/src/htape/geometry/Matrix.java" />
         <option value="$PROJECT_DIR$/src/htape/geometry/Point.java" />
         <option value="$PROJECT_DIR$/src/MatrixTest.java" />
-<<<<<<< HEAD
         <option value="$PROJECT_DIR$/src/org/jouvieje/fmodex/examples/CDPlayer.java" />
-=======
-        <option value="$PROJECT_DIR$/src/org/jouvieje/fmodex/examples/_3D.java" />
-        <option value="$PROJECT_DIR$/src/HTape.java" />
-        <option value="$PROJECT_DIR$/src/ProjectionTest.java" />
-        <option value="$PROJECT_DIR$/src/htape/util/filtering/hrtf/HRIR.java" />
-        <option value="$PROJECT_DIR$/src/ThreeDTest.java" />
-        <option value="$PROJECT_DIR$/src/htape/World.java" />
         <option value="$PROJECT_DIR$/src/htape/gui/WorldViewCanvas.java" />
-        <option value="$PROJECT_DIR$/src/htape/gui/WorldView.java" />
-        <option value="$PROJECT_DIR$/src/htape/geometry/Camera.java" />
->>>>>>> 3d4b5968589d4532dd8876e904d4b5c796158610
       </list>
     </option>
   </component>
@@ -325,7 +272,7 @@
     <ConfirmationsSetting value="0" id="Remove" />
   </component>
   <component name="ProjectReloadState">
-    <option name="STATE" value="2" />
+    <option name="STATE" value="0" />
   </component>
   <component name="ProjectView">
     <navigator currentView="ProjectPane" proportions="" version="1" splitterProportion="0.5">
@@ -340,11 +287,6 @@
       <sortByType />
     </navigator>
     <panes>
-      <pane id="PackagesPane" />
-<<<<<<< HEAD
-=======
-      <pane id="Scope" />
->>>>>>> 3d4b5968589d4532dd8876e904d4b5c796158610
       <pane id="ProjectPane">
         <subPane>
           <PATH>
@@ -373,7 +315,6 @@
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
             <PATH_ELEMENT>
-<<<<<<< HEAD
               <option name="myItemId" value="src" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
@@ -388,40 +329,39 @@
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
             <PATH_ELEMENT>
-              <option name="myItemId" value="lib" />
-=======
-              <option name="myItemId" value="media" />
->>>>>>> 3d4b5968589d4532dd8876e904d4b5c796158610
+              <option name="myItemId" value="src" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="examples" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
           </PATH>
         </subPane>
       </pane>
+      <pane id="PackagesPane" />
       <pane id="Favorites" />
-<<<<<<< HEAD
       <pane id="Scope" />
-=======
->>>>>>> 3d4b5968589d4532dd8876e904d4b5c796158610
     </panes>
   </component>
   <component name="PropertiesComponent">
     <property name="GoToFile.includeJavaFiles" value="false" />
-    <property name="project.structure.last.edited" value="Modules" />
+    <property name="project.structure.last.edited" value="Libraries" />
     <property name="OverrideImplement.combined" value="true" />
     <property name="project.structure.proportion" value="0.15" />
     <property name="options.splitter.main.proportions" value="0.3" />
     <property name="recentsLimit" value="5" />
     <property name="options.lastSelected" value="File.Encoding" />
     <property name="MemberChooser.sorted" value="false" />
-    <property name="project.structure.side.proportion" value="0.2" />
+    <property name="project.structure.side.proportion" value="0.1388889" />
     <property name="MemberChooser.copyJavadoc" value="false" />
     <property name="GoToClass.toSaveIncludeLibraries" value="false" />
     <property name="GoToAction.allIncluded" value="false" />
     <property name="MemberChooser.showClasses" value="true" />
     <property name="GoToClass.includeLibraries" value="false" />
-    <property name="dynamic.classpath" value="false" />
-    <property name="options.searchVisible" value="true" />
     <property name="options.splitter.details.proportions" value="0.2" />
+    <property name="options.searchVisible" value="true" />
+    <property name="dynamic.classpath" value="false" />
   </component>
   <component name="RecentsManager">
     <key name="CopyClassDialog.RECENTS_KEY">
@@ -443,12 +383,8 @@
     </key>
   </component>
   <component name="RunManager" selected="Application.ThreeDTest">
-<<<<<<< HEAD
-    <configuration default="false" name="FloatTest" type="Application" factoryName="Application" temporary="true">
-      <option name="MAIN_CLASS_NAME" value="FloatTest" />
-=======
-    <configuration default="false" name="HTape" type="Application" factoryName="Application" temporary="true">
-      <option name="MAIN_CLASS_NAME" value="HTape" />
+    <configuration default="false" name="ProjectionTest" type="Application" factoryName="Application" temporary="true">
+      <option name="MAIN_CLASS_NAME" value="ProjectionTest" />
       <option name="VM_PARAMETERS" value="-Djava.library.path=$PROJECT_DIR$/lib" />
       <option name="PROGRAM_PARAMETERS" value="" />
       <option name="WORKING_DIRECTORY" value="file://$PROJECT_DIR$" />
@@ -459,19 +395,12 @@
       <option name="PASS_PARENT_ENVS" value="true" />
       <module name="fmod" />
       <envs />
-      <RunnerSettings RunnerId="Debug">
-        <option name="DEBUG_PORT" value="34973" />
-        <option name="TRANSPORT" value="0" />
-        <option name="LOCAL" value="true" />
-      </RunnerSettings>
       <RunnerSettings RunnerId="Run" />
-      <ConfigurationWrapper RunnerId="Debug" />
       <ConfigurationWrapper RunnerId="Run" />
       <method />
     </configuration>
-    <configuration default="false" name="HTapeWorld" type="Application" factoryName="Application" temporary="true">
-      <option name="MAIN_CLASS_NAME" value="HTapeWorld" />
->>>>>>> 3d4b5968589d4532dd8876e904d4b5c796158610
+    <configuration default="false" name="FloatTest" type="Application" factoryName="Application" temporary="true">
+      <option name="MAIN_CLASS_NAME" value="FloatTest" />
       <option name="VM_PARAMETERS" value="-Djava.library.path=$PROJECT_DIR$/lib" />
       <option name="PROGRAM_PARAMETERS" value="" />
       <option name="WORKING_DIRECTORY" value="file://$PROJECT_DIR$" />
@@ -510,38 +439,6 @@
     </configuration>
     <configuration default="false" name="ThreeDTest" type="Application" factoryName="Application" temporary="true">
       <option name="MAIN_CLASS_NAME" value="ThreeDTest" />
-      <option name="VM_PARAMETERS" value="-Djava.library.path=$PROJECT_DIR$/lib" />
-      <option name="PROGRAM_PARAMETERS" value="" />
-      <option name="WORKING_DIRECTORY" value="file://$PROJECT_DIR$" />
-      <option name="ALTERNATIVE_JRE_PATH_ENABLED" value="false" />
-      <option name="ALTERNATIVE_JRE_PATH" value="" />
-      <option name="ENABLE_SWING_INSPECTOR" value="false" />
-      <option name="ENV_VARIABLES" />
-      <option name="PASS_PARENT_ENVS" value="true" />
-      <module name="fmod" />
-      <envs />
-      <RunnerSettings RunnerId="Run" />
-      <ConfigurationWrapper RunnerId="Run" />
-      <method />
-    </configuration>
-    <configuration default="false" name="ProjectionTest" type="Application" factoryName="Application" temporary="true">
-      <option name="MAIN_CLASS_NAME" value="ProjectionTest" />
-      <option name="VM_PARAMETERS" value="-Djava.library.path=$PROJECT_DIR$/lib" />
-      <option name="PROGRAM_PARAMETERS" value="" />
-      <option name="WORKING_DIRECTORY" value="file://$PROJECT_DIR$" />
-      <option name="ALTERNATIVE_JRE_PATH_ENABLED" value="false" />
-      <option name="ALTERNATIVE_JRE_PATH" value="" />
-      <option name="ENABLE_SWING_INSPECTOR" value="false" />
-      <option name="ENV_VARIABLES" />
-      <option name="PASS_PARENT_ENVS" value="true" />
-      <module name="fmod" />
-      <envs />
-      <RunnerSettings RunnerId="Run" />
-      <ConfigurationWrapper RunnerId="Run" />
-      <method />
-    </configuration>
-    <configuration default="false" name="ThreeDTest" type="Application" factoryName="Application" temporary="true">
-      <option name="MAIN_CLASS_NAME" value="ThreeDTest" />
       <option name="VM_PARAMETERS" value="-Djava.library.path=C:/Program Files/FMOD SoundSystem/FMOD Programmers API Win32/api/lib" />
       <option name="PROGRAM_PARAMETERS" value="" />
       <option name="WORKING_DIRECTORY" value="file://$PROJECT_DIR$" />
@@ -556,6 +453,28 @@
       <ConfigurationWrapper RunnerId="Run" />
       <method />
     </configuration>
+    <configuration default="false" name="DspCustom" type="Application" factoryName="Application" temporary="true">
+      <option name="MAIN_CLASS_NAME" value="org.jouvieje.fmodex.examples.DspCustom" />
+      <option name="VM_PARAMETERS" value="-Djava.library.path=$PROJECT_DIR$/lib" />
+      <option name="PROGRAM_PARAMETERS" value="" />
+      <option name="WORKING_DIRECTORY" value="file://$PROJECT_DIR$" />
+      <option name="ALTERNATIVE_JRE_PATH_ENABLED" value="false" />
+      <option name="ALTERNATIVE_JRE_PATH" value="" />
+      <option name="ENABLE_SWING_INSPECTOR" value="false" />
+      <option name="ENV_VARIABLES" />
+      <option name="PASS_PARENT_ENVS" value="true" />
+      <module name="fmod" />
+      <envs />
+      <RunnerSettings RunnerId="Debug">
+        <option name="DEBUG_PORT" value="2630" />
+        <option name="TRANSPORT" value="0" />
+        <option name="LOCAL" value="true" />
+      </RunnerSettings>
+      <RunnerSettings RunnerId="Run" />
+      <ConfigurationWrapper RunnerId="Debug" />
+      <ConfigurationWrapper RunnerId="Run" />
+      <method />
+    </configuration>
     <configuration default="true" type="Remote" factoryName="Remote">
       <option name="USE_SOCKET_TRANSPORT" value="true" />
       <option name="SERVER_MODE" value="false" />
@@ -565,6 +484,24 @@
       <method>
         <option name="AntTarget" enabled="false" />
         <option name="BuildArtifacts" enabled="false" />
+        <option name="Maven.BeforeRunTask" enabled="false" />
+      </method>
+    </configuration>
+    <configuration default="true" type="Applet" factoryName="Applet">
+      <module name="" />
+      <option name="MAIN_CLASS_NAME" />
+      <option name="HTML_FILE_NAME" />
+      <option name="HTML_USED" value="false" />
+      <option name="WIDTH" value="400" />
+      <option name="HEIGHT" value="300" />
+      <option name="POLICY_FILE" value="$APPLICATION_HOME_DIR$/bin/appletviewer.policy" />
+      <option name="VM_PARAMETERS" />
+      <option name="ALTERNATIVE_JRE_PATH_ENABLED" value="false" />
+      <option name="ALTERNATIVE_JRE_PATH" />
+      <method>
+        <option name="AntTarget" enabled="false" />
+        <option name="BuildArtifacts" enabled="false" />
+        <option name="Make" enabled="true" />
         <option name="Maven.BeforeRunTask" enabled="false" />
       </method>
     </configuration>
@@ -593,24 +530,6 @@
       <envs />
       <properties />
       <listeners />
-      <method>
-        <option name="AntTarget" enabled="false" />
-        <option name="BuildArtifacts" enabled="false" />
-        <option name="Make" enabled="true" />
-        <option name="Maven.BeforeRunTask" enabled="false" />
-      </method>
-    </configuration>
-    <configuration default="true" type="Applet" factoryName="Applet">
-      <module name="" />
-      <option name="MAIN_CLASS_NAME" />
-      <option name="HTML_FILE_NAME" />
-      <option name="HTML_USED" value="false" />
-      <option name="WIDTH" value="400" />
-      <option name="HEIGHT" value="300" />
-      <option name="POLICY_FILE" value="$APPLICATION_HOME_DIR$/bin/appletviewer.policy" />
-      <option name="VM_PARAMETERS" />
-      <option name="ALTERNATIVE_JRE_PATH_ENABLED" value="false" />
-      <option name="ALTERNATIVE_JRE_PATH" />
       <method>
         <option name="AntTarget" enabled="false" />
         <option name="BuildArtifacts" enabled="false" />
@@ -685,21 +604,12 @@
       <method />
     </configuration>
     <list size="6">
-<<<<<<< HEAD
-      <item index="0" class="java.lang.String" itemvalue="Application.FloatTest" />
-      <item index="1" class="java.lang.String" itemvalue="Application.HTape" />
-      <item index="2" class="java.lang.String" itemvalue="Application.HTapeWorld" />
-      <item index="3" class="java.lang.String" itemvalue="Application.MatrixTest" />
-      <item index="4" class="java.lang.String" itemvalue="Application._3D" />
-      <item index="5" class="java.lang.String" itemvalue="Application.ThreeDTest" />
-=======
-      <item index="0" class="java.lang.String" itemvalue="Application._3D" />
-      <item index="1" class="java.lang.String" itemvalue="Application.HTape" />
-      <item index="2" class="java.lang.String" itemvalue="Application.HTapeWorld" />
-      <item index="3" class="java.lang.String" itemvalue="Application.MatrixTest" />
+      <item index="0" class="java.lang.String" itemvalue="Application.ProjectionTest" />
+      <item index="1" class="java.lang.String" itemvalue="Application.FloatTest" />
+      <item index="2" class="java.lang.String" itemvalue="Application.MatrixTest" />
+      <item index="3" class="java.lang.String" itemvalue="Application._3D" />
       <item index="4" class="java.lang.String" itemvalue="Application.ThreeDTest" />
-      <item index="5" class="java.lang.String" itemvalue="Application.ProjectionTest" />
->>>>>>> 3d4b5968589d4532dd8876e904d4b5c796158610
+      <item index="5" class="java.lang.String" itemvalue="Application.DspCustom" />
     </list>
     <configuration name="&lt;template&gt;" type="WebApp" default="true" selected="false">
       <Host>localhost</Host>
@@ -732,38 +642,22 @@
     <servers />
   </component>
   <component name="ToolWindowManager">
-<<<<<<< HEAD
     <frame x="-4" y="-4" width="1928" height="1130" extended-state="6" />
     <editor active="false" />
-=======
-    <frame x="-1" y="27" width="1922" height="1154" extended-state="6" />
-    <editor active="true" />
->>>>>>> 3d4b5968589d4532dd8876e904d4b5c796158610
     <layout>
       <window_info id="Changes" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Palette" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Ant Build" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
-      <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.40672782" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
+      <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.40587044" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
-<<<<<<< HEAD
       <window_info id="Messages" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32692307" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
-      <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.22851041" sideWeight="0.29149798" order="1" side_tool="true" content_ui="tabs" />
+      <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.22851041" sideWeight="0.4159919" order="1" side_tool="true" content_ui="tabs" />
       <window_info id="Maven Projects" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Commander" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.4" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
-      <window_info id="Project" active="true" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.22851041" sideWeight="0.37955466" order="0" side_tool="false" content_ui="tabs" />
+      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.22851041" sideWeight="0.25506073" order="0" side_tool="false" content_ui="tabs" />
       <window_info id="Dependency Viewer" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.3208502" sideWeight="0.9978046" order="2" side_tool="false" content_ui="tabs" />
-=======
-      <window_info id="Messages" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.3273632" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
-      <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
-      <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.15018706" sideWeight="0.3800995" order="1" side_tool="true" content_ui="tabs" />
-      <window_info id="Maven Projects" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
-      <window_info id="Commander" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.4" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
-      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.15018706" sideWeight="0.29850745" order="0" side_tool="false" content_ui="tabs" />
-      <window_info id="Dependency Viewer" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
-      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.31343284" sideWeight="0.9978046" order="2" side_tool="false" content_ui="tabs" />
->>>>>>> 3d4b5968589d4532dd8876e904d4b5c796158610
       <window_info id="Cvs" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
       <window_info id="Message" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
       <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32935324" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
@@ -808,39 +702,6 @@
     <option name="FILTER_TARGETS" value="false" />
   </component>
   <component name="editorHistoryManager">
-<<<<<<< HEAD
-    <entry file="file://$PROJECT_DIR$/src/htape/geometry/Camera.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="62" column="54" selection-start="1018" selection-end="1018" vertical-scroll-proportion="0.0">
-=======
-    <entry file="file://$PROJECT_DIR$/src/htape/gui/HRTFTest.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="33" column="13" selection-start="1415" selection-end="1415" vertical-scroll-proportion="0.0" />
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/org/jouvieje/fmodex/examples/_3D.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="134" column="30" selection-start="4721" selection-end="4721" vertical-scroll-proportion="0.0">
->>>>>>> 3d4b5968589d4532dd8876e904d4b5c796158610
-          <folding />
-        </state>
-      </provider>
-    </entry>
-<<<<<<< HEAD
-    <entry file="file://$PROJECT_DIR$/src/MatrixTest.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="45" column="64" selection-start="1244" selection-end="1244" vertical-scroll-proportion="0.0">
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/htape/gui/WorldView.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="89" column="21" selection-start="2939" selection-end="2939" vertical-scroll-proportion="0.0">
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/htape/geometry/Matrix.java">
       <provider selected="true" editor-type-id="text-editor">
         <state line="91" column="18" selection-start="2336" selection-end="2336" vertical-scroll-proportion="0.0" />
@@ -848,21 +709,12 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/htape/World.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="101" column="16" selection-start="2619" selection-end="2619" vertical-scroll-proportion="0.0">
-          <folding />
-        </state>
+        <state line="101" column="16" selection-start="2619" selection-end="2619" vertical-scroll-proportion="0.0" />
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/htape/geometry/PointSource.java">
       <provider selected="true" editor-type-id="text-editor">
         <state line="7" column="13" selection-start="116" selection-end="116" vertical-scroll-proportion="0.0" />
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/htape/gui/WorldViewCanvas.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="60" column="36" selection-start="1647" selection-end="1647" vertical-scroll-proportion="0.0">
-          <folding />
-        </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/htape/geometry/Point.java">
@@ -875,137 +727,72 @@
         <state line="33" column="13" selection-start="1415" selection-end="1415" vertical-scroll-proportion="0.0" />
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/HTape.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="101" column="18" selection-start="3604" selection-end="3604" vertical-scroll-proportion="0.0" />
-=======
-    <entry file="file://$PROJECT_DIR$/../../resources/NativeFmodEx Sdk/src/NativeFmodEx/java/org/jouvieje/fmodex/structures/FMOD_VECTOR.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="50" column="13" selection-start="1800" selection-end="1800" vertical-scroll-proportion="0.0" />
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/htape/audio/SoundSystem.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="84" column="52" selection-start="2707" selection-end="2707" vertical-scroll-proportion="0.0" />
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/../../resources/NativeFmodEx Sdk/src/NativeFmodEx/java/org/jouvieje/fmodex/System.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="803" column="23" selection-start="29315" selection-end="29315" vertical-scroll-proportion="0.0" />
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/HTape.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="42" column="100" selection-start="1054" selection-end="1054" vertical-scroll-proportion="0.0" />
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/MatrixTest.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="40" column="45" selection-start="1160" selection-end="1160" vertical-scroll-proportion="0.0" />
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/HTapeWorld.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="15" column="38" selection-start="379" selection-end="379" vertical-scroll-proportion="0.0" />
-      </provider>
-    </entry>
-    <entry file="jar:///usr/lib/jvm/java-6-openjdk/jre/lib/rt.jar!/java/lang/Object.class">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="19" column="28" selection-start="566" selection-end="566" vertical-scroll-proportion="0.0">
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/htape/util/filtering/hrtf/HRIR.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="11" column="15" selection-start="238" selection-end="238" vertical-scroll-proportion="0.0">
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/ProjectionTest.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="11" column="31" selection-start="312" selection-end="312" vertical-scroll-proportion="0.0">
-          <folding />
-        </state>
->>>>>>> 3d4b5968589d4532dd8876e904d4b5c796158610
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/ThreeDTest.java">
       <provider selected="true" editor-type-id="text-editor">
-<<<<<<< HEAD
-        <state line="134" column="47" selection-start="3805" selection-end="3805" vertical-scroll-proportion="0.0">
-=======
-        <state line="150" column="19" selection-start="4260" selection-end="4260" vertical-scroll-proportion="0.0">
->>>>>>> 3d4b5968589d4532dd8876e904d4b5c796158610
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-<<<<<<< HEAD
-    <entry file="file://$PROJECT_DIR$/src/org/jouvieje/fmodex/examples/DspPluginViewerParamPanel.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="18" column="70" selection-start="572" selection-end="572" vertical-scroll-proportion="0.0">
+        <state line="134" column="47" selection-start="3829" selection-end="3829" vertical-scroll-proportion="0.0">
           <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/org/jouvieje/fmodex/examples/ChannelGroups.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="44" column="28" selection-start="1946" selection-end="1946" vertical-scroll-proportion="0.0">
-=======
-    <entry file="file://$PROJECT_DIR$/src/htape/gui/WorldViewCanvas.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="102" column="0" selection-start="3400" selection-end="3400" vertical-scroll-proportion="0.0">
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
-        </state>
+        <state line="44" column="28" selection-start="1946" selection-end="1946" vertical-scroll-proportion="0.0" />
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/htape/World.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="91" column="26" selection-start="2367" selection-end="2367" vertical-scroll-proportion="0.0">
->>>>>>> 3d4b5968589d4532dd8876e904d4b5c796158610
-          <folding />
-        </state>
-      </provider>
-    </entry>
-<<<<<<< HEAD
     <entry file="file://$PROJECT_DIR$/src/org/jouvieje/fmodex/examples/CDPlayer.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="44" column="70" selection-start="2146" selection-end="2146" vertical-scroll-proportion="0.0">
-=======
-    <entry file="file://$PROJECT_DIR$/src/htape/gui/WorldView.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="52" column="36" selection-start="1653" selection-end="1653" vertical-scroll-proportion="0.0">
->>>>>>> 3d4b5968589d4532dd8876e904d4b5c796158610
-          <folding />
-        </state>
+        <state line="44" column="70" selection-start="2146" selection-end="2146" vertical-scroll-proportion="0.0" />
       </provider>
     </entry>
-<<<<<<< HEAD
     <entry file="file://$PROJECT_DIR$/src/org/jouvieje/fmodex/examples/NetStream.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="47" column="70" selection-start="2447" selection-end="2447" vertical-scroll-proportion="0.0">
-          <folding />
-        </state>
+        <state line="47" column="70" selection-start="2447" selection-end="2447" vertical-scroll-proportion="0.0" />
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/org/jouvieje/fmodex/examples/_3D.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="57" column="39" selection-start="2767" selection-end="2767" vertical-scroll-proportion="0.69875777">
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
-=======
+        <state line="57" column="39" selection-start="2767" selection-end="2767" vertical-scroll-proportion="0.0">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/org/jouvieje/fmodex/examples/DspPluginViewerParamPanel.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="18" column="70" selection-start="572" selection-end="572" vertical-scroll-proportion="0.0" />
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/src/htape/geometry/Camera.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="15" column="28" selection-start="273" selection-end="273" vertical-scroll-proportion="0.33987916">
+        <state line="15" column="28" selection-start="273" selection-end="273" vertical-scroll-proportion="0.0">
           <folding />
->>>>>>> 3d4b5968589d4532dd8876e904d4b5c796158610
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/HTape.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="101" column="18" selection-start="3719" selection-end="3719" vertical-scroll-proportion="0.0">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/htape/gui/WorldViewCanvas.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="106" column="14" selection-start="3379" selection-end="3379" vertical-scroll-proportion="0.0">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="jar://C:/Program Files/Java/jdk1.6.0_17/src.zip!/java/net/URLClassLoader.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="179" column="49" selection-start="6985" selection-end="6985" vertical-scroll-proportion="0.0">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/org/jouvieje/fmodex/examples/DspCustom.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="58" column="0" selection-start="2455" selection-end="2455" vertical-scroll-proportion="0.42080745">
+          <folding />
         </state>
       </provider>
     </entry>
@@ -1026,11 +813,6 @@
           </splitter-proportions>
         </settings>
       </state>
-      <state key="Copyright.UI">
-        <settings>
-          <splitter-proportions />
-        </settings>
-      </state>
       <state key="FacetStructureConfigurable.UI">
         <settings>
           <last-edited>Android</last-edited>
@@ -1048,7 +830,7 @@
           <splitter-proportions>
             <option name="proportions">
               <list>
-                <option value="0.2" />
+                <option value="0.1388889" />
               </list>
             </option>
           </splitter-proportions>
@@ -1084,15 +866,10 @@
           <splitter-proportions>
             <option name="proportions">
               <list>
-                <option value="0.2" />
+                <option value="0.1388889" />
               </list>
             </option>
           </splitter-proportions>
-        </settings>
-      </state>
-      <state key="ScopeChooserConfigurable.UI">
-        <settings>
-          <splitter-proportions />
         </settings>
       </state>
     </states>

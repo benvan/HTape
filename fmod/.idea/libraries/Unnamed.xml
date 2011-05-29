@@ -1,12 +1,14 @@
 <component name="libraryTable">
   <library name="Unnamed">
     <CLASSES>
-      <root url="file://$PROJECT_DIR$/lib" />
+      <root url="file://$PROJECT_DIR$/../../../../fmod/lib" />
+      <root url="file://$PROJECT_DIR$/../../../../fmod/lib" />
     </CLASSES>
     <JAVADOC />
     <SOURCES>
-      <root url="file://$PROJECT_DIR$/../../resources/NativeFmodEx Sdk/src/NativeFmodEx/java" />
+      <root url="file://C:/Program Files/FMOD SoundSystem/NativeFmodEx Sdk/src/NativeFmodEx/java" />
+      <root url="file://C:/Program Files/FMOD SoundSystem/NativeFmodEx Sdk/src/NativeFmodDesigner/java" />
     </SOURCES>
-    <jarDirectory url="file://$PROJECT_DIR$/lib" recursive="false" />
+    <jarDirectory url="file://$PROJECT_DIR$/../../../../fmod/lib" recursive="false" />
   </library>
 </component>

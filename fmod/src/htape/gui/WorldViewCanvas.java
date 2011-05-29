@@ -99,6 +99,21 @@ public class WorldViewCanvas extends JPanel {
         Point radius = applyPerspective(toCameraSpace(source).addX(0.1));
         double r = Math.abs(radius.getX() - p.getX());
 
+        eg.circF(p,r);
+        g.setColor(Color.WHITE);
+        eg.circ(p,r);
+        g.setColor(Color.red);
+
+        //draw line to hrtf found
+        Point hrir = toScreenSpace(getPosition(world.hrir));
+
+        eg.square(hrir, 6);
+        eg.line(p, hrir);
+
+        drawInfo(g);
+    }
+
+
 	private void updateProjectionMatrices() {
 		Camera camera = world.getCamera();
         double f = camera.getFocalLength();

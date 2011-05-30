@@ -43,7 +43,7 @@ public class MatrixTest {
 
 
         try {
-            world.setHRTF(new HRTFFactory().fromFile("/home/ben/subject_008.hrtf.cipic.bin"));
+            world.setHRTF(new HRTFFactory().fromFile("resources/hrtfs/subject_008.hrtf.cipic.bin"));
         } catch (UnrecognisedHRTFException e) {
             System.err.println("Failed to recognise HRTF format.");
             System.exit(0);

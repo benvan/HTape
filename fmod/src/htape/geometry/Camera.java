@@ -13,7 +13,7 @@ public class Camera {
     double nearPlane = 10;
     double farPlane = 100000;
 	
-    private float[] binding;
+    private float[] binding = new float[6];
 	private float zx=0,zy=0,zz=0;
 	public float px=0,py=0,pz=0;
 

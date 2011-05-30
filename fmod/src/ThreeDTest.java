@@ -44,14 +44,12 @@ import java.nio.ByteOrder;
 
 public class ThreeDTest {
 	
-	private static String hrtf_location = "/home/ben/subject_008.hrtf.cipic.bin";
+	private static String hrtf_location = "resources/hrtfs/subject_008.hrtf.cipic.bin";
     private static String hrtf_directory = "c:\\temp\\";
     private static String wav_location = "media/sample.wav";
 	
 	public static void main(String[] args) throws IOException {
 
-		
-		
         Socket echoSocket = null;
         PrintWriter out = null;
         BufferedReader in = null;
@@ -86,14 +84,10 @@ public class ThreeDTest {
 		            	String str = new String(bs);
 		            	int i = 0;
 		            	try{
-		            	for (String  st : str.trim().split(" ")){
-		            		pos[i] = (i > 3) ? pos[i] + (Float.parseFloat(st)-pos[i])/10 : Float.parseFloat(st);
-		            		i++;
-//		            		System.out.print(st);
-//		            		System.out.print(" ");
-		            		
-		            	}
-		            	//System.out.println();
+                            for (String  st : str.trim().split(" ")){
+                                pos[i] = (i > 3) ? pos[i] + (Float.parseFloat(st)-pos[i])/10 : Float.parseFloat(st);
+                                i++;
+                            }
 		            	}
 		            	catch(NumberFormatException e){
 		            		System.err.println("******** Some numerical error **********");
@@ -103,7 +97,7 @@ public class ThreeDTest {
 				}
             });
             
-            //t.start();
+            t.start();
             
             
             
@@ -113,25 +107,8 @@ public class ThreeDTest {
             world.move(p, new Point(0,1,0));
             
 
-            double ang = 0.5;
-            Matrix m = new Matrix(new double[][]{
-                {1,0,0,0},
-                {0,Math.cos(ang),-Math.sin(ang),0},
-                {0,Math.sin(ang),Math.cos(ang),0},
-                {0,0,0,1}
-            });
-
-            m = m.mult(new Matrix(new double[][]{
-                {Math.cos(ang),-Math.sin(ang),0,0},
-                {Math.sin(ang),Math.cos(ang),0,0},
-                {0,0,1,0},
-                {0,0,0,1}
-            }));
-
-            //world.getCamera().transform(m);
             world.getCamera().setFocalLength(-1000);
-            
-//            world.getCamera().bind(pos);
+            world.getCamera().bind(pos);
 
 
 

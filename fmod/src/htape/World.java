@@ -102,7 +102,7 @@ public class World {
         projection = elevationPlane.mult(projection).toPoint();
         double az = Math.atan2(projection.getZ(), projection.getX());
 
-        System.out.println(projection.toString() + " az: " + Math.toDegrees(az));
+//        System.out.println(projection.toString() + " az: " + Math.toDegrees(az));
         
 
         hrir = hrtf.get(90 - Math.toDegrees(az), Math.toDegrees(el));

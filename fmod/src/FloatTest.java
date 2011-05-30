@@ -28,7 +28,7 @@ public class FloatTest {
 
     public static void main(String[] args) throws IOException, UnrecognisedHRTFException {
 
-        hrtf = new HRTFFactory().fromFile("/home/ben/subject_008.hrtf.cipic.bin");
+        hrtf = new HRTFFactory().fromFile("resources/38.hrtf.listen.bin");
 
         final CIPICLocationPicker l = new CIPICLocationPicker();
 
